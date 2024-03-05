@@ -1,9 +1,9 @@
-			</div>
+
 		</div>
 		<footer>
 			<div class="container sm">
 				<div class="row">
-					<div class="col-4">
+					<div class="col-md-4">
 						<div><img src="<?php bloginfo('template_url'); ?>/img/OpascopeTM_logo-white.svg"></div>
 
 						<div class="footer-btn">
@@ -20,7 +20,7 @@
 						</div>
 					</div>
 
-					<div class="col-4">
+					<div class="col-md-4">
 						<div class="title">Company</div>
 						<ul>
 							<li><a href="<?php bloginfo('url'); ?>/services">Services</a></li>
@@ -28,7 +28,7 @@
 						</ul>
 					</div>
 
-					<div class="col-4">
+					<div class="col-md-4">
 						<div class="title">Resources</div>
 						<ul>
 							<li><a href="<?php bloginfo('url'); ?>/case-studies">Case Studies</a></li>
@@ -42,12 +42,12 @@
 
 			<div class="container bottom">
 				<div class="row">
-					<div class="col-4">
-						Built by Opascope <span class="c-emoji c-emoji__medium c-emoji--inline" data-qa="emoji" data-sk="tooltip_parent"><img decoding="async" src="https://a.slack-edge.com/production-standard-emoji-assets/14.0/google-medium/1f680.png" alt=":rocket:" aria-label="rocket emoji" data-stringify-type="emoji" data-stringify-emoji=":rocket:"></span>
+					<div class="col-md-4 built">
+						Built by Opascope <span class="c-emoji c-emoji__medium c-emoji--inline"><img src="https://a.slack-edge.com/production-standard-emoji-assets/14.0/google-medium/1f680.png" alt=":rocket:"></span>
 					</div>
 
-					<div class="col-8 copy">
-						© 2023 PBCT LLC dba Opascope. All rights reserved | <a href="<?php bloginfo('url'); ?>/privacy-policy">Privacy Policy</a>
+					<div class="col-md-8 copy">
+						© 2024 PBCT LLC dba Opascope. <br class="visible-mobile">All rights reserved | <a href="<?php bloginfo('url'); ?>/privacy-policy">Privacy Policy</a>
 					</div>
 				</div>
 			</div>

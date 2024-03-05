@@ -65,6 +65,5 @@
 				})
 			});
 		</script>
-
-		<div class="container">
-			<div class="content">
+		
+		<div class="content">
