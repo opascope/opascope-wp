@@ -5,9 +5,9 @@
  */
 function the_slug()
 {
-	$post_data = get_post($post->ID, ARRAY_A);
-	$slug = $post_data['post_name'].'_page';
-	return $slug;
+	$current_page_id = get_the_ID();
+	$current_page_slug = get_post_field('post_name', $current_page_id);
+	return $current_page_slug;
 }
 
 /**
@@ -36,7 +36,7 @@ if ( function_exists( 'register_nav_menus' ) ) {
 	);
 }
 
-//add_theme_support( 'post-thumbnails' );
+add_theme_support( 'post-thumbnails' );
 
 //add_action( 'init', 'create_post_type' );
 //function create_post_type() {

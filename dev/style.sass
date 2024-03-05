@@ -1,5 +1,294 @@
 /* Theme name: Opascope */
-html,
+/* Version: 1.0 */
+/* Author: Opascope */
+
+$grey: #6E7074
+$black: #11151C
+$border: #41454A
+$footer-text: #B8B9BB
+
 body
 	margin: 0
 	padding: 0
+	font-family: Inter
+	font-size: 16px
+	line-height: 26px
+	color: $black
+
+.container
+	max-width: 1098px
+
+header
+	padding: 29px 0 50px 0
+
+.menu
+	ul
+		padding: 7px 0 0
+		margin: 0
+		list-style: none
+		display: flex
+		list-style: none
+		justify-content: flex-end
+
+		li
+			padding: 0 20px
+
+			> a
+				color: $grey
+				font-size: 16px
+				font-style: normal
+				font-weight: 700
+				line-height: 24px
+				border-bottom: 1px solid #000
+				padding: 7px 0
+				text-decoration: none
+
+				&:hover
+					text-decoration: none
+					color: $black
+
+			&.book
+				padding-right: 0
+
+				> a
+					padding: 12.5px 23px
+					border: 1px solid #11151C
+					font-size: 16px
+					background: $black
+					color: #fff
+					text-align: center
+
+					&:hover
+						background: #fff
+						color: $black
+
+.toggle-menu
+	float: right
+
+	.nav-icon
+		width: 40px
+		height: 27px
+		position: relative
+		-webkit-transform: rotate(0deg)
+		-moz-transform: rotate(0deg)
+		-o-transform: rotate(0deg)
+		transform: rotate(0deg)
+		-webkit-transition: .5s ease-in-out
+		-moz-transition: .5s ease-in-out
+		-o-transition: .5s ease-in-out
+		transition: .5s ease-in-out
+		cursor: pointer
+
+		span
+			display: block
+			position: absolute
+			height: 4px
+			width: 100%
+			background: $black
+			border-radius: 9px
+			opacity: 1
+			left: 0
+			-webkit-transform: rotate(0deg)
+			-moz-transform: rotate(0deg)
+			-o-transform: rotate(0deg)
+			transform: rotate(0deg)
+			-webkit-transition: .25s ease-in-out
+			-moz-transition: .25s ease-in-out
+			-o-transition: .25s ease-in-out
+			transition: .25s ease-in-out
+
+			&:nth-child(1)
+				top: 0px
+				-webkit-transform-origin: left center
+				-moz-transform-origin: left center
+				-o-transform-origin: left center
+				transform-origin: left center
+
+			&:nth-child(2)
+				top: 14px
+				-webkit-transform-origin: left center
+				-moz-transform-origin: left center
+				-o-transform-origin: left center
+				transform-origin: left center
+
+			&:nth-child(3)
+				top: 27px
+				-webkit-transform-origin: left center
+				-moz-transform-origin: left center
+				-o-transform-origin: left center
+				transform-origin: left center
+
+
+		&.open span:nth-child(1)
+			-webkit-transform: rotate(45deg)
+			-moz-transform: rotate(45deg)
+			-o-transform: rotate(45deg)
+			transform: rotate(45deg)
+			top: 0px
+			left: 8px
+
+
+		&.open span:nth-child(2)
+			width: 0%
+			opacity: 0
+
+
+		&.open span:nth-child(3)
+			-webkit-transform: rotate(-45deg)
+			-moz-transform: rotate(-45deg)
+			-o-transform: rotate(-45deg)
+			transform: rotate(-45deg)
+			top: 29px
+			left: 8px
+
+.mobile-menu
+	display: none
+
+	ul
+		display: flex
+		list-style: none
+		justify-content: flex-end
+		margin: 0
+		flex-direction: column
+		width: 100%
+		padding: 16px 0
+
+		li
+			position: relative
+			line-height: 28px
+			padding: 0px
+			color: $grey
+			padding: 15px 0px
+			width: 100%
+
+			> a
+				position: relative
+				line-height: 28px
+				padding: 0px
+				color: $grey
+				text-decoration: none
+				font-weight: 700
+				width: 100%
+				display: inline-block
+
+				&:after
+					position: absolute
+					bottom: -7px
+					left: 0
+					width: 100%
+					height: 2px
+					background: $grey
+					content: ""
+
+			&.book
+				> a
+					padding: 12.5px 23px
+					border: 1px solid $black
+					transition: 0.5s
+					font-size: 16px
+					background: #11151C
+					color: #fff
+					text-align: center
+
+					&:after
+						content: none
+
+footer
+	background: $black
+	padding: 80px 0 20px
+
+	.container.sm
+		max-width: 904px
+
+	.container
+		max-width: 1070px
+
+	.footer-btn
+		margin-top: 42px
+
+		a
+			border-radius: 2px
+			border: 1px solid #FFF
+			background: #FFF
+			text-align: center
+			font-weight: 400
+			line-height: 26px
+			display: inline-block
+			text-decoration: none
+			color: $black
+			padding: 11px 22px
+
+	.social
+		margin-top: 30px
+
+		a
+			border-radius: 50px
+			background: #FFF
+			width: 38px
+			height: 38px
+			display: inline-flex
+			justify-content: center
+			margin-right: 15px
+
+			&.ln
+				svg
+					width: 17.5px
+
+			&.tw
+				svg
+					width: 19px
+
+			&.in
+				svg
+					width: 17.5px
+
+	.title
+		color: #FFF
+		font-size: 20px
+		font-weight: 700
+		line-height: 30px
+
+	ul
+		padding: 0
+		margin: 26px 0 0
+		list-style: none
+
+		li
+			margin-bottom: 12px
+
+			> a
+				color: #FFF
+				font-size: 16px
+				font-style: normal
+				font-weight: 400
+				line-height: 26px
+
+	.line
+		max-width: 1660px
+		margin: 50px auto 0 auto
+		border-top: 1px solid #373A40
+
+	.bottom
+		padding-top: 21px
+		color: $footer-text
+		font-size: 14px
+		line-height: 26px
+
+	.copy
+		text-align: right
+
+		a
+			color: $footer-text
+			&:hover
+				color: #fff
+
+@media (max-width: 991px)
+	.hidden-mobile
+		display: none
+
+@media (min-width: 992px)
+	.visible-mobile
+		display: none
+a
+	transition: 0.5s
+	text-decoration: none
