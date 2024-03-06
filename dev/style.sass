@@ -280,14 +280,14 @@ footer
 		line-height: 26px
 
 	.built
-		@media (max-width: 767px)
+		@media (max-width: 991px)
 			text-align: center
 			padding-top: 10px
 			order: 2
 
 	.copy
 		text-align: right
-		@media (max-width: 767px)
+		@media (max-width: 991px)
 			text-align: center
 
 		a
@@ -308,22 +308,25 @@ a
 
 .button
 	a
-		display: block
+		display: inline-block
 		padding: 20.5px 56px
 		border: 1px solid $black
-		font-size: 16px
 		background: $black
 		color: #fff
 		text-align: center
+		font-size: 22.027px
+		font-weight: 400
+		line-height: 22.027px
 
 		&:hover
 			background: #fff
 			color: $black
 
 /* Home Page */
-
 .main
 	padding: 160px 0
+	@media (max-width: 991px)
+		padding: 50px 0
 
 	h1
 		margin: 0 0 49px
@@ -331,8 +334,13 @@ a
 		font-weight: 700
 		line-height: 70.488px
 
+		@media (max-width: 991px)
+			font-size: 45px
+			line-height: 55px
+
 	.button a
-		width: 264px
+		@media (max-width: 991px)
+			width: 100%
 
 	.flex-end
 		display: flex
@@ -342,43 +350,186 @@ a
 		@media (max-width: 991px)
 			display: initial
 
+	.slider-wrap
+		max-width: 570px
+		border: 1.139px solid #1E1E1E
+		padding: 30px 38px 30px 38px
 
-.slider-wrap
-	max-width: 570px
-	border: 1.139px solid #1E1E1E
-	padding: 30px 38px 38px 38px
-	margin-block-start: 0
+		@media (max-width: 991px)
+			margin-top: 25px
 
-.quote
-	font-size: 27.341px
-	font-weight: 400
-	line-height: 36.454px
+	.quote
+		font-size: 27.341px
+		font-weight: 400
+		line-height: 36.454px
 
-.name
-	font-size: 18.227px
-	font-weight: 400
-	line-height: 27.341px
-	padding-top: 45px
+	.name
+		font-size: 18.227px
+		font-weight: 400
+		line-height: 27.341px
+		padding-top: 41px
 
-	strong
-		display: block
+		strong
+			display: block
 
-.slick-dots
-	list-style: none
-	position: absolute
-	right: -62px
-	top: -60px
+	.slick-dots
+		list-style: none
+		position: absolute
+		right: -62px
+		top: -60px
 
-	li
-		button
-			background: none
-			border: 1.139px solid $black
-			width: 12px
-			height: 13px
+		li
+			button
+				background: none
+				border: 1.139px solid $black
+				width: 12px
+				height: 13px
+				padding: 0
+				font-size: 0
+				line-height: 0
+				border-radius: 0
+
+			&.slick-active button
+				background: $black
+
+	@media (max-width: 1024px)
+		.slider-wrap
+			max-width: 380px
+
+	@media (max-width: 991px)
+		.slider-wrap
+			max-width: 100%
+
+		.slider-col
+			padding-right: 25px
+
+		.item
+			min-height: 250px
+
+	@media (max-width: 991px) and (orientation: portrait)
+		.item
+			min-height: 415px
+
+		.slick-slide
+			padding: 14px 0
+
+	@media (max-width: 1100px)
+		.item
+			min-height: 260px
+
+		.quote
+			font-size: 20px
+			line-height: 28px
+
+	@media (max-width: 900px) and (orientation: landscape)
+		.quote
+			font-size: 20px
+			line-height: 28px
+
+	@media (max-width: 400px) and (orientation: portrait)
+		.item
+			min-height: 285px
+
+		.slick-slide
+			padding: 10px 0
+
+.numbers
+	background: $black
+	padding: 60px 0
+	color: #fff
+	text-align: center
+
+	.row
+		gap: 60px
+		flex-wrap: nowrap
+		@media (max-width: 991px)
+			flex-wrap: wrap
+			gap: 0
+
+	@media (max-width: 991px)
+		text-align: left
+		padding: 50px 0
+
+	.head
+		font-size: 21px
+		line-height: 29.4px
+		letter-spacing: 1px
+		text-transform: uppercase
+		margin-bottom: 18.9px
+
+		@media (max-width: 991px)
+			font-size: 18px
+			margin-bottom: 0
+
+	.num
+		font-size: 52px
+		font-weight: 700
+		line-height: 67.6px
+		letter-spacing: 1px
+
+		@media (max-width: 991px)
+			font-size: 32px
+			margin-bottom: 12px
+
+.how
+	padding: 124px 0 101px
+	@media (max-width: 991px)
+		padding: 50px 0
+
+	.item
+		padding-bottom: 101px
+		@media (max-width: 991px)
+			padding-bottom: 50px
+		&:last-child
 			padding: 0
-			font-size: 0
-			line-height: 0
-			border-radius: 0
 
-		&.slick-active button
-			background: $black
+	.head
+		color: $grey
+		font-size: 20px
+		font-weight: 700
+		line-height: 32px
+		letter-spacing: 1px
+		text-transform: uppercase
+		padding-bottom: 30px
+		display: flex
+		align-items: center
+		gap: 30px
+
+		@media (max-width: 991px)
+			font-size: 14px
+			padding-bottom: 20px
+
+		&:after
+			content: " "
+			height: 1px
+			background: #000
+			display: block
+			flex-grow: 1
+
+	.head-big
+		font-size: 56px
+		font-weight: 700
+		line-height: 64px
+		padding-right: 62px
+		@media (max-width: 991px)
+			font-size: 32px
+			line-height: 39px
+			margin-bottom: 20px
+
+	.text-1
+		font-size: 24px
+		font-weight: 400
+		line-height: 30px
+		@media (max-width: 991px)
+			font-size: 14px
+			line-height: 22px
+
+	.text-2
+		margin-top: 30px
+		color: $grey
+		font-size: 16px
+		font-weight: 400
+		line-height: 30px
+		@media (max-width: 991px)
+			font-size: 14px
+			line-height: 22px

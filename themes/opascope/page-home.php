@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 	<?php if(have_posts()): the_post(); ?>
-		<div class="container">
-			<section class="main">
-				<div class="row">
+		<section class="main">
+			<div class="container">
+				<div class="row align-items-start">
 					<div class="col-md-5">
 						<h1>Profitable performance marketing.</h1>
 						<div class="button">
@@ -64,6 +64,81 @@
 				</div>
 			</section>
 		</div>
+
+		<section class="numbers">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="head">total client market capitalization</div>
+						<div class="num">$ 310,290,084,075</div>
+					</div>
+					<div class="col-md-6">
+						<div class="head">total ad spend analyzed</div>
+						<div class="num">$ 826,982,024</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="how">
+			<div class="container">
+				<div class="item">
+					<div class="head">How we look at the world</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="head-big">We are wired to do whatever it takes.</div>
+						</div>
+						<div class="col-md-6">
+							<div class="text-1">Above all else, we’re problem solvers. Where other agencies see roadblocks, we see opportunities to unlock your potential:</div>
+							<div class="text-2">
+								We solve problems other agencies don’t know to look for<br>
+								We’re technical and we’re not afraid to write some code<br>
+								We take extreme ownership of anything you hand us
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="head">How we work with you</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="head-big">We adjust to our
+clients, not the
+other way around.</div>
+						</div>
+						<div class="col-md-6">
+							<div class="text-1">Positive change happens when you work side-by-side. We offer tailored client experiences that foster transparency and collaboration:</div>
+							<div class="text-2">
+								Customized project management built for your team<br>
+You work with experts, not junior account managers<br>
+Integrated with your internal and external teams
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="head">Our commitments to our clients</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="head-big">Our relationships
+are measured in
+years, not months.</div>
+						</div>
+						<div class="col-md-6">
+							<div class="text-1">We want to partner with our clients for the long term, and not because they’re contractually obligated to stick around:</div>
+							<div class="text-2">
+								Opascope will be a profit center, not a cost center<br>
+No long-term contracts; only results drive retention<br>
+We’ll be strategic advisors and subject matter experts
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 	<?php endif; ?>
 
 <?php get_footer(); ?>
