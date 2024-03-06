@@ -6,6 +6,8 @@ $grey: #6E7074
 $black: #11151C
 $border: #41454A
 $footer-text: #B8B9BB
+$ivory: #F9F9F9
+$form-label: #4B4F58
 
 body
 	margin: 0
@@ -280,10 +282,17 @@ footer
 		line-height: 26px
 
 	.built
+		display: flex
+
 		@media (max-width: 991px)
 			text-align: center
 			padding-top: 10px
 			order: 2
+
+		img
+			display: inline-block
+			margin-top: 2px
+			margin-left: 5px
 
 	.copy
 		text-align: right
@@ -321,6 +330,62 @@ a
 		&:hover
 			background: #fff
 			color: $black
+
+/* Form */
+.form
+	padding: 36px 51px 51px 51px
+	border: 1px solid #000
+
+	@media (max-width: 991px)
+		padding: 25px
+
+	.form-head
+		font-size: 32px
+		font-weight: 400
+		line-height: 41.6px
+		letter-spacing: 1px
+		text-align: center
+
+	form
+		margin-top: 28px
+
+	label
+		color: $form-label
+		font-size: 15px
+		font-weight: 700
+		line-height: 27.86px
+
+	input
+		border-radius: 2px
+		border: 1px solid $border
+		height: 52px
+		margin: 0
+		padding: 14px 16px
+		width: 100%
+
+	.consent
+		min-height: initial
+		width: initial
+		margin-right: 5px
+		height: auto
+
+#formBtn
+	font-size: 18px
+	font-weight: 400
+	line-height: 18px
+	border-radius: 2px
+	border: 1px solid #41454A
+	background: #000
+	color: #fff
+	margin-top: 20px
+	transition: 0.5s
+
+	&:hover
+		color: #000
+		background: transparent
+
+.g-recaptcha
+	margin-top: 15px
 
 /* Home Page */
 .main
@@ -533,3 +598,70 @@ a
 		@media (max-width: 991px)
 			font-size: 14px
 			line-height: 22px
+
+.quote-s
+	padding-bottom: 101px
+
+	.inner
+		background: $ivory
+		padding: 40px 115px
+		text-align: center
+
+		@media (max-width: 991px)
+			padding: 40px
+
+	.text
+		font-size: 32px
+		line-height: 40px
+		font-weight: 700
+		margin-bottom: 32px
+
+		@media (max-width: 991px)
+			font-size: 22px
+			line-height: 32px
+
+	.auth
+		font-size: 24px
+		font-weight: 400
+		line-height: 44.57px
+
+		@media (max-width: 991px)
+			font-size: 16px
+			line-height: 25px
+
+.card
+	background: $black
+	padding: 80px 0
+
+	.text
+		color: #FFF
+		font-size: 33.648px
+		line-height: 47.108px
+
+		@media (max-width: 991px)
+			font-size: 22px
+			line-height: 32px
+
+		> span
+			font-weight: 700
+
+.letstalk
+	padding: 106px 0 82px
+	@media (max-width: 991px)
+		padding: 50px 0
+
+	.text
+		font-size: 200px
+		line-height: 220px
+		font-weight: 700
+		text-transform: lowercase
+
+		@media (max-width: 991px)
+			font-size: 100px
+			line-height: 120px
+			margin-bottom: 25px
+
+
+		> span
+			display: inline-block
+			margin-left: 80px

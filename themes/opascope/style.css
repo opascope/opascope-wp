@@ -275,12 +275,20 @@ footer .bottom {
   font-size: 14px;
   line-height: 26px;
 }
+footer .built {
+  display: flex;
+}
 @media (max-width: 991px) {
   footer .built {
     text-align: center;
     padding-top: 10px;
     order: 2;
   }
+}
+footer .built img {
+  display: inline-block;
+  margin-top: 2px;
+  margin-left: 5px;
 }
 footer .copy {
   text-align: right;
@@ -326,6 +334,67 @@ a {
 .button a:hover {
   background: #fff;
   color: #11151C;
+}
+
+/* Form */
+.form {
+  padding: 36px 51px 51px 51px;
+  border: 1px solid #000;
+}
+@media (max-width: 991px) {
+  .form {
+    padding: 25px;
+  }
+}
+.form .form-head {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 41.6px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.form form {
+  margin-top: 28px;
+}
+.form label {
+  color: #4B4F58;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 27.86px;
+}
+.form input {
+  border-radius: 2px;
+  border: 1px solid #41454A;
+  height: 52px;
+  margin: 0;
+  padding: 14px 16px;
+  width: 100%;
+}
+.form .consent {
+  min-height: initial;
+  width: initial;
+  margin-right: 5px;
+  height: auto;
+}
+
+#formBtn {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  border-radius: 2px;
+  border: 1px solid #41454A;
+  background: #000;
+  color: #fff;
+  margin-top: 20px;
+  transition: 0.5s;
+}
+#formBtn:hover {
+  color: #000;
+  background: transparent;
+}
+
+.g-recaptcha {
+  margin-top: 15px;
 }
 
 /* Home Page */
@@ -583,6 +652,88 @@ a {
     font-size: 14px;
     line-height: 22px;
   }
+}
+
+.quote-s {
+  padding-bottom: 101px;
+}
+.quote-s .inner {
+  background: #F9F9F9;
+  padding: 40px 115px;
+  text-align: center;
+}
+@media (max-width: 991px) {
+  .quote-s .inner {
+    padding: 40px;
+  }
+}
+.quote-s .text {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+@media (max-width: 991px) {
+  .quote-s .text {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+.quote-s .auth {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 44.57px;
+}
+@media (max-width: 991px) {
+  .quote-s .auth {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+.card {
+  background: #11151C;
+  padding: 80px 0;
+}
+.card .text {
+  color: #FFF;
+  font-size: 33.648px;
+  line-height: 47.108px;
+}
+@media (max-width: 991px) {
+  .card .text {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+.card .text > span {
+  font-weight: 700;
+}
+
+.letstalk {
+  padding: 106px 0 82px;
+}
+@media (max-width: 991px) {
+  .letstalk {
+    padding: 50px 0;
+  }
+}
+.letstalk .text {
+  font-size: 200px;
+  line-height: 220px;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+@media (max-width: 991px) {
+  .letstalk .text {
+    font-size: 100px;
+    line-height: 120px;
+    margin-bottom: 25px;
+  }
+}
+.letstalk .text > span {
+  display: inline-block;
+  margin-left: 80px;
 }
 
 /*# sourceMappingURL=style.css.map */
