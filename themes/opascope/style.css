@@ -320,6 +320,10 @@ a {
   text-decoration: none;
 }
 
+.wpcf7-spinner {
+  display: none !important;
+}
+
 .button a {
   display: inline-block;
   padding: 20.5px 56px;
@@ -398,72 +402,72 @@ a {
 }
 
 /* Home Page */
-.main {
+.home .main {
   padding: 160px 0;
 }
 @media (max-width: 991px) {
-  .main {
+  .home .main {
     padding: 50px 0;
   }
 }
-.main h1 {
+.home .main h1 {
   margin: 0 0 49px;
   font-size: 61.677px;
   font-weight: 700;
   line-height: 70.488px;
 }
 @media (max-width: 991px) {
-  .main h1 {
+  .home .main h1 {
     font-size: 45px;
     line-height: 55px;
   }
 }
 @media (max-width: 991px) {
-  .main .button a {
+  .home .main .button a {
     width: 100%;
   }
 }
-.main .flex-end {
+.home .main .flex-end {
   display: flex;
   justify-content: flex-end;
   padding-right: 38px;
 }
 @media (max-width: 991px) {
-  .main .flex-end {
+  .home .main .flex-end {
     display: initial;
   }
 }
-.main .slider-wrap {
+.home .main .slider-wrap {
   max-width: 570px;
   border: 1.139px solid #1E1E1E;
   padding: 30px 38px 30px 38px;
 }
 @media (max-width: 991px) {
-  .main .slider-wrap {
+  .home .main .slider-wrap {
     margin-top: 25px;
   }
 }
-.main .quote {
+.home .main .quote {
   font-size: 27.341px;
   font-weight: 400;
   line-height: 36.454px;
 }
-.main .name {
+.home .main .name {
   font-size: 18.227px;
   font-weight: 400;
   line-height: 27.341px;
   padding-top: 41px;
 }
-.main .name strong {
+.home .main .name strong {
   display: block;
 }
-.main .slick-dots {
+.home .main .slick-dots {
   list-style: none;
   position: absolute;
   right: -62px;
   top: -60px;
 }
-.main .slick-dots li button {
+.home .main .slick-dots li button {
   background: none;
   border: 1.139px solid #11151C;
   width: 12px;
@@ -473,80 +477,79 @@ a {
   line-height: 0;
   border-radius: 0;
 }
-.main .slick-dots li.slick-active button {
+.home .main .slick-dots li.slick-active button {
   background: #11151C;
 }
 @media (max-width: 1024px) {
-  .main .slider-wrap {
+  .home .main .slider-wrap {
     max-width: 380px;
   }
 }
 @media (max-width: 991px) {
-  .main .slider-wrap {
+  .home .main .slider-wrap {
     max-width: 100%;
   }
-  .main .slider-col {
+  .home .main .slider-col {
     padding-right: 25px;
   }
-  .main .item {
+  .home .main .item {
     min-height: 250px;
   }
 }
 @media (max-width: 991px) and (orientation: portrait) {
-  .main .item {
+  .home .main .item {
     min-height: 415px;
   }
-  .main .slick-slide {
+  .home .main .slick-slide {
     padding: 14px 0;
   }
 }
 @media (max-width: 1100px) {
-  .main .item {
+  .home .main .item {
     min-height: 260px;
   }
-  .main .quote {
+  .home .main .quote {
     font-size: 20px;
     line-height: 28px;
   }
 }
 @media (max-width: 900px) and (orientation: landscape) {
-  .main .quote {
+  .home .main .quote {
     font-size: 20px;
     line-height: 28px;
   }
 }
 @media (max-width: 400px) and (orientation: portrait) {
-  .main .item {
+  .home .main .item {
     min-height: 285px;
   }
-  .main .slick-slide {
+  .home .main .slick-slide {
     padding: 10px 0;
   }
 }
-
-.numbers {
+.home .numbers {
   background: #11151C;
   padding: 60px 0;
   color: #fff;
   text-align: center;
 }
-.numbers .row {
+.home .numbers .row {
   gap: 60px;
   flex-wrap: nowrap;
 }
 @media (max-width: 991px) {
-  .numbers .row {
+  .home .numbers .row {
     flex-wrap: wrap;
     gap: 0;
   }
 }
 @media (max-width: 991px) {
-  .numbers {
+  .home .numbers {
     text-align: left;
     padding: 50px 0;
   }
 }
-.numbers .head {
+.home .numbers .head {
   font-size: 21px;
   line-height: 29.4px;
   letter-spacing: 1px;
@@ -554,44 +557,43 @@ a {
   margin-bottom: 18.9px;
 }
 @media (max-width: 991px) {
-  .numbers .head {
+  .home .numbers .head {
     font-size: 18px;
     margin-bottom: 0;
   }
 }
-.numbers .num {
+.home .numbers .num {
   font-size: 52px;
   font-weight: 700;
   line-height: 67.6px;
   letter-spacing: 1px;
 }
 @media (max-width: 991px) {
-  .numbers .num {
+  .home .numbers .num {
     font-size: 32px;
     margin-bottom: 12px;
   }
 }
-
-.how {
+.home .how {
   padding: 124px 0 101px;
 }
 @media (max-width: 991px) {
-  .how {
+  .home .how {
     padding: 50px 0;
   }
 }
-.how .item {
+.home .how .item {
   padding-bottom: 101px;
 }
 @media (max-width: 991px) {
-  .how .item {
+  .home .how .item {
     padding-bottom: 50px;
   }
 }
-.how .item:last-child {
+.home .how .item:last-child {
   padding: 0;
 }
-.how .head {
+.home .how .head {
   color: #6E7074;
   font-size: 20px;
   font-weight: 700;
@@ -604,43 +606,43 @@ a {
   gap: 30px;
 }
 @media (max-width: 991px) {
-  .how .head {
+  .home .how .head {
     font-size: 14px;
     padding-bottom: 20px;
   }
 }
-.how .head:after {
+.home .how .head:after {
   content: " ";
   height: 1px;
   background: #000;
   display: block;
   flex-grow: 1;
 }
-.how .head-big {
+.home .how .head-big {
   font-size: 56px;
   font-weight: 700;
   line-height: 64px;
   padding-right: 62px;
 }
 @media (max-width: 991px) {
-  .how .head-big {
+  .home .how .head-big {
     font-size: 32px;
     line-height: 39px;
     margin-bottom: 20px;
   }
 }
-.how .text-1 {
+.home .how .text-1 {
   font-size: 24px;
   font-weight: 400;
   line-height: 30px;
 }
 @media (max-width: 991px) {
-  .how .text-1 {
+  .home .how .text-1 {
     font-size: 14px;
     line-height: 22px;
   }
 }
-.how .text-2 {
+.home .how .text-2 {
   margin-top: 30px;
   color: #6E7074;
   font-size: 16px;
@@ -648,65 +650,63 @@ a {
   line-height: 30px;
 }
 @media (max-width: 991px) {
-  .how .text-2 {
+  .home .how .text-2 {
     font-size: 14px;
     line-height: 22px;
   }
 }
-
-.quote-s {
+.home .quote-s {
   padding-bottom: 101px;
 }
-.quote-s .inner {
+.home .quote-s .inner {
   background: #F9F9F9;
   padding: 40px 115px;
   text-align: center;
 }
 @media (max-width: 991px) {
-  .quote-s .inner {
+  .home .quote-s .inner {
     padding: 40px;
   }
 }
-.quote-s .text {
+.home .quote-s .text {
   font-size: 32px;
   line-height: 40px;
   font-weight: 700;
   margin-bottom: 32px;
 }
 @media (max-width: 991px) {
-  .quote-s .text {
+  .home .quote-s .text {
     font-size: 22px;
     line-height: 32px;
   }
 }
-.quote-s .auth {
+.home .quote-s .auth {
   font-size: 24px;
   font-weight: 400;
   line-height: 44.57px;
 }
 @media (max-width: 991px) {
-  .quote-s .auth {
+  .home .quote-s .auth {
     font-size: 16px;
     line-height: 25px;
   }
 }
-
-.card {
+.home .card {
   background: #11151C;
   padding: 80px 0;
 }
-.card .text {
+.home .card .text {
   color: #FFF;
   font-size: 33.648px;
   line-height: 47.108px;
 }
 @media (max-width: 991px) {
-  .card .text {
+  .home .card .text {
     font-size: 22px;
     line-height: 32px;
   }
 }
-.card .text > span {
+.home .card .text > span {
   font-weight: 700;
 }
 
