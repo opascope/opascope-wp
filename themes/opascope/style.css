@@ -575,19 +575,57 @@ a {
   }
 }
 
-/* Book page */
-.main {
-  padding: 103px 0;
+/* Case Studies */
+.case-studies .main {
+  padding: 100px 0;
 }
 @media (max-width: 991px) {
-  .main {
+  .case-studies .main {
     padding: 23px 0;
   }
 }
-.main .pd-1 {
+.case-studies .main .pd-1 {
   padding-right: 25px;
 }
-.main h1 {
+.case-studies .main h1 {
+  margin: 0 0 49px;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 64px;
+}
+@media (max-width: 991px) {
+  .case-studies .main h1 {
+    font-size: 45px;
+    line-height: 55px;
+    margin: 0 0 25px;
+  }
+}
+.case-studies .main .text {
+  font-size: 20px;
+  padding-left: 16px;
+  border-left: 2px solid #D7D9DD;
+}
+@media (max-width: 991px) {
+  .case-studies .main .text {
+    padding: 0;
+    border: none;
+    font-size: 18px;
+  }
+}
+
+/* Book page */
+.book-intro-call .main {
+  padding: 103px 0;
+}
+@media (max-width: 991px) {
+  .book-intro-call .main {
+    padding: 23px 0;
+  }
+}
+.book-intro-call .main .pd-1 {
+  padding-right: 25px;
+}
+.book-intro-call .main h1 {
   font-size: 80px;
   font-weight: 700;
   line-height: 88px;
@@ -595,58 +633,58 @@ a {
   margin: 0 0 25px;
 }
 @media (max-width: 991px) {
-  .main h1 {
+  .book-intro-call .main h1 {
     font-size: 32px;
     line-height: 40px;
     margin: 0 0 12px;
     text-align: center;
   }
 }
-.main .subline {
+.book-intro-call .main .subline {
   font-size: 22px;
   font-weight: 700;
   line-height: 24px;
   margin: 0 0 25px;
 }
 @media (max-width: 991px) {
-  .main .subline {
+  .book-intro-call .main .subline {
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
     text-align: center;
   }
 }
-.main .quote {
+.book-intro-call .main .quote {
   background: #F9F9F9;
   padding: 30px;
 }
 @media (max-width: 991px) {
-  .main .quote {
+  .book-intro-call .main .quote {
     margin-top: 23px;
   }
 }
-.main .quote .auth {
+.book-intro-call .main .quote .auth {
   padding-top: 25px;
 }
 @media (max-width: 991px) {
-  .main .form {
+  .book-intro-call .main .form {
     padding: 33px;
   }
-  .main .form label {
+  .book-intro-call .main .form label {
     font-weight: 400;
     margin: 17px 0;
     display: inline-block;
   }
-  .main .form label[for="00NUU0000004Pav"] {
+  .book-intro-call .main .form label[for="00NUU0000004Pav"] {
     display: inline;
   }
-  .main .form-head {
+  .book-intro-call .main .form-head {
     font-size: 32px;
     font-weight: 700;
     line-height: 35.964px;
   }
-  .main .g-recaptcha > div,
-  .main .g-recaptcha iframe {
+  .book-intro-call .main .g-recaptcha > div,
+  .book-intro-call .main .g-recaptcha iframe {
     width: 276px !important;
   }
 }
