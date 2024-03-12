@@ -62,9 +62,10 @@ body {
   outline: none;
 }
 .toggle-menu .nav-icon {
-  width: 40px;
+  width: 30px;
   height: 27px;
   position: relative;
+  top: 9px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -78,7 +79,7 @@ body {
 .toggle-menu .nav-icon span {
   display: block;
   position: absolute;
-  height: 4px;
+  height: 3px;
   width: 100%;
   background: #11151C;
   border-radius: 9px;
@@ -101,14 +102,14 @@ body {
   transform-origin: left center;
 }
 .toggle-menu .nav-icon span:nth-child(2) {
-  top: 14px;
+  top: 9px;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
   transform-origin: left center;
 }
 .toggle-menu .nav-icon span:nth-child(3) {
-  top: 27px;
+  top: 18px;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
@@ -119,7 +120,7 @@ body {
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
-  top: 0px;
+  top: -3px;
   left: 8px;
 }
 .toggle-menu .nav-icon.open span:nth-child(2) {
@@ -131,7 +132,7 @@ body {
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  top: 29px;
+  top: 18px;
   left: 8px;
 }
 
@@ -571,6 +572,82 @@ a {
   .our-approach .ask .subhead {
     font-size: 18px;
     margin-bottom: 10px;
+  }
+}
+
+/* Book page */
+.main {
+  padding: 103px 0;
+}
+@media (max-width: 991px) {
+  .main {
+    padding: 23px 0;
+  }
+}
+.main .pd-1 {
+  padding-right: 25px;
+}
+.main h1 {
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 88px;
+  letter-spacing: 1px;
+  margin: 0 0 25px;
+}
+@media (max-width: 991px) {
+  .main h1 {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 12px;
+    text-align: center;
+  }
+}
+.main .subline {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0 0 25px;
+}
+@media (max-width: 991px) {
+  .main .subline {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: center;
+  }
+}
+.main .quote {
+  background: #F9F9F9;
+  padding: 30px;
+}
+@media (max-width: 991px) {
+  .main .quote {
+    margin-top: 23px;
+  }
+}
+.main .quote .auth {
+  padding-top: 25px;
+}
+@media (max-width: 991px) {
+  .main .form {
+    padding: 33px;
+  }
+  .main .form label {
+    font-weight: 400;
+    margin: 17px 0;
+    display: inline-block;
+  }
+  .main .form label[for="00NUU0000004Pav"] {
+    display: inline;
+  }
+  .main .form-head {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 35.964px;
+  }
+  .main .g-recaptcha > div,
+  .main .g-recaptcha iframe {
+    width: 276px !important;
   }
 }
 
