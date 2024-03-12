@@ -59,8 +59,8 @@
 						</script>
 					</div>
 				</div>
-			</section>
-		</div>
+			</div>
+		</section>
 
 		<section class="numbers">
 			<div class="container">

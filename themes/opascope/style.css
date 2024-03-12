@@ -401,6 +401,179 @@ a {
   margin-top: 15px;
 }
 
+/* Our Approach Page */
+.our-approach .pd-1 {
+  padding-right: 45px;
+}
+@media (max-width: 991px) {
+  .our-approach .pd-1 {
+    padding-right: 15px;
+  }
+}
+.our-approach .main {
+  padding: 100px 0;
+}
+@media (max-width: 991px) {
+  .our-approach .main {
+    padding: 50px 0;
+  }
+}
+.our-approach .main h1 {
+  margin: 0 0 49px;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 64px;
+}
+@media (max-width: 991px) {
+  .our-approach .main h1 {
+    font-size: 45px;
+    line-height: 55px;
+  }
+}
+.our-approach .main .inner {
+  background: #11151C;
+  color: #fff;
+  padding: 69px 84px;
+  font-size: 16px;
+  line-height: 24px;
+}
+@media (max-width: 991px) {
+  .our-approach .main .inner {
+    margin-top: 25px;
+    padding: 30px;
+  }
+}
+.our-approach .main .auth {
+  padding-top: 110px;
+  font-weight: 700;
+}
+@media (max-width: 991px) {
+  .our-approach .main .auth {
+    padding-top: 50px;
+  }
+}
+.our-approach .problems {
+  background: #F9F9F9;
+}
+.our-approach .problems,
+.our-approach .scaling {
+  padding: 64px 0;
+}
+@media (max-width: 991px) {
+  .our-approach .problems,
+  .our-approach .scaling {
+    padding: 50px 0;
+  }
+}
+.our-approach .problems .subhead,
+.our-approach .scaling .subhead {
+  color: #6E7074;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.256px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.our-approach .problems .head,
+.our-approach .scaling .head {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+}
+@media (max-width: 991px) {
+  .our-approach .problems .text,
+  .our-approach .scaling .text {
+    margin-top: 25px;
+  }
+}
+.our-approach .problems .prob-head,
+.our-approach .scaling .prob-head {
+  padding: 48px 0 32px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+.our-approach .problems .inner,
+.our-approach .scaling .inner {
+  padding-top: 12px;
+  border-top: 1px solid #000;
+}
+@media (max-width: 991px) {
+  .our-approach .problems .inner,
+  .our-approach .scaling .inner {
+    margin-bottom: 20px;
+  }
+}
+.our-approach .problems .inner span,
+.our-approach .scaling .inner span {
+  font-weight: 700;
+}
+.our-approach .problems .columns,
+.our-approach .scaling .columns {
+  gap: 80px;
+}
+@media (max-width: 991px) {
+  .our-approach .problems .columns,
+  .our-approach .scaling .columns {
+    gap: 0;
+  }
+  .our-approach .problems .columns .col,
+  .our-approach .scaling .columns .col {
+    flex-basis: 45%;
+  }
+}
+.our-approach .scaling .subhead {
+  margin-bottom: 0;
+}
+.our-approach .ask {
+  background: #F9F9F9;
+  padding: 64px 0;
+}
+@media (max-width: 991px) {
+  .our-approach .ask {
+    padding: 50px 0;
+  }
+}
+.our-approach .ask .row {
+  gap: 100px;
+}
+@media (max-width: 991px) {
+  .our-approach .ask .row {
+    gap: 20px;
+  }
+  .our-approach .ask .row .col:last-child {
+    flex-basis: 100%;
+    margin-top: 20px;
+  }
+}
+.our-approach .ask .head {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 64px;
+  text-transform: capitalize;
+  margin: 0 0 50px;
+}
+@media (max-width: 991px) {
+  .our-approach .ask .head {
+    font-size: 28px;
+    line-height: 37px;
+    margin-bottom: 25px;
+  }
+}
+.our-approach .ask .subhead {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  text-transform: capitalize;
+}
+@media (max-width: 991px) {
+  .our-approach .ask .subhead {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}
+
 /* Home Page */
 .home .main {
   padding: 160px 0;

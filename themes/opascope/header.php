@@ -9,6 +9,10 @@
 	<meta name="viewport" content="width=device-width">
 
 	<title><?php bloginfo('name'); ?></title>
+	<link rel="icon" href="<?php bloginfo('template_url'); ?>/img/favicon-150x150.png" sizes="32x32">
+	<link rel="icon" href="<?php bloginfo('template_url'); ?>/img/favicon.png" sizes="192x192">
+	<link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/img/favicon.png">
+	<meta name="msapplication-TileImage" content="<?php bloginfo('template_url'); ?>/img/favicon.png">
 
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/normalize.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap-grid.min.css">

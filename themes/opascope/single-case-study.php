@@ -88,18 +88,18 @@
 	}
 
 	.innersection .rightbox,
-	.Solution {
+	.solution {
 		width: 60%;
 	}
 	
-	.theResult ul{
+	.the-result ul{
 		/* list-style-type: none;
 		margin-left: 0; */
 		padding-top: 28px;
 		padding-bottom: 28px;
 	}
 	
-	.theResult ul li{
+	.the-result ul li{
 		margin-bottom: 5px;
 	}
 
@@ -179,7 +179,7 @@
 
 	/* Desktop Percentage Section css */
 
-	.desktopSection .Solution {
+	.desktopSection .solution {
 		width: 100%;
 	}
 	
@@ -247,7 +247,7 @@
 		margin-bottom: 30px;
 	}
 
-	.Results .founder {
+	.results .founder {
 		text-align: center;
 		height: fit-content;
 	}
@@ -359,76 +359,6 @@
 		margin-top: 40px;
 	}
 
-	/* Jambo Section Css Start */
-
-
-	.Jombo-section {
-		padding: 80px 0px;
-	}
-
-	.big-text h1 {
-		font-size: 200px;
-		line-height: 220px;
-		font-weight: 700;
-		color: #11151c;
-	}
-
-	.big-text h1 span {
-		margin-left: 65%;
-	}
-
-	.button {
-		width: 24%;
-		text-align: center;
-		background: transparent !important;
-	}
-
-	.button p {
-		font-size: 24px;
-		color: #11151C;
-		line-height: 38px;
-		margin-bottom: 20px;
-		font-family: 'Helvetica Neue', sans-serif;
-	}
-
-	.button a {
-		background: #11151C;
-		color: #fff;
-		font-size: 20px;
-		line-height: 42px;
-		border: 1px solid #11151C;
-		padding: 10px 30px;
-		text-decoration: none;
-		display: inline-block;
-		width: 100%;
-		text-align: center;
-		transition: 0.5s;
-		width: 267px;
-	}
-
-
-	.button a:hover {
-		background: transparent;
-		color: #11151C;
-		transition: 0.5s;
-	}
-
-	/* Jambo Section Css Close */
-
-	.letstalk_mobile {
-		display: none;
-	}
-	
-	.letstalk_desktop {
-		display: block;
-	}
-
-	/* Slider */
-
-
-	/* Slider Close */
-
-
 	/* Responsive Css Start */
 
 	@media(max-width: 1024px) {
@@ -449,16 +379,6 @@
 		.founderbox .founder {
 			padding: 60px 20px;
 		}
-
-
-		.Jombo-section {
-			padding: 50px 0px;
-		}
-
-		.big-text h1 {
-			font-size: 120px;
-			line-height: 120px;
-		}
 	}
 
 	@media(max-width: 991px) {
@@ -478,7 +398,7 @@
 		}
 
 		.innersection .rightbox,
-		.Solution {
+		.solution {
 			width: 100%;
 			margin-top: 10px;
 		}
@@ -586,7 +506,7 @@
 		}
 
 		.innersection .rightbox,
-		.Solution {
+		.solution {
 			width: 100%;
 			margin-top: 5px;
 		}
@@ -649,12 +569,12 @@
 			padding: 48px 20px;
 		}
 
-		.Results .founder h2 {
+		.results .founder h2 {
 			font-size: 24px;
 			line-height: 30px;
 		}
 
-		.Results .founder a {
+		.results .founder a {
 			font-size: 14px;
 			line-height: 26px;
 			padding: 12px 30px;
@@ -665,28 +585,11 @@
 			margin-bottom: 30px;
 		}
 
-		.big-text h1 {
-			font-size: 64px;
-			line-height: 64px;
-		}
-
-		.big-text h1 br {
-			display: none;
-		}
-
-		.big-text h1 span {
-			margin: 0px;
-		}
-
 		.button {
 			width: 100%;
 			margin: 20px 0px 0px;
 		}
 
-		.Jombo-section {
-			padding: 0px 0px;
-		}
-		
 		.success-stories {
 			padding: 48px 0 !important;	
 		}
@@ -855,7 +758,7 @@
 					</div>
 
 
-					<div class="Solution theResult">
+					<div class="Solution the-result">
 						<?php if ( have_rows( 'the_results' ) ) : ?>
 							<?php while ( have_rows( 'the_results' ) ) :
 								the_row(); ?>

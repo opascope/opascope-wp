@@ -1,0 +1,18 @@
+[2024-03-12T07:28:06+00:00] ********************************************
+******  Log date: 2024/03/12 07:28:06 ******
+********************************************
+
+Intent: push
+Error: <b>Version Mismatch</b> &mdash; We've detected you have version 1.0.0-beta.27 of WP Engine Site Migration at opascopedev.wpenginepowered.com but are using 1.0.0-rc.1 here. (#196)
+[2024-03-12T07:30:32+00:00] ********************************************
+******  Log date: 2024/03/12 07:30:32 ******
+********************************************
+
+Intent: push
+Error: Unable to connect to the remote server, please check the connection details - 400 Bad Request (#129 - scope: verify_connection_to_remote_site)
+[2024-03-12T07:30:40+00:00] ********************************************
+******  Log date: 2024/03/12 07:30:40 ******
+********************************************
+
+Intent: push
+Error: Unable to connect to the remote server, please check the connection details - 400 Bad Request (#129 - scope: ajax_update_plugin_on_remote)
