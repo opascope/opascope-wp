@@ -38,20 +38,27 @@ if ( function_exists( 'register_nav_menus' ) ) {
 
 add_theme_support( 'post-thumbnails' );
 
-//add_action( 'init', 'create_post_type' );
-//function create_post_type() {
-//	register_post_type( 'test',
-//		array(
-//			'labels' => array(
-//				'name' => __( 'Test' ),
-//				'singular_name' => __( 'Test' )
-//			),
-//		'public' => true,
-//		'has_archive' => true,
-//		'supports' => array( 'title', 'editor') 
-//		)
-//	);
-//}
+if( !function_exists('sc_change_custom_post_type_slug') ):
+    add_filter( 'register_post_type_args', 'sc_change_custom_post_type_slug', 10, 2 );
+    function sc_change_custom_post_type_slug( $args, $post_type ) {
+        if ( 'journal' === $post_type ) {
+            $args['rewrite']['slug'] = 'insights';
+        }
+        return $args;
+    }
+endif;
+
+
+if ( ! function_exists( 'sc_change_page_slug' ) ) {
+    add_filter( 'rewrite_rules_array', 'sc_change_page_slug' );
+    function sc_change_page_slug( $rules ) {
+        $new_rules = array(
+            'insights/?$' => 'index.php?pagename=Insights',
+        );
+
+        return $new_rules + $rules;
+    }
+}
 
 function cptui_register_my_cpts() {
 
@@ -128,70 +135,70 @@ function cptui_register_my_cpts() {
 	 * Post Type: Jobs.
 	 */
 
-	$labels = [
-		"name" => esc_html__( "Jobs", "opascope" ),
-		"singular_name" => esc_html__( "Job", "opascope" ),
-		"menu_name" => esc_html__( "Jobs", "opascope" ),
-		"all_items" => esc_html__( "All Jobs", "opascope" ),
-		"add_new" => esc_html__( "Add new", "opascope" ),
-		"add_new_item" => esc_html__( "Add new Job", "opascope" ),
-		"edit_item" => esc_html__( "Edit Job", "opascope" ),
-		"new_item" => esc_html__( "New Job", "opascope" ),
-		"view_item" => esc_html__( "View Job", "opascope" ),
-		"view_items" => esc_html__( "View Jobs", "opascope" ),
-		"search_items" => esc_html__( "Search Jobs", "opascope" ),
-		"not_found" => esc_html__( "No Jobs found", "opascope" ),
-		"not_found_in_trash" => esc_html__( "No Jobs found in trash", "opascope" ),
-		"parent" => esc_html__( "Parent Job:", "opascope" ),
-		"featured_image" => esc_html__( "Featured image for this Job", "opascope" ),
-		"set_featured_image" => esc_html__( "Set featured image for this Job", "opascope" ),
-		"remove_featured_image" => esc_html__( "Remove featured image for this Job", "opascope" ),
-		"use_featured_image" => esc_html__( "Use as featured image for this Job", "opascope" ),
-		"archives" => esc_html__( "Job archives", "opascope" ),
-		"insert_into_item" => esc_html__( "Insert into Job", "opascope" ),
-		"uploaded_to_this_item" => esc_html__( "Upload to this Job", "opascope" ),
-		"filter_items_list" => esc_html__( "Filter Jobs list", "opascope" ),
-		"items_list_navigation" => esc_html__( "Jobs list navigation", "opascope" ),
-		"items_list" => esc_html__( "Jobs list", "opascope" ),
-		"attributes" => esc_html__( "Jobs attributes", "opascope" ),
-		"name_admin_bar" => esc_html__( "Job", "opascope" ),
-		"item_published" => esc_html__( "Job published", "opascope" ),
-		"item_published_privately" => esc_html__( "Job published privately.", "opascope" ),
-		"item_reverted_to_draft" => esc_html__( "Job reverted to draft.", "opascope" ),
-		"item_scheduled" => esc_html__( "Job scheduled", "opascope" ),
-		"item_updated" => esc_html__( "Job updated.", "opascope" ),
-		"parent_item_colon" => esc_html__( "Parent Job:", "opascope" ),
-	];
+	// $labels = [
+	// 	"name" => esc_html__( "Jobs", "opascope" ),
+	// 	"singular_name" => esc_html__( "Job", "opascope" ),
+	// 	"menu_name" => esc_html__( "Jobs", "opascope" ),
+	// 	"all_items" => esc_html__( "All Jobs", "opascope" ),
+	// 	"add_new" => esc_html__( "Add new", "opascope" ),
+	// 	"add_new_item" => esc_html__( "Add new Job", "opascope" ),
+	// 	"edit_item" => esc_html__( "Edit Job", "opascope" ),
+	// 	"new_item" => esc_html__( "New Job", "opascope" ),
+	// 	"view_item" => esc_html__( "View Job", "opascope" ),
+	// 	"view_items" => esc_html__( "View Jobs", "opascope" ),
+	// 	"search_items" => esc_html__( "Search Jobs", "opascope" ),
+	// 	"not_found" => esc_html__( "No Jobs found", "opascope" ),
+	// 	"not_found_in_trash" => esc_html__( "No Jobs found in trash", "opascope" ),
+	// 	"parent" => esc_html__( "Parent Job:", "opascope" ),
+	// 	"featured_image" => esc_html__( "Featured image for this Job", "opascope" ),
+	// 	"set_featured_image" => esc_html__( "Set featured image for this Job", "opascope" ),
+	// 	"remove_featured_image" => esc_html__( "Remove featured image for this Job", "opascope" ),
+	// 	"use_featured_image" => esc_html__( "Use as featured image for this Job", "opascope" ),
+	// 	"archives" => esc_html__( "Job archives", "opascope" ),
+	// 	"insert_into_item" => esc_html__( "Insert into Job", "opascope" ),
+	// 	"uploaded_to_this_item" => esc_html__( "Upload to this Job", "opascope" ),
+	// 	"filter_items_list" => esc_html__( "Filter Jobs list", "opascope" ),
+	// 	"items_list_navigation" => esc_html__( "Jobs list navigation", "opascope" ),
+	// 	"items_list" => esc_html__( "Jobs list", "opascope" ),
+	// 	"attributes" => esc_html__( "Jobs attributes", "opascope" ),
+	// 	"name_admin_bar" => esc_html__( "Job", "opascope" ),
+	// 	"item_published" => esc_html__( "Job published", "opascope" ),
+	// 	"item_published_privately" => esc_html__( "Job published privately.", "opascope" ),
+	// 	"item_reverted_to_draft" => esc_html__( "Job reverted to draft.", "opascope" ),
+	// 	"item_scheduled" => esc_html__( "Job scheduled", "opascope" ),
+	// 	"item_updated" => esc_html__( "Job updated.", "opascope" ),
+	// 	"parent_item_colon" => esc_html__( "Parent Job:", "opascope" ),
+	// ];
 
-	$args = [
-		"label" => esc_html__( "Jobs", "opascope" ),
-		"labels" => $labels,
-		"description" => "",
-		"public" => true,
-		"publicly_queryable" => true,
-		"show_ui" => true,
-		"show_in_rest" => true,
-		"rest_base" => "",
-		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"rest_namespace" => "wp/v2",
-		"has_archive" => false,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"delete_with_user" => false,
-		"exclude_from_search" => false,
-		"capability_type" => "post",
-		"map_meta_cap" => true,
-		"hierarchical" => false,
-		"can_export" => true,
-		"rewrite" => [ "slug" => "job", "with_front" => true ],
-		"query_var" => true,
-		"menu_icon" => "https://opascope.com/wp-content/uploads/2023/05/232190-1.png",
-		"supports" => [ "title", "editor", "thumbnail", "custom-fields" ],
-		"taxonomies" => [ "job_category" ],
-		"show_in_graphql" => false,
-	];
+	// $args = [
+	// 	"label" => esc_html__( "Jobs", "opascope" ),
+	// 	"labels" => $labels,
+	// 	"description" => "",
+	// 	"public" => true,
+	// 	"publicly_queryable" => true,
+	// 	"show_ui" => true,
+	// 	"show_in_rest" => true,
+	// 	"rest_base" => "",
+	// 	"rest_controller_class" => "WP_REST_Posts_Controller",
+	// 	"rest_namespace" => "wp/v2",
+	// 	"has_archive" => false,
+	// 	"show_in_menu" => true,
+	// 	"show_in_nav_menus" => true,
+	// 	"delete_with_user" => false,
+	// 	"exclude_from_search" => false,
+	// 	"capability_type" => "post",
+	// 	"map_meta_cap" => true,
+	// 	"hierarchical" => false,
+	// 	"can_export" => true,
+	// 	"rewrite" => [ "slug" => "job", "with_front" => true ],
+	// 	"query_var" => true,
+	// 	"menu_icon" => "https://opascope.com/wp-content/uploads/2023/05/232190-1.png",
+	// 	"supports" => [ "title", "editor", "thumbnail", "custom-fields" ],
+	// 	"taxonomies" => [ "job_category" ],
+	// 	"show_in_graphql" => false,
+	// ];
 
-	register_post_type( "job", $args );
+	// register_post_type( "job", $args );
 
 	/**
 	 * Post Type: insights.
@@ -243,7 +250,7 @@ function cptui_register_my_cpts() {
 		"rest_base" => "",
 		"rest_controller_class" => "WP_REST_Posts_Controller",
 		"rest_namespace" => "wp/v2",
-		"has_archive" => "insights",
+		"has_archive" => "false",
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"delete_with_user" => false,

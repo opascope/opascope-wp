@@ -990,7 +990,7 @@
 						<?php echo do_shortcode('[ez-toc]');  ?>
 						<div class="alignCenter newsletterForm">
 							<div>Please send me tips on marketing strategies that impact revenue.</div>
-							<?php echo do_shortcode('[contact-form-7 id="2782" title="Journal Marketing Form"]'); ?>
+							<?php echo do_shortcode('[contact-form-7 id="2782" title="Insight Marketing Form"]'); ?>
 						</div>
 					</div>
 				</div>
