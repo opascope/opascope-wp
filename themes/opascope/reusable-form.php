@@ -48,7 +48,7 @@
 	<input type="hidden" name="gclid__c" value="">
 	<input type="hidden" name="ga_id__c" value="">
 	<input type=hidden name="oid" value="00D5e000002Gmku">
-	<input type=hidden name="retURL" value="https://opascope.com/thank-you/">
+	<input type=hidden name="retURL" value="<?php bloginfo('url'); ?>/thank-you/">
 
 	<!--  ----------------------------------------------------------------------  -->
 	<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
