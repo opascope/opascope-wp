@@ -1,17 +1,15 @@
 <?php get_header(); ?>
 	
 	<?php if(have_posts()): the_post(); ?>
-		<div>
-			<article class="page">
-				<h2 class="entry_title">
-					<?php the_title(); ?>
-				</h2>
+		<section class="main default-page">
+			<div class="container">
+				<h1><?php the_title(); ?></h1>
 
-				<div class="entry_content">
+				<div class="content">
 					<?php the_content(); ?>
 				</div>
-			</article>
-		</div>
+			</div>
+		</section>
 	<?php endif; ?>
 
 <?php get_footer(); ?>
