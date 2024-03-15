@@ -13,7 +13,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-6 flex-end">
+					<div class="col-md-5 offset-md-1 flex-end">
 						<div class="form">
 							<div class="form-head">Book Intro Call</div>
 							<?php include get_template_directory() . '/reusable-form.php'; ?>

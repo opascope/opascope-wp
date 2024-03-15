@@ -47,7 +47,7 @@
 					</div>
 
 					<div class="col-md-8 copy">
-						© 2024 PBCT LLC dba Opascope. <br class="visible-mobile">All rights reserved | <a href="<?php bloginfo('url'); ?>/privacy-policy">Privacy Policy</a>
+						© 2024 PBCT LLC dba Opascope. <br class="visible-mobile">All rights reserved | <a href="<?php bloginfo('url'); ?>/privacy-policy">Privacy Policy</a> | <a href="<?php bloginfo('url'); ?>/login">Login</a>
 					</div>
 				</div>
 			</div>
