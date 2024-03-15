@@ -14,4 +14,9 @@
 		</section>
 	<?php endif; ?>
 
+	<script type="text/javascript">
+         document.addEventListener( 'wpcf7mailsent', function( event ) {
+              location = '<?php bloginfo('url'); ?>/thank-you-newsletter';
+         }, false );
+	</script>
 <?php get_footer(); ?>

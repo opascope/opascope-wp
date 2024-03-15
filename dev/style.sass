@@ -987,7 +987,8 @@ a
 		z-index: -1
 
 /* Newsletter Page */
-.newsletter
+.newsletter,
+.newsletter-thank-you
 	.logo img
 		filter: invert(100%)
 		@media (max-width: 1024px)
@@ -1070,6 +1071,30 @@ a
 		margin: 0 0 32px
 		@media (max-width: 991px)
 			margin: 15px 0 25px
+
+/* Newsletter Thank You */
+.newsletter-thank-you
+	text-align: center
+
+	h1
+		font-size: 58px
+		line-height: 71px
+		@media (max-width: 991px)
+			font-size: 32px
+			line-height: 42px
+
+	.nl-form
+		max-width: 600px
+
+		p
+			a
+				text-decoration: none
+				font-weight: bold
+				display: inline-block
+				border-bottom: 2px solid $black
+				padding-bottom: 10px
+
+
 
 /* Default page */
 .default-page
