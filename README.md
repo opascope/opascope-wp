@@ -1,6 +1,6 @@
 # Opascope Website
 
-Please do not modify themes/opascope/style.css, instead run a sass commdand to compile the file in /dev directory, ie `sass --watch dev/style.sass:themes/opascope/style.css`
+Please do not modify themes/opascope/style.css, instead run a sass command to compile the file in /dev directory, ie `sass --watch dev/style.sass:themes/opascope/style.css`
 
 # Database
 
