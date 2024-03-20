@@ -124,9 +124,9 @@
 
 	.single-case-study .innersection .leftbox .box > div {
 		color: #fff;
-		font-size: 80px;
+		font-size: 60px;
 		margin: 0px 0px 12px;
-		line-height: 90px;
+		line-height: 70px;
 		font-weight: 700;
 		background-color: transparent !important;
 	}

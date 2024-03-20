@@ -1020,6 +1020,11 @@ a {
 .login .main {
   padding: 80px 0;
 }
+@media (min-width: 1025px) {
+  .login .main {
+    min-height: 650px;
+  }
+}
 .login .login-form {
   max-width: 400px;
   margin: 0 auto;
