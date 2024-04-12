@@ -96,9 +96,12 @@
 		    width: calc(50% - 16px);
 		    border: 1px solid #11151C;
 		}
+		.customPostPreview .col-sm-6 {
+			padding: 0;
+		}
 		.customPostPreview .col-sm-6 a {
 			text-decoration: none;
-		    padding: 30px 20px;
+		    padding: 30px 20px 50px 20px;
 		    display: block;
 		}
 		.customPostPreview .featureCaseStudies a{
@@ -123,7 +126,7 @@
 			margin: 16px 0;
 			margin-top: 0px;
 			font-weight: 700;
-			font-size: 36px;
+			font-size: 34.5px;
 			line-height: 43.2px;
 			-moz-box-align: center;
 			align-items: center;
@@ -138,6 +141,19 @@
 			line-height: 24px;
 			color: #949699;
 		}	
+
+		@media (max-width: 1291px) {
+			.customPostPreview .col-sm-6 a {
+			    min-height: 350px;
+			}
+		}
+
+		.postReadMore {
+		    position: absolute;
+		    bottom: 18px;
+		    z-index: 9999;
+		}
+
 		.postReadMore button {
 			position: relative;
 			-moz-box-align: center;
@@ -450,7 +466,9 @@
 			}
 		}
 		@media (max-width: 767px) {
-
+			.customPostPreview .col-sm-6 a {
+				min-height: auto;
+			}
 			.postPercentage {
 			    padding: 0px !important;
 			}

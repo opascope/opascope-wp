@@ -81,6 +81,7 @@
 	}
 	#ez-toc-container ul li a {
 	  color: #6E7074 !important;
+	  font-weight: 400;
 	}
 
 
@@ -91,7 +92,7 @@
 
 	div#ez-toc-container ul li {
 	  font-size: 18px;
-	  margin: 24px 20px 24px 0px;
+	  margin: 24px 10px 24px 0px;
 	}
 	div#ez-toc-container ul li:last-child{
 	  border:0px;
@@ -103,6 +104,7 @@
 	.ez-toc-counter nav ul li a::before, #ez-toc-container a.ez-toc-toggle {
 	  display:none;
 	}
+
 
 	@media (max-width:767px){
 	  .single-journal .rightbox .wp-block-image img {
@@ -215,6 +217,7 @@
 	}
 	.postCategory {
 		padding-bottom: 20px;
+		min-height: 76px;
 	}
 	.postCategory > a {
 		text-decoration: none;
@@ -322,7 +325,7 @@
 	
 	.leftbox .newsletterForm {
 		background-color: #11151c;
-		padding: 50px 40px;
+		padding: 50px 35px;
 		margin-bottom: 20px;
 	}
 	
@@ -540,6 +543,7 @@
 	.card {
 		padding-top: 30px;
 		position: relative;
+		min-height: 525px;
 	}
 
 	.card h2 {
@@ -599,7 +603,10 @@
 		text-align: center;
 		margin-top: 40px;
 	}
-
+	.bottom-line {
+		position: absolute;
+		bottom: 0;
+	}
 
 	.Jombo-section {
 		padding: 80px 0px;
@@ -635,6 +642,7 @@
 		color: #fff;
 		margin-bottom: 0px;
 	}
+
 
 	/* statistic css close */
 
@@ -681,6 +689,14 @@
 		.Jombo-section {
 			padding: 50px 0px;
 		}
+		.bottom-line {
+			position: initial;
+		}
+		.card,
+		.postCategory {
+			min-height: initial;
+		}
+
 
 	}
 
@@ -1031,8 +1047,10 @@
 									?>
 								</div>
 								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-								<p><?php echo get_field('excerpt'); ?></p>
-								<a href="<?php the_permalink(); ?>">Read More</a>
+								<div class="bottom-line">
+									<p><?php echo get_field('excerpt'); ?></p>
+									<a href="<?php the_permalink(); ?>">Read More</a>
+								</div>
 							</div>
 						</div>
 						<?php

@@ -1,7 +1,7 @@
 
 		</div>
 		<footer>
-			<div class="container sm">
+			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
 						<div><img src="<?php bloginfo('template_url'); ?>/img/OpascopeTM_logo-white.svg"></div>

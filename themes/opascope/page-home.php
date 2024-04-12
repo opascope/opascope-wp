@@ -89,9 +89,11 @@
 						<div class="col-md-6">
 							<div class="text-1">Above all else, we’re problem solvers. Where other agencies see roadblocks, we see opportunities to unlock your potential:</div>
 							<div class="text-2">
-								We solve problems other agencies don’t know to look for<br>
-								We’re technical and we’re not afraid to write some code<br>
-								We take extreme ownership of anything you hand us
+								<ul>
+									<li>We solve problems other agencies don’t know to look for</li>
+									<li>We’re technical and we’re not afraid to write some code</li>
+									<li>We take extreme ownership of anything you hand us</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -108,9 +110,11 @@ other way around.</div>
 						<div class="col-md-6">
 							<div class="text-1">Positive change happens when you work side-by-side. We offer tailored client experiences that foster transparency and collaboration:</div>
 							<div class="text-2">
-								Customized project management built for your team<br>
-You work with experts, not junior account managers<br>
-Integrated with your internal and external teams
+								<ul>
+									<li>Customized project management built for your team</li>
+									<li>You work with experts, not junior account managers</li>
+									<li>Integrated with your internal and external teams</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -127,9 +131,11 @@ Integrated with your internal and external teams
 						<div class="col-md-6">
 							<div class="text-1">We want to partner with our clients for the long term, and not because they’re contractually obligated to stick around:</div>
 							<div class="text-2">
-								Opascope will be a profit center, not a cost center<br>
-								No long-term contracts; only results drive retention<br>
-								We’ll be strategic advisors and subject matter experts
+								<ul>
+									<li>Opascope will be a profit center, not a cost center</li>
+									<li>No long-term contracts; only results drive retention</li>
+									<li>We’ll be strategic advisors and subject matter experts</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -148,7 +154,7 @@ Integrated with your internal and external teams
 
 		<section class="card">
 			<div class="container">
-				<div class="text"><span>Businesses are complicated.</span><br>
+				<div class="text"><span>Businesses are complicated.</span>
 				This is why we don’t sell a package or process: because one size does not fit all. We identify opportunities, select the optimal growth levers, and operationalize bespoke marketing strategies while overcoming the obstacles that arise at scale.</div>
 			</div>
 		</section>

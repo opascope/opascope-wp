@@ -13,6 +13,11 @@ body {
 .container {
   max-width: 1098px;
 }
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1199px;
+  }
+}
 
 .menu ul {
   padding: 7px 0 0;
@@ -201,12 +206,6 @@ body {
 footer {
   background: #11151C;
   padding: 80px 0 20px;
-}
-footer .container.sm {
-  max-width: 904px;
-}
-footer .container {
-  max-width: 1070px;
 }
 footer .footer-btn {
   margin-top: 42px;
@@ -507,7 +506,6 @@ a {
 .our-approach .scaling .subhead {
   color: #6E7074;
   font-size: 16px;
-  font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.256px;
   text-transform: uppercase;
@@ -611,6 +609,9 @@ a {
     margin-bottom: 10px;
   }
 }
+.our-approach .ask .text {
+  color: #6E7074;
+}
 
 /* Case Studies */
 .case-studies .main {
@@ -652,12 +653,26 @@ a {
 
 /* Services page */
 .services .main {
-  padding: 122px;
+  padding: 122px 0;
 }
 @media (max-width: 991px) {
   .services .main {
     padding: 50px 0;
   }
+}
+.services .main .row {
+  gap: 25px;
+}
+@media (max-width: 991px) {
+  .services .main .row {
+    gap: intiial;
+  }
+}
+.services .main .col-md-7 {
+  flex: 0 0 56%;
+}
+.services .main .col-md-5 {
+  flex: 0 0 44%;
 }
 .services .main .pd-1 {
   padding-right: 20px;
@@ -719,7 +734,6 @@ a {
   font-weight: 700;
   line-height: 32px;
   margin: 0 0 28px;
-  padding-right: 55px;
 }
 @media (max-width: 991px) {
   .services .services-section .subhead {
@@ -843,7 +857,7 @@ a {
 }
 .services .quote {
   background: #F9F9F9;
-  padding: 70px 0;
+  padding: 160px 0;
   font-size: 24px;
 }
 @media (max-width: 991px) {
@@ -1536,6 +1550,10 @@ a {
   font-size: 16px;
   font-weight: 400;
   line-height: 30px;
+}
+.home .how .text-2 ul {
+  padding: 0 0 0 17px;
+  margin: 0;
 }
 @media (max-width: 991px) {
   .home .how .text-2 {

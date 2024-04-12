@@ -631,7 +631,7 @@
 	    <div class="banner">
 	        <ul class="breadcrumbs">
 	            <li>
-					<a href="/case-studies/">Case Studies</a>
+					<a href="<?php bloginfo('url'); ?>/case-studies">Case Studies</a>
 					<span class='arrow_icon'>
 						<svg width="4" height="8" viewBox="0 0 4 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M0.5 1L3.5 4L0.5 7" stroke="#6E7074" stroke-linecap="round" stroke-linejoin="round"/>
@@ -846,7 +846,7 @@
 					            <div class="founderbox">
 					                <div class="founder readyForDifferent">
 					                    <h2>Ready<br>for Different?</h2>
-					                    <a href="/book-intro-call">Book an Intro Call</a>
+					                    <a href="<?php bloginfo('url'); ?>/book-intro-call">Book an Intro Call</a>
 					                </div>
 					            </div>
 					        </div>

@@ -3,14 +3,14 @@
 		<section class="main">
 			<div class="container">
 				<div class="row align-items-start">
-					<div class="col-md-6 pd-1">
-						<h1>We don’t sell a packaged solution <br>— we sell growth.</h1>
+					<div class="col-md-7">
+						<h1>We don’t sell a packaged solution — we sell growth.</h1>
 						<div class="button">
 							<a href="<?php bloginfo('url'); ?>/book-intro-call">Book Intro Call</a>
 						</div>
 					</div>
 
-					<div class="col-md-6 flex-end">
+					<div class="col-md-5 flex-end">
 						<div class="inner">
 							<div>“Opascope is different than any other performance agency I’ve ever worked with because they truly embed themselves in your team, and it’s rare if ever, to hear them say, ‘That’s out of scope for us,’ like they will find a way.”</div>
 							<div class="auth">Steve, Director of Marketing at a D2C Tech Company</div>
