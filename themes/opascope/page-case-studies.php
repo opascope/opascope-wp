@@ -3,11 +3,11 @@
 		<section class="main">
 			<div class="container">
 				<div class="row align-items-start">
-					<div class="col-md-5 pd-1">
+					<div class="col-md-6 pd-1">
 						<h1><?php the_title(); ?></h1>
 					</div>
 
-					<div class="col-md-7 flex-end">
+					<div class="col-md-6 flex-end">
 						<div class="text">At Opascope, we collaborate with high-growth companies facing unique challenges, seeking a true performance marketing partner. Our case studies are anonymous to protect clients’ strategies. Let’s chat to see how we can help you.</div>
 					</div>
 				</div>
@@ -148,7 +148,7 @@
 			}
 		}
 
-		.postReadMore {
+		.caseStudies .postReadMore {
 		    position: absolute;
 		    bottom: 18px;
 		    z-index: 9999;
@@ -374,7 +374,7 @@
 
 		.postHeading > div {
 			color: #fff;
-		    margin: 16px 0;
+		    margin: 16px 0 0;
 		    margin-top: 0px;
 		    font-weight: 700;
 		    font-size: 36px;
@@ -410,6 +410,7 @@
 			    text-align: center;
 			    margin-left: 0;
 			    margin-bottom: 30px;
+			    margin-top: 0;
 			}
 		}
 		@media (max-width: 991px){

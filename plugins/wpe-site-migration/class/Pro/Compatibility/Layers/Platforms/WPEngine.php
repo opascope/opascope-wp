@@ -29,7 +29,6 @@ class WPEngine extends AbstractPlatform
     {
         parent::__construct();
 
-        add_filter('wpmdb_get_connection_info', [$this, 'filter_get_connection_info']);
         add_filter('wpmdb_get_alternate_connection_url', [$this, 'filter_get_alternate_connection_url'], 10, 2);
         add_action('wpmdb_flush', [$this, 'purge_all_cache']);
     }
@@ -60,30 +59,6 @@ class WPEngine extends AbstractPlatform
         }
 
         return $platform;
-    }
-
-    /**
-     * Filter the connection info to substitute in the canonical URL for a WP Engine site.
-     *
-     * @param array $connection_info
-     *
-     * @return array
-     *
-     * @handles wpmdb_get_connection_info
-     */
-    public function filter_get_connection_info($connection_info)
-    {
-        if ( ! static::is_platform() || ! is_array($connection_info) || empty($connection_info)) {
-            return $connection_info;
-        }
-
-        if ( ! defined('PWP_NAME') || empty(PWP_NAME)) {
-            return $connection_info;
-        }
-
-        $connection_info[0] = 'https://' . PWP_NAME . '.' . self::$primary_domain;
-
-        return $connection_info;
     }
 
     /**

@@ -18,7 +18,7 @@ body
 	color: $black
 
 .container
-	max-width: 1098px
+	max-width: 1120px
 
 	@media (max-width: 1280px)
 		max-width: 1199px
@@ -33,18 +33,18 @@ body
 		justify-content: flex-end
 
 		li
-			padding: 0 20px
+			padding: 0 17px
 
 			@media (min-width: 992px) and (max-width: 1100px)
 				padding: 0 14px
 
 			> a
 				color: $grey
-				font-size: 16px
+				font-size: 17px
 				font-style: normal
 				font-weight: 700
 				line-height: 24px
-				border-bottom: 1px solid #000
+				border-bottom: 2px solid $grey
 				padding: 7px 0
 				text-decoration: none
 				@media (min-width: 992px) and (max-width: 1100px)
@@ -300,7 +300,9 @@ footer
 	.copy
 		text-align: right
 		@media (max-width: 991px)
-			text-align: center
+			font-size: 12px
+			margin-top: 15px
+			text-align: left
 
 		a
 			color: $footer-text
@@ -342,7 +344,7 @@ a
 .button
 	a
 		display: inline-block
-		padding: 20.5px 56px
+		padding: 20.5px 50px
 		border: 1px solid $black
 		background: $black
 		color: #fff
@@ -350,6 +352,7 @@ a
 		font-size: 22.027px
 		font-weight: 400
 		line-height: 22.027px
+		border-radius: 2px
 
 		&:hover
 			background: #fff
@@ -418,7 +421,7 @@ a
 /* Our Approach Page */
 .our-approach
 	.pd-1
-		padding-right: 45px
+		padding-right: 109px
 		@media (max-width: 991px)
 			padding-right: 15px
 
@@ -457,6 +460,9 @@ a
 
 	.problems
 		background: $ivory
+
+		.text
+			font-size: 15px
 
 	.problems,
 	.scaling
@@ -562,9 +568,9 @@ a
 
 		h1
 			margin: 0 0 49px
-			font-size: 56px
+			font-size: 80px
 			font-weight: 700
-			line-height: 64px
+			line-height: 91px
 
 			@media (max-width: 991px)
 				font-size: 45px
@@ -572,7 +578,8 @@ a
 				margin: 0 0 25px
 
 		.text
-			font-size: 20px
+			font-size: 22px
+			line-height: 33px
 			padding-left: 16px
 			border-left: 2px solid #D7D9DD
 			@media (max-width: 991px)
@@ -593,10 +600,11 @@ a
 				gap: intiial
 
 		.col-md-7
-			flex: 0 0 56%
+			flex: 0 0 54%
 
 		.col-md-5
-			flex: 0 0 44%
+			flex: 0 0 46%
+			max-width: 43.7%
 
 		.pd-1
 			padding-right: 20px
@@ -647,7 +655,7 @@ a
 			font-size: 24px
 			font-weight: 700
 			line-height: 32px
-			margin: 0 0 28px
+			margin: 0 0 20px
 			@media (max-width: 991px)
 				font-size: 20px
 				padding: 0
@@ -789,7 +797,7 @@ a
 		margin: 0 0 50px
 
 		.col-md-3
-			flex: 0 0 22%
+			flex: 0 0 21.29%
 			@media (max-width: 991px)
 				flex: 100%
 
@@ -1277,7 +1285,7 @@ a
 			padding: 50px 0
 
 		.item
-			padding-bottom: 101px
+			padding-bottom: 150px
 			@media (max-width: 991px)
 				padding-bottom: 50px
 			&:last-child
@@ -1294,6 +1302,8 @@ a
 			display: flex
 			align-items: center
 			gap: 30px
+			@media (min-width: 1024px) and (max-width: 1340px)
+				font-size: 27px
 
 			@media (max-width: 991px)
 				font-size: 14px
@@ -1310,7 +1320,10 @@ a
 			font-size: 56px
 			font-weight: 700
 			line-height: 64px
-			padding-right: 62px
+			padding-right: 50px
+			@media (min-width: 1024px) and (max-width: 1340px)
+				font-size: 38px
+				line-height: 45px
 			@media (max-width: 991px)
 				font-size: 32px
 				line-height: 39px
@@ -1325,7 +1338,7 @@ a
 				line-height: 22px
 
 		.text-2
-			margin-top: 30px
+			margin-top: 20px
 			color: $grey
 			font-size: 16px
 			font-weight: 400
@@ -1344,7 +1357,7 @@ a
 
 		.inner
 			background: $ivory
-			padding: 40px 115px
+			padding: 40px 140px
 			text-align: center
 
 			@media (max-width: 991px)
@@ -1354,7 +1367,8 @@ a
 			font-size: 32px
 			line-height: 40px
 			font-weight: 700
-			margin-bottom: 32px
+			margin: 0 auto 32px auto
+			max-width: 826px
 
 			@media (max-width: 991px)
 				font-size: 22px
@@ -1396,12 +1410,18 @@ a
 		font-weight: 700
 		text-transform: lowercase
 
+		@media (max-width: 1280px)
+			font-size: 160px
+			line-height: 160px
+
 		@media (max-width: 991px)
-			font-size: 100px
-			line-height: 120px
+			font-size: 64px
+			line-height: 83px
 			margin-bottom: 25px
 
 
 		> span
 			display: inline-block
 			margin-left: 80px
+			@media (max-width: 991px)
+				margin-left: 0

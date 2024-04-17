@@ -166,7 +166,7 @@ class MigrationHelper
      *
      * @return array
      */
-    private function get_connection_info()
+    public function get_connection_info()
     {
         return apply_filters(
             'wpmdb_get_connection_info',

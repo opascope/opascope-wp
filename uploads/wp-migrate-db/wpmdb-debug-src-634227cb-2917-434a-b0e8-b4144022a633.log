@@ -1,0 +1,1249 @@
+[2024-04-12T07:43:23+00:00] DeliciousBrains\WPMDB\Common\Migration\InitiateMigration::initiate_migration
+[2024-04-12T07:43:34+00:00] get_local_files: directories:-
+[2024-04-12T07:43:34+00:00] Array
+(
+    [0] => C:\projects\opascope-website/wp-content/uploads
+)
+[2024-04-12T07:43:34+00:00] get_local_files: "C:\projects\opascope-website/wp-content/uploads":file_exists
+[2024-04-12T07:43:34+00:00] get_local_files: "C:\projects\opascope-website/wp-content/uploads":is_dir
+[2024-04-12T07:43:34+00:00] get_files_by_path: "C:\projects\opascope-website/wp-content/uploads".
+[2024-04-12T07:43:34+00:00] initialize: "C:\projects\opascope-website/wp-content/uploads".
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\wpcf7_uploads".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\wpcf7_uploads:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\wpallimport".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\wpallimport:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\wpallimport\uploads".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\wpallimport\uploads:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\wpallimport\uploads\2acbb9a77059985e2760188f68a2e7ee".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\wpallimport\uploads\2acbb9a77059985e2760188f68a2e7ee:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\wpallimport\temp".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\wpallimport\temp:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\wpallimport\logs".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\wpallimport\logs:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\wpallimport\history".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\wpallimport\history:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\wpallimport\files".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\wpallimport\files:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\wpallexport".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\wpallexport:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\wpallexport\temp".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\wpallexport\temp:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\wpallexport\exports".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\wpallexport\exports:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\wpallexport\exports\9d3d0466fd55ad10729e29384efb37ad".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\wpallexport\exports\9d3d0466fd55ad10729e29384efb37ad:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\wp-migrate-db".
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\2024".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\2024:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\2024\04".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\2024\04:scandir
+[2024-04-12T07:43:34+00:00] build_manifest_tree: "C:\projects\opascope-website/wp-content/uploads\2024\03".
+[2024-04-12T07:43:34+00:00] C:\projects\opascope-website/wp-content/uploads\2024\03:scandir
+[2024-04-12T07:43:37+00:00] DeliciousBrains\WPMDB\Common\TPF\ThemePluginFilesLocal::filter_enqueue_stage: theme_files
+[2024-04-12T07:43:37+00:00] prepare_files_to_migrate: themes
+[2024-04-12T07:43:37+00:00] DeliciousBrains\WPMDB\Common\TPF\ThemePluginFilesLocal::filter_items_to_migrate
+[2024-04-12T07:43:37+00:00] filter_items_to_migrate:>>> items:-
+[2024-04-12T07:43:37+00:00] Array
+(
+    [0] => C:\projects\opascope-website\wp-content\themes\opascope
+)
+[2024-04-12T07:43:37+00:00] filter_items_to_migrate: excludes:-
+[2024-04-12T07:43:37+00:00] .git
+node_modules
+.htaccess*
+*.DS_Store*
+[2024-04-12T07:43:37+00:00] filter_items_to_migrate:<<< items:-
+[2024-04-12T07:43:37+00:00] Array
+(
+    [0] => C:\projects\opascope-website\wp-content\themes\opascope
+)
+[2024-04-12T07:43:37+00:00] DeliciousBrains\WPMDB\Common\TPF\ThemePluginFilesLocal::initiate_file_migration
+[2024-04-12T07:43:37+00:00] verify_files_for_migration: files:-
+[2024-04-12T07:43:37+00:00] Array
+(
+    [0] => C:\projects\opascope-website\wp-content\themes\opascope
+)
+[2024-04-12T07:43:37+00:00] get_local_files: directories:-
+[2024-04-12T07:43:37+00:00] Array
+(
+    [0] => C:\projects\opascope-website\wp-content\themes\opascope
+)
+[2024-04-12T07:43:37+00:00] get_local_files: "C:\projects\opascope-website\wp-content\themes\opascope":file_exists
+[2024-04-12T07:43:37+00:00] get_local_files: "C:\projects\opascope-website\wp-content\themes\opascope":is_dir
+[2024-04-12T07:43:37+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\themes\opascope".
+[2024-04-12T07:43:37+00:00] initialize: "C:\projects\opascope-website\wp-content\themes\opascope".
+[2024-04-12T07:43:37+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\themes\opascope".
+[2024-04-12T07:43:37+00:00] C:\projects\opascope-website\wp-content\themes\opascope:scandir
+[2024-04-12T07:43:37+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\themes\opascope\js".
+[2024-04-12T07:43:37+00:00] C:\projects\opascope-website\wp-content\themes\opascope\js:scandir
+[2024-04-12T07:43:37+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\themes\opascope\img".
+[2024-04-12T07:43:37+00:00] C:\projects\opascope-website\wp-content\themes\opascope\img:scandir
+[2024-04-12T07:43:37+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\themes\opascope\css".
+[2024-04-12T07:43:37+00:00] C:\projects\opascope-website\wp-content\themes\opascope\css:scandir
+[2024-04-12T07:43:39+00:00] DeliciousBrains\WPMDB\Common\TPF\ThemePluginFilesLocal::filter_enqueue_stage: plugin_files
+[2024-04-12T07:43:39+00:00] prepare_files_to_migrate: plugins
+[2024-04-12T07:43:39+00:00] DeliciousBrains\WPMDB\Common\TPF\ThemePluginFilesLocal::filter_items_to_migrate
+[2024-04-12T07:43:39+00:00] filter_items_to_migrate:>>> items:-
+[2024-04-12T07:43:39+00:00] Array
+(
+    [0] => C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields
+    [1] => C:\projects\opascope-website\wp-content\plugins\cloudflare
+    [2] => C:\projects\opascope-website\wp-content\plugins\contact-form-7
+    [3] => C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api
+    [4] => C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents
+    [5] => C:\projects\opascope-website\wp-content\plugins\ns-featured-posts
+    [6] => C:\projects\opascope-website\wp-content\plugins\reading-time-wp
+    [7] => C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture
+    [8] => C:\projects\opascope-website\wp-content\plugins\wordfence
+    [9] => C:\projects\opascope-website\wp-content\plugins\wordpress-importer
+    [10] => C:\projects\opascope-website\wp-content\plugins\wp-login-form
+    [11] => C:\projects\opascope-website\wp-content\plugins\wp-rocket
+)
+[2024-04-12T07:43:39+00:00] filter_items_to_migrate: excludes:-
+[2024-04-12T07:43:39+00:00] .git
+node_modules
+.htaccess*
+*.DS_Store*
+[2024-04-12T07:43:39+00:00] filter_items_to_migrate:<<< items:-
+[2024-04-12T07:43:39+00:00] Array
+(
+    [0] => C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields
+    [1] => C:\projects\opascope-website\wp-content\plugins\cloudflare
+    [2] => C:\projects\opascope-website\wp-content\plugins\contact-form-7
+    [3] => C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api
+    [4] => C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents
+    [5] => C:\projects\opascope-website\wp-content\plugins\ns-featured-posts
+    [6] => C:\projects\opascope-website\wp-content\plugins\reading-time-wp
+    [7] => C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture
+    [8] => C:\projects\opascope-website\wp-content\plugins\wordfence
+    [9] => C:\projects\opascope-website\wp-content\plugins\wordpress-importer
+    [10] => C:\projects\opascope-website\wp-content\plugins\wp-login-form
+    [11] => C:\projects\opascope-website\wp-content\plugins\wp-rocket
+)
+[2024-04-12T07:43:39+00:00] DeliciousBrains\WPMDB\Common\TPF\ThemePluginFilesLocal::initiate_file_migration
+[2024-04-12T07:43:39+00:00] verify_files_for_migration: files:-
+[2024-04-12T07:43:39+00:00] Array
+(
+    [0] => C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields
+    [1] => C:\projects\opascope-website\wp-content\plugins\cloudflare
+    [2] => C:\projects\opascope-website\wp-content\plugins\contact-form-7
+    [3] => C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api
+    [4] => C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents
+    [5] => C:\projects\opascope-website\wp-content\plugins\ns-featured-posts
+    [6] => C:\projects\opascope-website\wp-content\plugins\reading-time-wp
+    [7] => C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture
+    [8] => C:\projects\opascope-website\wp-content\plugins\wordfence
+    [9] => C:\projects\opascope-website\wp-content\plugins\wordpress-importer
+    [10] => C:\projects\opascope-website\wp-content\plugins\wp-login-form
+    [11] => C:\projects\opascope-website\wp-content\plugins\wp-rocket
+)
+[2024-04-12T07:43:39+00:00] get_local_files: directories:-
+[2024-04-12T07:43:39+00:00] Array
+(
+    [0] => C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields
+    [1] => C:\projects\opascope-website\wp-content\plugins\cloudflare
+    [2] => C:\projects\opascope-website\wp-content\plugins\contact-form-7
+    [3] => C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api
+    [4] => C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents
+    [5] => C:\projects\opascope-website\wp-content\plugins\ns-featured-posts
+    [6] => C:\projects\opascope-website\wp-content\plugins\reading-time-wp
+    [7] => C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture
+    [8] => C:\projects\opascope-website\wp-content\plugins\wordfence
+    [9] => C:\projects\opascope-website\wp-content\plugins\wordpress-importer
+    [10] => C:\projects\opascope-website\wp-content\plugins\wp-login-form
+    [11] => C:\projects\opascope-website\wp-content\plugins\wp-rocket
+)
+[2024-04-12T07:43:39+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields":file_exists
+[2024-04-12T07:43:39+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields":is_dir
+[2024-04-12T07:43:39+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields".
+[2024-04-12T07:43:39+00:00] initialize: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields".
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\lang".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\lang:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\walkers".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\walkers:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\rest-api".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\rest-api:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\post-types".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\post-types:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\locations".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\locations:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\legacy".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\legacy:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\forms".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\forms:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\fields".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\fields:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\api".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\api:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\ajax".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\ajax:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\views".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\views:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\views\upgrade".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\views\upgrade:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\views\tools".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\views\tools:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\views\global".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\views\global:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\views\acf-taxonomy".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\views\acf-taxonomy:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\views\acf-post-type".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\views\acf-post-type:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\views\acf-field-group".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\views\acf-field-group:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\tools".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\tools:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\post-types".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\includes\admin\post-types:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc\timepicker".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc\timepicker:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc\select2".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc\select2:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc\select2\4".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc\select2\4:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc\select2\3".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc\select2\3:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc\datepicker".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc\datepicker:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc\datepicker\images".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc\datepicker\images:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc\color-picker-alpha".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\inc\color-picker-alpha:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\images".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\images:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\images\icons".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\images\icons:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\images\field-type-previews".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\images\field-type-previews:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\images\field-type-icons".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\images\field-type-icons:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\images\field-states".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\images\field-states:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\build".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\build:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\build\js".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\build\js:scandir
+[2024-04-12T07:43:39+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\build\css".
+[2024-04-12T07:43:39+00:00] C:\projects\opascope-website\wp-content\plugins\advanced-custom-fields\assets\build\css:scandir
+[2024-04-12T07:43:40+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\cloudflare":file_exists
+[2024-04-12T07:43:40+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\cloudflare":is_dir
+[2024-04-12T07:43:40+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\plugins\cloudflare".
+[2024-04-12T07:43:40+00:00] initialize: "C:\projects\opascope-website\wp-content\plugins\cloudflare".
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-php72".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-php72:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-intl-normalizer".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-intl-normalizer:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-intl-normalizer\Resources".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-intl-normalizer\Resources:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-intl-normalizer\Resources\unidata".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-intl-normalizer\Resources\unidata:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-intl-normalizer\Resources\stubs".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-intl-normalizer\Resources\stubs:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-intl-idn".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-intl-idn:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-intl-idn\Resources".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-intl-idn\Resources:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-intl-idn\Resources\unidata".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\symfony\polyfill-intl-idn\Resources\unidata:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\psr".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\psr:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\psr\log".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\psr\log:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\psr\log\Psr".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\psr\log\Psr:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\psr\log\Psr\Log".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\psr\log\Psr\Log:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\psr\log\Psr\Log\Test".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\psr\log\Psr\Log\Test:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\composer".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\composer:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\cloudflare".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\cloudflare:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\cloudflare\cf-ip-rewrite".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\cloudflare\cf-ip-rewrite:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\cloudflare\cf-ip-rewrite\tests".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\cloudflare\cf-ip-rewrite\tests:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\cloudflare\cf-ip-rewrite\src".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\cloudflare\cf-ip-rewrite\src:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\cloudflare\cf-ip-rewrite\src\CloudFlare".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\vendor\cloudflare\cf-ip-rewrite\src\CloudFlare:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\stylesheets".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\stylesheets:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\src".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\src:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\src\WordPress".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\src\WordPress:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\src\WordPress\Constants".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\src\WordPress\Constants:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\src\WordPress\Constants\Exceptions".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\src\WordPress\Constants\Exceptions:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\src\Test".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\src\Test:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\src\Test\WordPress".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\src\Test\WordPress:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\src\Test\Router".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\src\Test\Router:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\src\Test\Integration".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\src\Test\Integration:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\src\Test\API".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\src\Test\API:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\src\Router".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\src\Router:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\src\Integration".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\src\Integration:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\src\API".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\src\API:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\src\API\Exception".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\src\API\Exception:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\lang".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\lang:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\fonts".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\fonts:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\cloudflare\assets".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\cloudflare\assets:scandir
+[2024-04-12T07:43:40+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\contact-form-7":file_exists
+[2024-04-12T07:43:40+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\contact-form-7":is_dir
+[2024-04-12T07:43:40+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\plugins\contact-form-7".
+[2024-04-12T07:43:40+00:00] initialize: "C:\projects\opascope-website\wp-content\plugins\contact-form-7".
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\modules".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\modules:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\modules\stripe".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\modules\stripe:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\modules\sendinblue".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\modules\sendinblue:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\modules\recaptcha".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\modules\recaptcha:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\modules\constant-contact".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\modules\constant-contact:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\modules\akismet".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\modules\akismet:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\languages".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\languages:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\swv".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\swv:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\swv\php".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\swv\php:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\swv\php\rules".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\swv\php\rules:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\swv\js".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\swv\js:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\js".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\js:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\js\jquery-ui".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\js\jquery-ui:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\js\jquery-ui\themes".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\js\jquery-ui\themes:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\js\jquery-ui\themes\smoothness".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\js\jquery-ui\themes\smoothness:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\js\jquery-ui\themes\smoothness\images".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\js\jquery-ui\themes\smoothness\images:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\css".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\css:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\config-validator".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\config-validator:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\block-editor".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\includes\block-editor:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\assets".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\assets:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\admin".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\admin:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\admin\js".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\admin\js:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\admin\includes".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\admin\includes:scandir
+[2024-04-12T07:43:40+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-7\admin\css".
+[2024-04-12T07:43:40+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-7\admin\css:scandir
+[2024-04-12T07:43:41+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api":file_exists
+[2024-04-12T07:43:41+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api":is_dir
+[2024-04-12T07:43:41+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api".
+[2024-04-12T07:43:41+00:00] initialize: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api".
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\public".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\public:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\public\partials".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\public\partials:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\public\js".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\public\js:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\public\css".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\public\css:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\languages".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\languages:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\includes".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\includes:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\admin".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\admin:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\admin\partials".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\admin\partials:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\admin\js".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\admin\js:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\admin\images".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\admin\images:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\admin\css".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\contact-form-to-any-api\admin\css:scandir
+[2024-04-12T07:43:41+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents":file_exists
+[2024-04-12T07:43:41+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents":is_dir
+[2024-04-12T07:43:41+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents".
+[2024-04-12T07:43:41+00:00] initialize: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents".
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\vendor".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\vendor:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\vendor\sticky-kit".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\vendor\sticky-kit:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\vendor\js-cookie".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\vendor\js-cookie:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\languages".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\languages:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\includes".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\includes:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\includes\vendor".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\includes\vendor:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\includes\vendor\ultimate-web-scraper".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\includes\vendor\ultimate-web-scraper:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\assets".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\assets:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\assets\js".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\assets\js:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\assets\css".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\easy-table-of-contents\assets\css:scandir
+[2024-04-12T07:43:41+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts":file_exists
+[2024-04-12T07:43:41+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts":is_dir
+[2024-04-12T07:43:41+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts".
+[2024-04-12T07:43:41+00:00] initialize: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts".
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor\ernilambar".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor\ernilambar:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor\ernilambar\wp-admin-notice".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor\ernilambar\wp-admin-notice:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor\ernilambar\wp-admin-notice\src".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor\ernilambar\wp-admin-notice\src:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor\ernilambar\optioner".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor\ernilambar\optioner:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor\ernilambar\optioner\src".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor\ernilambar\optioner\src:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor\ernilambar\optioner\assets".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor\ernilambar\optioner\assets:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor\composer".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\vendor\composer:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\languages".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\languages:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\includes".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\includes:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\includes\widgets".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\includes\widgets:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\includes\classes".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\includes\classes:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\assets".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\assets:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\assets\js".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\assets\js:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\assets\css".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\ns-featured-posts\assets\css:scandir
+[2024-04-12T07:43:41+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\reading-time-wp":file_exists
+[2024-04-12T07:43:41+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\reading-time-wp":is_dir
+[2024-04-12T07:43:41+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\plugins\reading-time-wp".
+[2024-04-12T07:43:41+00:00] initialize: "C:\projects\opascope-website\wp-content\plugins\reading-time-wp".
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\reading-time-wp".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\reading-time-wp:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\reading-time-wp\languages".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\reading-time-wp\languages:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\reading-time-wp\assets".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\reading-time-wp\assets:scandir
+[2024-04-12T07:43:41+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture":file_exists
+[2024-04-12T07:43:41+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture":is_dir
+[2024-04-12T07:43:41+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture".
+[2024-04-12T07:43:41+00:00] initialize: "C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture".
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture\languages".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture\languages:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture\js".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture\js:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture\img".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture\img:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture\gutenberg".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture\gutenberg:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture\dist".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture\dist:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture\css".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\metronet-profile-picture\css:scandir
+[2024-04-12T07:43:41+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\wordfence":file_exists
+[2024-04-12T07:43:41+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\wordfence":is_dir
+[2024-04-12T07:43:41+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\plugins\wordfence".
+[2024-04-12T07:43:41+00:00] initialize: "C:\projects\opascope-website\wp-content\plugins\wordfence".
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\waf".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\waf:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\waf\pomo".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\waf\pomo:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\waf".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\waf:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\user".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\user:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\unsupported-php".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\unsupported-php:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\tours".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\tours:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\tools".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\tools:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\scanner".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\scanner:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\reports".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\reports:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\options".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\options:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\onboarding".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\onboarding:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\offboarding".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\offboarding:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\gdpr".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\gdpr:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\diagnostics".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\diagnostics:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\dashboard".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\dashboard:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\common".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\common:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\views\blocking".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\views\blocking:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\vendor".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\vendor:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\wf-waf".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\wf-waf:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\wf-waf\src".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\wf-waf\src:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\wf-waf\src\views".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\wf-waf\src\views:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\wf-waf\src\lib".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\wf-waf\src\lib:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\wf-waf\src\lib\storage".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\wf-waf\src\lib\storage:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\wf-waf\src\lib\parser".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\wf-waf\src\lib\parser:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\mmdb-reader".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\mmdb-reader:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\mmdb-reader\src".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\mmdb-reader\src:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\mmdb-reader\src\Io".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\mmdb-reader\src\Io:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\mmdb-reader\src\Exception".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\wordfence\mmdb-reader\src\Exception:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\composer".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\vendor\composer:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\tmp".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\tmp:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\user".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\user:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\settings".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\settings:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\page".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\page:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\options".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\options:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\onboarding".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\onboarding:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\manage".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\manage:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\email".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\email:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\common".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\views\common:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\js".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\js:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\img".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\img:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\css".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\css:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes\utility".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes\utility:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes\model".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes\model:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes\model\view".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes\model\view:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes\model\text".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes\model\text:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes\model\settings".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes\model\settings:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes\model\crypto".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes\model\crypto:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes\controller".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\modules\login-security\classes\controller:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\models".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\models:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\models\scanner".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\models\scanner:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\models\page".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\models\page:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\models\firewall".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\models\firewall:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\models\common".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\models\common:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\models\block".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\models\block:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\lib".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\lib:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\lib\rest-api".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\lib\rest-api:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\lib\dashboard".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\lib\dashboard:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\lib\Diff".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\lib\Diff:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\lib\Diff\Renderer".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\lib\Diff\Renderer:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\lib\Diff\Renderer\Html".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\lib\Diff\Renderer\Html:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\languages".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\languages:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\js".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\js:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\images".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\images:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\images\logos".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\images\logos:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\images\icons".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\images\icons:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\fonts".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\fonts:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\css".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\css:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\css\license".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\css\license:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\css\images".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\css\images:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat:scandir
+[2024-04-12T07:43:41+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src".
+[2024-04-12T07:43:41+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\PHP52".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\PHP52:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core32".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core32:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core32\SecretStream".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core32\SecretStream:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core32\Poly1305".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core32\Poly1305:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core32\Curve25519".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core32\Curve25519:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core32\Curve25519\Ge".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core32\Curve25519\Ge:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core32\ChaCha20".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core32\ChaCha20:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core\SecretStream".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core\SecretStream:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core\Poly1305".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core\Poly1305:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core\Curve25519".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core\Curve25519:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core\Curve25519\Ge".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core\Curve25519\Ge:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core\ChaCha20".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core\ChaCha20:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core\Base64".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\src\Core\Base64:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\namespaced".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\namespaced:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\namespaced\Core".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\namespaced\Core:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\namespaced\Core\Poly1305".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\namespaced\Core\Poly1305:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\namespaced\Core\Curve25519".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\namespaced\Core\Curve25519:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\namespaced\Core\Curve25519\Ge".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\namespaced\Core\Curve25519\Ge:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\namespaced\Core\ChaCha20".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\namespaced\Core\ChaCha20:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\lib".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\sodium_compat\lib:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\random_compat".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\random_compat:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\random_compat\lib".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\random_compat\lib:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\random_compat\dist".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\paragonie\random_compat\dist:scandir
+[2024-04-12T07:43:42+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\composer".
+[2024-04-12T07:43:42+00:00] C:\projects\opascope-website\wp-content\plugins\wordfence\crypto\vendor\composer:scandir
+[2024-04-12T07:43:43+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\wordpress-importer":file_exists
+[2024-04-12T07:43:43+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\wordpress-importer":is_dir
+[2024-04-12T07:43:43+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\plugins\wordpress-importer".
+[2024-04-12T07:43:43+00:00] initialize: "C:\projects\opascope-website\wp-content\plugins\wordpress-importer".
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordpress-importer".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wordpress-importer:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wordpress-importer\parsers".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wordpress-importer\parsers:scandir
+[2024-04-12T07:43:43+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\wp-login-form":file_exists
+[2024-04-12T07:43:43+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\wp-login-form":is_dir
+[2024-04-12T07:43:43+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\plugins\wp-login-form".
+[2024-04-12T07:43:43+00:00] initialize: "C:\projects\opascope-website\wp-content\plugins\wp-login-form".
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-login-form".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-login-form:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-login-form\addons".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-login-form\addons:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-login-form\addons\images".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-login-form\addons\images:scandir
+[2024-04-12T07:43:43+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\wp-rocket":file_exists
+[2024-04-12T07:43:43+00:00] get_local_files: "C:\projects\opascope-website\wp-content\plugins\wp-rocket":is_dir
+[2024-04-12T07:43:43+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\plugins\wp-rocket".
+[2024-04-12T07:43:43+00:00] initialize: "C:\projects\opascope-website\wp-content\plugins\wp-rocket".
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\views".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\views:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\settings".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\settings:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\settings\sections".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\settings\sections:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\settings\partials".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\settings\partials:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\settings\page-sections".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\settings\page-sections:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\settings\fields".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\settings\fields:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\settings\buttons".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\settings\buttons:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\plugins".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\plugins:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\deactivation-intent".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\deactivation-intent:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\cpcss".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\cpcss:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\cpcss\metabox".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\cpcss\metabox:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\cache".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\views\cache:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\psr".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\psr:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\psr\log".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\psr\log:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\psr\log\Psr".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\psr\log\Psr:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\psr\log\Psr\Log".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\psr\log\Psr\Log:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\psr\log\Psr\Log\Test".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\psr\log\Psr\Log\Test:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Test".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Test:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Processor".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Processor:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Handler".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Handler:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Handler\SyslogUdp".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Handler\SyslogUdp:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Handler\Slack".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Handler\Slack:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Handler\FingersCrossed".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Handler\FingersCrossed:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Handler\Curl".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Handler\Curl:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Formatter".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Formatter:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Attribute".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\monolog\monolog\src\Monolog\Attribute:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\composer".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\composer:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\cloudflare".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\cloudflare:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\cloudflare\cf-ip-rewrite".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\cloudflare\cf-ip-rewrite:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\cloudflare\cf-ip-rewrite\tests".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\cloudflare\cf-ip-rewrite\tests:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\cloudflare\cf-ip-rewrite\src".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\cloudflare\cf-ip-rewrite\src:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\cloudflare\cf-ip-rewrite\src\CloudFlare".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\vendor\cloudflare\cf-ip-rewrite\src\CloudFlare:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\languages".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\languages:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\vendors".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\vendors:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\vendors\classes".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\vendors\classes:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\functions".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\functions:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\front".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\front:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\vendors".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\vendors:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\vendors\classes".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\vendors\classes:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\subscriber".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\subscriber:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\subscriber\admin".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\subscriber\admin:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\subscriber\admin\Settings".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\subscriber\admin\Settings:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\subscriber\admin\Optimization".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\subscriber\admin\Optimization:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\subscriber\Optimization".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\subscriber\Optimization:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\classes".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\classes:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\classes\busting".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\classes\busting:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Optimization".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Optimization:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Optimization\QueryString".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Optimization\QueryString:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Media".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Media:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Media\Embeds".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Media\Embeds:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Addon".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Addon:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Addon\GoogleTracking".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Addon\GoogleTracking:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Addon\FacebookTracking".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Addon\FacebookTracking:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Addon\Busting".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\deprecated\Engine\Addon\Busting:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\common".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\common:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\traits".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\traits:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\subscriber".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\subscriber:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\subscriber\third-party".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\subscriber\third-party:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\subscriber\third-party\plugins".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\subscriber\third-party\plugins:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\subscriber\third-party\plugins\Images".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\subscriber\third-party\plugins\Images:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\subscriber\third-party\plugins\Images\Webp".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\subscriber\third-party\plugins\Images\Webp:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\subscriber\Tools".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\subscriber\Tools:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\logger".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\logger:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\interfaces".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\interfaces:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\event-management".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\event-management:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\dependencies".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\dependencies:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\dependencies\wp-media".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\dependencies\wp-media:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\dependencies\wp-media\background-processing".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\dependencies\wp-media\background-processing:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\dependencies\mobiledetect".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\dependencies\mobiledetect:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\dependencies\mobiledetect\mobiledetectlib".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\dependencies\mobiledetect\mobiledetectlib:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\admin".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\admin:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\ServiceProvider".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\ServiceProvider:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\Buffer".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\classes\Buffer:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\admin".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\admin:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\admin\ui".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\admin\ui:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Themes".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Themes:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\Security".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\Security:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\SEO".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\SEO:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\PageBuilder".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\PageBuilder:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\Optimization".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\Optimization:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\I18n".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\I18n:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\Ecommerce".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\Ecommerce:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\CDN".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\CDN:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\Ads".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Plugins\Ads:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Hostings".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\ThirdParty\Hostings:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Support".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Support:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Links".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Links:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Frontend".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Frontend:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Database".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Database:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Database\Tables".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Database\Tables:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Database\Schemas".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Database\Schemas:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Database\Rows".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Database\Rows:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Database\Queries".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Database\Queries:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Cron".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Cron:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Controller".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Controller:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Admin".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Admin:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Activation".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Preload\Activation:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Plugin".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Plugin:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Frontend".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Frontend:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Database".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Database:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Database\Tables".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Database\Tables:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Database\Schemas".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Database\Schemas:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Database\Row".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Database\Row:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Database\Queries".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Database\Queries:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Cron".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Cron:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Controller".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Controller:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Admin".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\RUCSS\Admin:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\Minify".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\Minify:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\Minify\JS".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\Minify\JS:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\Minify\CSS".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\Minify\CSS:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\GoogleFonts".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\GoogleFonts:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\GoogleFonts\Admin".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\GoogleFonts\Admin:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\DynamicLists".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\DynamicLists:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\DynamicLists\IncompatiblePluginsLists".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\DynamicLists\IncompatiblePluginsLists:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\DynamicLists\DelayJSLists".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\DynamicLists\DelayJSLists:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\DynamicLists\DefaultLists".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\DynamicLists\DefaultLists:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\DelayJS".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\DelayJS:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\DelayJS\Admin".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\DelayJS\Admin:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\DeferJS".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\DeferJS:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\Buffer".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Optimization\Buffer:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Media".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Media:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Media\Lazyload".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Media\Lazyload:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Media\ImageDimensions".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Media\ImageDimensions:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Media\Emojis".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Media\Emojis:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\License".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\License:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\License\views".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\License\views:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\License\API".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\License\API:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Heartbeat".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Heartbeat:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\HealthCheck".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\HealthCheck:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Deactivation".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Deactivation:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\CriticalPath".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\CriticalPath:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\CriticalPath\Admin".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\CriticalPath\Admin:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Common".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Common:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Common\Queue".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Common\Queue:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Capabilities".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Capabilities:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Cache".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Cache:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Cache\PurgeExpired".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Cache\PurgeExpired:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Cache\Config".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Cache\Config:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\CDN".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\CDN:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\CDN\RocketCDN".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\CDN\RocketCDN:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\CDN\RocketCDN\views".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\CDN\RocketCDN\views:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Admin".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Admin:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Admin\Settings".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Admin\Settings:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Admin\Deactivation".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Admin\Deactivation:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Admin\Database".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Admin\Database:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Admin\Beacon".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Admin\Beacon:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Admin\API".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Admin\API:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Activation".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Engine\Activation:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\RocketLazyload".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\RocketLazyload:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Psr".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Psr:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Psr\Container".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Psr\Container:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\PathConverter".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\PathConverter:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Minify".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Minify:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Minify\data".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Minify\data:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Minify\data\js".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Minify\data\js:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Minify\Exceptions".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Minify\Exceptions:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\League".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\League:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\League\Container".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\League\Container:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\League\Container\ServiceProvider".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\League\Container\ServiceProvider:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\League\Container\Inflector".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\League\Container\Inflector:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\League\Container\Exception".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\League\Container\Exception:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\League\Container\Definition".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\League\Container\Definition:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\League\Container\Argument".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\League\Container\Argument:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Database".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Database:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Database\Queries".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\Database\Queries:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\lib".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\lib:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\lib\cron-expression".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\lib\cron-expression:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\deprecated".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\deprecated:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes\schema".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes\schema:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes\schedules".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes\schedules:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes\migration".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes\migration:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes\data-stores".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes\data-stores:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes\actions".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes\actions:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes\abstracts".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes\abstracts:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes\WP_CLI".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Dependencies\ActionScheduler\classes\WP_CLI:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon\WebP".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon\WebP:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon\Varnish".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon\Varnish:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon\Sucuri".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon\Sucuri:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon\Cloudflare".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon\Cloudflare:scandir
+[2024-04-12T07:43:43+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon\Cloudflare\Auth".
+[2024-04-12T07:43:43+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon\Cloudflare\Auth:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon\Cloudflare\Admin".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon\Cloudflare\Admin:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon\Cloudflare\API".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\Addon\Cloudflare\API:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\API".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\API:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\themes".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\themes:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\slider".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\slider:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\seo".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\seo:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\security".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\security:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\rating".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\rating:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\page-builder".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\page-builder:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\mobile".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\mobile:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\i18n".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\i18n:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\ecommerce".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\ecommerce:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\cookies".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\plugins\cookies:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\hosting".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\inc\3rd-party\hosting:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\js".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\js:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\js\lazyload".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\js\lazyload:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\js\lazyload\17.8.3".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\js\lazyload\17.8.3:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\js\lazyload\17.5".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\js\lazyload\17.5:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\js\lazyload\16.1".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\js\lazyload\16.1:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\js\lazyload\12.0".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\js\lazyload\12.0:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\js\lazyload\11.0.6".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\js\lazyload\11.0.6:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\img".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\img:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\fonts".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\fonts:scandir
+[2024-04-12T07:43:44+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\css".
+[2024-04-12T07:43:44+00:00] C:\projects\opascope-website\wp-content\plugins\wp-rocket\assets\css:scandir
+[2024-04-12T07:43:57+00:00] DeliciousBrains\WPMDB\Common\TPF\ThemePluginFilesLocal::filter_enqueue_stage: other_files
+[2024-04-12T07:43:57+00:00] prepare_files_to_migrate: others
+[2024-04-12T07:43:57+00:00] DeliciousBrains\WPMDB\Common\TPF\ThemePluginFilesLocal::filter_items_to_migrate
+[2024-04-12T07:43:57+00:00] filter_items_to_migrate:>>> items:-
+[2024-04-12T07:43:57+00:00] Array
+(
+    [0] => C:\projects\opascope-website\wp-content\.git
+    [1] => C:\projects\opascope-website\wp-content\.gitignore
+    [2] => C:\projects\opascope-website\wp-content\README.md
+    [3] => C:\projects\opascope-website\wp-content\cache
+    [4] => C:\projects\opascope-website\wp-content\dev
+    [5] => C:\projects\opascope-website\wp-content\opascope-db.sql
+    [6] => C:\projects\opascope-website\wp-content\wflogs
+    [7] => C:\projects\opascope-website\wp-content\wp-rocket-config
+)
+[2024-04-12T07:43:57+00:00] filter_items_to_migrate: excludes:-
+[2024-04-12T07:43:57+00:00] .git
+node_modules
+*.sql
+*.log
+*backup*/
+*cache*/
+wflogs/
+updraft/
+.htaccess*
+*.DS_Store*
+[2024-04-12T07:43:57+00:00] filter_items_to_migrate:<<< items:-
+[2024-04-12T07:43:57+00:00] Array
+(
+    [2] => C:\projects\opascope-website\wp-content\README.md
+    [4] => C:\projects\opascope-website\wp-content\dev
+    [7] => C:\projects\opascope-website\wp-content\wp-rocket-config
+)
+[2024-04-12T07:43:57+00:00] DeliciousBrains\WPMDB\Common\TPF\ThemePluginFilesLocal::initiate_file_migration
+[2024-04-12T07:43:57+00:00] verify_files_for_migration: files:-
+[2024-04-12T07:43:57+00:00] Array
+(
+    [2] => C:\projects\opascope-website\wp-content\README.md
+    [4] => C:\projects\opascope-website\wp-content\dev
+    [7] => C:\projects\opascope-website\wp-content\wp-rocket-config
+)
+[2024-04-12T07:43:57+00:00] get_local_files: directories:-
+[2024-04-12T07:43:57+00:00] Array
+(
+    [0] => C:\projects\opascope-website\wp-content\README.md
+    [1] => C:\projects\opascope-website\wp-content\dev
+    [2] => C:\projects\opascope-website\wp-content\wp-rocket-config
+)
+[2024-04-12T07:43:57+00:00] get_local_files: "C:\projects\opascope-website\wp-content\README.md":file_exists
+[2024-04-12T07:43:57+00:00] get_local_files: "C:\projects\opascope-website\wp-content\README.md":is_dir
+[2024-04-12T07:43:57+00:00] get_local_files: "C:\projects\opascope-website\wp-content\dev":file_exists
+[2024-04-12T07:43:57+00:00] get_local_files: "C:\projects\opascope-website\wp-content\dev":is_dir
+[2024-04-12T07:43:57+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\dev".
+[2024-04-12T07:43:57+00:00] initialize: "C:\projects\opascope-website\wp-content\dev".
+[2024-04-12T07:43:57+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\dev".
+[2024-04-12T07:43:57+00:00] C:\projects\opascope-website\wp-content\dev:scandir
+[2024-04-12T07:43:57+00:00] get_local_files: "C:\projects\opascope-website\wp-content\wp-rocket-config":file_exists
+[2024-04-12T07:43:57+00:00] get_local_files: "C:\projects\opascope-website\wp-content\wp-rocket-config":is_dir
+[2024-04-12T07:43:57+00:00] get_files_by_path: "C:\projects\opascope-website\wp-content\wp-rocket-config".
+[2024-04-12T07:43:57+00:00] initialize: "C:\projects\opascope-website\wp-content\wp-rocket-config".
+[2024-04-12T07:43:57+00:00] build_manifest_tree: "C:\projects\opascope-website\wp-content\wp-rocket-config".
+[2024-04-12T07:43:57+00:00] C:\projects\opascope-website\wp-content\wp-rocket-config:scandir

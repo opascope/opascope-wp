@@ -38,7 +38,7 @@ function wpe_migrations_loaded()
 
 	// @TODO revisit since we're reming is_admin()
 	// exit quickly unless: standalone admin; one of our AJAX calls
-	if (is_multisite() && !current_user_can('manage_network_options') && !Util::wpmdb_is_ajax()) {
+	if (is_multisite() && !current_user_can('manage_network_options') && !Util::wpmdb_is_ajax() && !((defined('WP_CLI') && WP_CLI))) {
 		return;
 	}
 	if (function_exists('wpe_migrations')) {

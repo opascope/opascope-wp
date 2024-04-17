@@ -195,9 +195,14 @@ class PluginHelper
         if ('media_files' === $stage) {
             $folders = apply_filters('wpmdb_mf_remote_uploads_folder', $folders, $state_data);
         }
+        $items = $folders;
+
+        if ($stage === 'media_files' && isset($folders[0])) {
+            $items = $this->get_top_level_items($folders[0]);
+        }
 
         $files = $this->file_processor->get_local_files(
-            $folders,
+            $items,
             $slashed,
             json_decode($state_data['excludes'], true),
             $stage,

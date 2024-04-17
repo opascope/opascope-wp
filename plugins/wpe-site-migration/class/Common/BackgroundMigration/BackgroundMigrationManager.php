@@ -205,8 +205,8 @@ class BackgroundMigrationManager
         $this->rest_API_server->registerRestRoute(
             'migration',
             [
-                'methods'  => 'PUT',
-                'callback' => [$this, 'ajax_put_migration'],
+                'methods'  => 'POST',
+                'callback' => [$this, 'ajax_update_migration'],
                 'args'     => [
                     'action'       => [
                         'description' => esc_html__(
@@ -238,9 +238,9 @@ class BackgroundMigrationManager
 
         // A DELETE endpoint to enable dismissing a user's last migration.
         $this->rest_API_server->registerRestRoute(
-            'migration',
+            'delete-migration',
             [
-                'methods'  => 'DELETE',
+                'methods'  => 'POST',
                 'callback' => [$this, 'ajax_delete_migration'],
                 'args'     => [
                     'migration_id' => [
@@ -275,7 +275,7 @@ class BackgroundMigrationManager
      *
      * @return void
      */
-    public function ajax_put_migration(WP_REST_Request $request)
+    public function ajax_update_migration(WP_REST_Request $request)
     {
         $data = $request->get_json_params();
 
@@ -370,6 +370,16 @@ class BackgroundMigrationManager
             $last_migration['dismissed'] = true;
 
             $this->update_last_migration($last_migration);
+        }
+
+
+        //Clean up the migration data
+        Persistence::cleanupStateOptions();
+
+        $active_migration = $this->get_active_migration();
+
+        if ( ! empty($active_migration)) {
+            $active_migration->delete();
         }
 
         // For anything that needs to be done after a migration is dismissed.

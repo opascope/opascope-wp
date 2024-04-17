@@ -2,9 +2,9 @@
 Contributors: wpengine, ahmedgeek, philwebs, ianmjones, eriktorsner, dalewilliams, tysonreeder, kevinwhoffman
 Tags: migrate, push, transfer, wordpress migration plugin, move site, database migration, site migration
 Requires at least: 5.0
-Tested up to: 6.4.3
+Tested up to: 6.5
 Requires PHP: 5.6
-Stable tag: 1.0.0-rc.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Migrate any WordPress site to WP Engine or Flywheel.
@@ -14,6 +14,28 @@ Migrate any WordPress site to WP Engine or Flywheel.
 Migrate any WordPress site to WP Engine or Flywheel. Copy all database tables and site files or customize the migration to include only what you need.
 
 == Changelog ==
+
+= WP Engine Site Migration 1.0.2 - 2024-04-11 =
+* Fixed: "Duplicate entry" errors are now less likely to occur when migrating a database table with binary primary keys, such as Wordfence’s `wffilemods` table
+
+= WP Engine Site Migration 1.0.1 - 2024-04-11 =
+* Fixed: "Duplicate entry" errors are now less likely to occur when migrating a database table with non-integer primary keys
+* Fixed: Pressing the **Close** button now clears all migration-related database records from the options table
+
+= WP Engine Site Migration 1.0.0 - 2024-04-04 =
+* Added: The WP Engine Site Migration plugin is now generally available
+
+= WP Engine Site Migration 1.0.0-rc.4 - 2024-04-03 =
+* Changed: REST API endpoints that previously used `PUT` or `DELETE` now use `POST` for compatibility with more server configurations
+* Changed: Debug logging is now disabled by default and can be enabled by setting the `wpmdb_enable_debug_log` filter to return `true`
+
+= WP Engine Site Migration 1.0.0-rc.3 - 2024-03-18 =
+* Changed: Recursive scanning is once again split across all files and directories within the `uploads` directory
+
+= WP Engine Site Migration 1.0.0-rc.2 - 2024-03-14 =
+* Changed: Connection information for WP Engine sites now uses the WordPress site URL instead of the wpengine.com domain
+* Fixed: Connection information in the WP Engine User Portal is now able to be retrieved faster and more reliably
+* Fixed: A change in background processing logic has been reverted to reduce the likelihood of stuck migrations
 
 = WP Engine Site Migration 1.0.0-rc.1 - 2024-03-07 =
 * Changed: All default excludes are now defined via PHP and passed to the UI

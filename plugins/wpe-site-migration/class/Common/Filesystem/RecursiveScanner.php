@@ -3,7 +3,6 @@
 namespace DeliciousBrains\WPMDB\Common\Filesystem;
 
 use DeliciousBrains\WPMDB\Common\Debug;
-use DeliciousBrains\WPMDB\Common\Migration\MigrationHelper;
 use DeliciousBrains\WPMDB\Common\MigrationPersistence\Persistence;
 use DeliciousBrains\WPMDB\Common\Transfers\Files\Excludes;
 use DeliciousBrains\WPMDB\Common\Transfers\Files\Util;
@@ -369,7 +368,7 @@ class RecursiveScanner
      */
     public function reached_bottleneck()
     {
-        return ! MigrationHelper::should_continue() || ($this->get_bottleneck() < 1 && $this->is_enabled());
+        return $this->get_bottleneck() < 1 && $this->is_enabled();
     }
 
     /**

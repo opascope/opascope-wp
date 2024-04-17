@@ -23,12 +23,12 @@
 		<section class="problems">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4 pd-1">
+					<div class="col-md-5 pd-1">
 						<div class="subhead">TECHNICAL PROBLEM-SOLVING</div>
 						<div class="head">We don’t throw money at things that are broken</div>
 					</div>
 
-					<div class="col-md-8">
+					<div class="col-md-7">
 						<div class="text">Before we start scaling any strategy, our priority is to build a strong foundation. Sometimes that means rebuilding an ad account. Other times it’s your measurement and attribution framework — either way, we start by fixing problems we know are holding you back.<br><br>Within the first 30 days, we expect our clients to see either reduced cost, increased efficiency or, at a minimum, visibility into what’s working and what’s not.</div>
 					</div>
 				</div>

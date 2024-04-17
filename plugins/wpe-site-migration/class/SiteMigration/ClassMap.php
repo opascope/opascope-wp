@@ -156,6 +156,11 @@ class ClassMap extends \DeliciousBrains\WPMDB\ClassMap
      */
     public $transport_manager;
 
+    /**
+     * @var Cli\Commands
+     */
+    public $cli_commands;
+
     public function __construct()
     {
         $this->hosting_platform = new Platforms();
@@ -486,5 +491,8 @@ class ClassMap extends \DeliciousBrains\WPMDB\ClassMap
             $this->util,
             $this->license
         );
+
+        // Register WPESM CLI commands.
+        $this->cli_commands = new Cli\Commands();
     }
 }

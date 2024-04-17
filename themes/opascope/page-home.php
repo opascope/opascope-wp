@@ -147,7 +147,7 @@ other way around.</div>
 			<div class="container">
 				<div class="inner">
 					<div class="text">“There are very few agencies that I can unconditionally recommend. Opascope is one. They’re an overall pleasure to work with.”</div>
-					<div class="auth">Jen, Senior Manager at a Publicly Traded Cloud Management Company</div>
+					<div class="auth">Jen, Senior Manager at a Publicly Traded SaaS Company</div>
 				</div>
 			</div>
 		</section>

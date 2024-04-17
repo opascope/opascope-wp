@@ -277,6 +277,16 @@ abstract class BackgroundMigration
     }
 
     /**
+     * Delete entire job queue.
+     *
+     * @return void
+     */
+    public function delete()
+    {
+        $this->background_process->delete_all();
+    }
+
+    /**
      * Get background process class.
      *
      * @return BackgroundMigrationProcess|null

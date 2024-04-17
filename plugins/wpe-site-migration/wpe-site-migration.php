@@ -3,7 +3,7 @@
 Plugin Name: WP Engine Site Migration
 Description: Migrate any WordPress site to WP Engine or Flywheel. Copy all database tables and site files or customize the migration to include only what you need.
 Author: WP Engine
-Version: 1.0.0-rc.1
+Version: 1.0.2
 Author URI: https://wpengine.com/?utm_source=wpesm_plugin&utm_medium=referral&utm_campaign=bx_prod_referral&utm_content=wpesm_plugin_author_link
 Network: True
 Text Domain: wp-migrate-db
@@ -44,9 +44,6 @@ $plugin_root = '/';
 if(!defined('WPMDB_VENDOR_DIR')){
     define('WPMDB_VENDOR_DIR', __DIR__ . $plugin_root."vendor");
 }
-
-// TODO: Remove when beta complete.
-add_filter('wpmdb_enable_debug_log', '__return_true');
 
 require WPMDB_VENDOR_DIR . '/autoload.php';
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-migrate-db-pro\n"
 "Report-Msgid-Bugs-To: nom@deliciousbrains.com\n"
-"POT-Creation-Date: 2024-03-07 18:02+0000\n"
+"POT-Creation-Date: 2024-04-11 17:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -341,9 +341,9 @@ msgstr ""
 #: src/wp-migrate-db-pro/class/Pro/License.php:717
 #: src/wp-migrate-db-pro/class/Common/UI/TemplateBase.php:84
 #: src/wp-migrate-db-pro/class/Free/Plugin/PluginManager.php:54
-#: src/wp-migrate-db-pro/class/SiteMigration/Plugin/PluginManager.php:54
 #: src/wp-migrate-db-pro/class/Pro/Plugin/ProPluginManager.php:254
 #: src/wp-migrate-db-pro/class/Pro/Plugin/ProPluginManager.php:558
+#: src/wp-migrate-db-pro/class/SiteMigration/Plugin/PluginManager.php:54
 msgctxt "Plugin configuration and preferences"
 msgid "Settings"
 msgstr ""
@@ -469,34 +469,34 @@ msgid "Type not supplied."
 msgstr ""
 
 #: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:355
-#: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:481
+#: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:491
 msgid "Migration ID not supplied."
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:449
+#: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:459
 #, php-format
 msgid "Invalid migration type \"%s\" supplied."
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:459
+#: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:469
 msgid "Invalid action supplied."
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:489
+#: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:499
 msgid "Data for Migration ID could not be loaded."
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:526
+#: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:536
 msgid "Every Minute"
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:528
+#: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:538
 #: src/wp-migrate-db-pro/class/Common/Queue/Cron.php:86
 #, php-format
 msgid "Every %d Minutes"
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:884
+#: src/wp-migrate-db-pro/class/Common/BackgroundMigration/BackgroundMigrationManager.php:894
 #, php-format
 msgid "The migration was terminated after %d minutes without progress."
 msgstr ""
@@ -617,34 +617,34 @@ msgstr ""
 msgid "Could not find the file to download:"
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:185
+#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:184
 #, php-format
 msgid "Unable to read the contents of directory \"%s\"."
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:253
-#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:505
-#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:672
+#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:252
+#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:504
+#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:671
 #, php-format
 msgid "Scan manifest file has unexpected format at \"%s\"."
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:315
+#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:314
 #, php-format
 msgid "Could not read directory \"%s\"."
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:561
+#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:560
 #, php-format
 msgid "Scan manifest file could not be opened at \"%s\"."
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:571
+#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:570
 #, php-format
 msgid "Scan manifest file is empty at \"%s\"."
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:598
+#: src/wp-migrate-db-pro/class/Common/Filesystem/RecursiveScanner.php:597
 #, php-format
 msgid "Scan manifest file could not be saved at \"%s\""
 msgstr ""
@@ -876,6 +876,18 @@ msgid ""
 "whether your site can perform loopback requests, and learn %2$s."
 msgstr ""
 
+#: src/wp-migrate-db-pro/class/Common/MigrationState/ApplicationStateController.php:59
+msgid "Array of application state branches."
+msgstr ""
+
+#: src/wp-migrate-db-pro/class/Common/MigrationState/MigrationStateManager.php:93
+msgid "Failed to save migration state. Please contact support."
+msgstr ""
+
+#: src/wp-migrate-db-pro/class/Common/MigrationState/MigrationStateManager.php:128
+msgid "Failed to retrieve migration state. Please contact support."
+msgstr ""
+
 #: src/wp-migrate-db-pro/class/Common/Multisite/Multisite.php:159
 #: src/wp-migrate-db-pro/class/Common/Multisite/Multisite.php:182
 msgid "single site"
@@ -939,18 +951,6 @@ msgstr ""
 #, php-format
 msgid ""
 "It looks like the remote site is a %s install and this install is a %s. %s"
-msgstr ""
-
-#: src/wp-migrate-db-pro/class/Common/MigrationState/ApplicationStateController.php:59
-msgid "Array of application state branches."
-msgstr ""
-
-#: src/wp-migrate-db-pro/class/Common/MigrationState/MigrationStateManager.php:93
-msgid "Failed to save migration state. Please contact support."
-msgstr ""
-
-#: src/wp-migrate-db-pro/class/Common/MigrationState/MigrationStateManager.php:128
-msgid "Failed to retrieve migration state. Please contact support."
 msgstr ""
 
 #: src/wp-migrate-db-pro/class/Common/Plugin/Assets.php:71
@@ -1196,48 +1196,48 @@ msgstr ""
 msgid "365 days"
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:970
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:971
 #, php-format
 msgid ""
 "Failed to retrieve table structure for table '%s', please ensure your "
 "database is online. (#125)"
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1047
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1048
 #, php-format
 msgid "Error creating temporary table. Table \"%s\" does not exist."
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1102
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1103
 #, php-format
 msgid "Delete any existing table %s"
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1113
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1114
 #, php-format
 msgid "Table structure of table %s"
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1121
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1122
 msgid ""
 "Failed to generate the create table query, please ensure your database is "
 "online. (#126)"
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1180
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1181
 #, php-format
 msgid "Data contents of table %s"
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1311
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1312
 msgid "Failed to write the gzipped SQL data to the file. (#127)"
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1318
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1319
 msgid "Failed to write the SQL data to the file. (#128)"
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1401
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1402
 #, php-format
 msgid ""
 "The imported table `%1s` contains characters which are invalid in the target "
@@ -1247,7 +1247,7 @@ msgid ""
 "documentation</a> for more information."
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1411
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:1412
 #, php-format
 msgid ""
 "The table `%1s` contains characters which are invalid in the target "
@@ -1255,40 +1255,40 @@ msgid ""
 "for more information."
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:2015
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:2016
 msgid "Error moving SQL file into ZIP archive"
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:2117
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:2118
 #, php-format
 msgid "End of data contents of table %s"
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:2202
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:2203
 msgid ""
 "Temporary table prefix not supplied when trying to delete temporary tables."
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:2275
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:2276
 msgid "WordPress MySQL database migration"
-msgstr ""
-
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:2277
-#, php-format
-msgid "Generated: %s"
 msgstr ""
 
 #: src/wp-migrate-db-pro/class/Common/Sql/Table.php:2278
 #, php-format
-msgid "Hostname: %s"
+msgid "Generated: %s"
 msgstr ""
 
 #: src/wp-migrate-db-pro/class/Common/Sql/Table.php:2279
 #, php-format
+msgid "Hostname: %s"
+msgstr ""
+
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:2280
+#, php-format
 msgid "Database: %s"
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:2464
+#: src/wp-migrate-db-pro/class/Common/Sql/Table.php:2465
 #, php-format
 msgid "Could not add table \"%1$s\" to queue.<br>Database Error: %2$s"
 msgstr ""
@@ -1500,8 +1500,8 @@ msgid "Unknown"
 msgstr ""
 
 #: src/wp-migrate-db-pro/class/Free/Plugin/PluginManager.php:53
-#: src/wp-migrate-db-pro/class/SiteMigration/Plugin/PluginManager.php:49
 #: src/wp-migrate-db-pro/class/Pro/Plugin/ProPluginManager.php:557
+#: src/wp-migrate-db-pro/class/SiteMigration/Plugin/PluginManager.php:49
 msgid "Migrate"
 msgstr ""
 
@@ -1514,47 +1514,21 @@ msgid "WP Migrate Lite"
 msgstr ""
 
 #: src/wp-migrate-db-pro/class/Free/Plugin/PluginManager.php:159
-#: src/wp-migrate-db-pro/class/SiteMigration/Plugin/PluginManager.php:163
 #: src/wp-migrate-db-pro/class/Pro/Plugin/ProPluginManager.php:752
+#: src/wp-migrate-db-pro/class/SiteMigration/Plugin/PluginManager.php:163
 msgid "Documentation"
 msgstr ""
 
 #: src/wp-migrate-db-pro/class/Free/Plugin/PluginManager.php:162
-#: src/wp-migrate-db-pro/class/SiteMigration/Plugin/PluginManager.php:168
 #: src/wp-migrate-db-pro/class/Pro/Plugin/ProPluginManager.php:755
+#: src/wp-migrate-db-pro/class/SiteMigration/Plugin/PluginManager.php:168
 msgid "Support"
 msgstr ""
 
 #: src/wp-migrate-db-pro/class/Free/Plugin/PluginManager.php:169
-#: src/wp-migrate-db-pro/class/SiteMigration/Plugin/PluginManager.php:173
 #: src/wp-migrate-db-pro/class/Pro/Plugin/ProPluginManager.php:762
+#: src/wp-migrate-db-pro/class/SiteMigration/Plugin/PluginManager.php:173
 msgid "Feedback"
-msgstr ""
-
-#: src/wp-migrate-db-pro/class/SiteMigration/Plugin/PluginManager.php:80
-#, php-format
-msgid ""
-"It looks like you're trying to migrate a multisite to a single site, which "
-"isn't currently supported by this plugin. To continue, <a href=\"%s\" target="
-"\"_blank\">convert the destination to a multisite</a> and try again."
-msgstr ""
-
-#: src/wp-migrate-db-pro/class/SiteMigration/Plugin/PluginManager.php:97
-#, php-format
-msgid ""
-"It looks like you're trying to migrate a single site to a multisite, which "
-"isn't currently supported by this plugin. To continue, <a href=\"%s\" target="
-"\"_blank\">convert the destination to a single site</a> and try again."
-msgstr ""
-
-#: src/wp-migrate-db-pro/class/SiteMigration/Settings/Settings.php:102
-#, php-format
-msgid ""
-"We've detected that <code>WP_HTTP_BLOCK_EXTERNAL</code> is enabled, which "
-"will prevent WP Engine Site Migration from functioning properly. You should "
-"either disable <code>WP_HTTP_BLOCK_EXTERNAL</code> or add any sites that "
-"you'd like to migrate to <code>WP_ACCESSIBLE_HOSTS</code>. More information "
-"on this can be found <a href=\"%s\" target=\"_blank\">here</a>."
 msgstr ""
 
 #: src/wp-migrate-db-pro/class/Pro/Addon/Addon.php:65
@@ -1735,6 +1709,32 @@ msgid ""
 "target=\"_blank\">here</a>."
 msgstr ""
 
+#: src/wp-migrate-db-pro/class/SiteMigration/Plugin/PluginManager.php:80
+#, php-format
+msgid ""
+"It looks like you're trying to migrate a multisite to a single site, which "
+"isn't currently supported by this plugin. To continue, <a href=\"%s\" target="
+"\"_blank\">convert the destination to a multisite</a> and try again."
+msgstr ""
+
+#: src/wp-migrate-db-pro/class/SiteMigration/Plugin/PluginManager.php:97
+#, php-format
+msgid ""
+"It looks like you're trying to migrate a single site to a multisite, which "
+"isn't currently supported by this plugin. To continue, <a href=\"%s\" target="
+"\"_blank\">convert the destination to a single site</a> and try again."
+msgstr ""
+
+#: src/wp-migrate-db-pro/class/SiteMigration/Settings/Settings.php:102
+#, php-format
+msgid ""
+"We've detected that <code>WP_HTTP_BLOCK_EXTERNAL</code> is enabled, which "
+"will prevent WP Engine Site Migration from functioning properly. You should "
+"either disable <code>WP_HTTP_BLOCK_EXTERNAL</code> or add any sites that "
+"you'd like to migrate to <code>WP_ACCESSIBLE_HOSTS</code>. More information "
+"on this can be found <a href=\"%s\" target=\"_blank\">here</a>."
+msgstr ""
+
 #: src/wp-migrate-db-pro/class/Common/Alerts/Email/EmailAlert.php:143
 msgid "🚀 Site migration started"
 msgstr ""
@@ -1771,7 +1771,7 @@ msgstr ""
 msgid "Could not validate $_POST data."
 msgstr ""
 
-#: src/wp-migrate-db-pro/class/Common/Transfers/Files/PluginHelper.php:274
+#: src/wp-migrate-db-pro/class/Common/Transfers/Files/PluginHelper.php:279
 msgid "Saving queue status to remote failed."
 msgstr ""
 

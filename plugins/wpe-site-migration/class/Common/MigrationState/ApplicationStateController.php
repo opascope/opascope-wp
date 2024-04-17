@@ -52,7 +52,7 @@ class ApplicationStateController
         ]);
 
         $this->rest_API_server->registerRestRoute('/state/(?P<migration_id>[\S]+)', [
-            'methods'  => 'PUT',
+            'methods'  => 'POST',
             'callback' => [$this, 'update_state'],
             'args'     => [
                 'state' => [

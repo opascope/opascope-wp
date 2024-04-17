@@ -3,7 +3,7 @@
 		<section class="main">
 			<div class="container">
 				<div class="row align-items-start">
-					<div class="col-md-7">
+					<div class="col-md-7 pd-1">
 						<h1>We don’t sell a packaged solution — we sell growth.</h1>
 						<div class="button">
 							<a href="<?php bloginfo('url'); ?>/book-intro-call">Book Intro Call</a>

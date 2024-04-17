@@ -892,6 +892,7 @@ class Table
         $points             = array();
         $field_set          = array();
         $this->primary_keys = array();
+        $this->first_select = true;
         $use_primary_keys   = true;
 
         foreach ($table_structure as $struct) {
@@ -913,14 +914,14 @@ class Table
                 apply_filters('wpmdb_process_column_as_bit', false, $struct)
             ) {
                 $bits[strtolower($struct->Field)] = '1';
-            } elseif ( 0 === strpos($struct->Type, 'point')) {
+            } elseif (0 === strpos($struct->Type, 'point')) {
                 $points[strtolower($struct->Field)] = '1';
             }
 
             $field_set[] = $this->table_helper->backquote($struct->Field);
 
             if ('PRI' === $struct->Key && true === $use_primary_keys) {
-                if (false === strpos($struct->Type, 'int')) {
+                if ( false !== strpos($struct->Type, 'binary')) {
                     $use_primary_keys   = false;
                     $this->primary_keys = array();
                     continue;
@@ -945,7 +946,7 @@ class Table
             'bins'      => $bins,
             'bits'      => $bits,
             'field_set' => $field_set,
-            'points'    => $points
+            'points'    => $points,
         );
     }
 
