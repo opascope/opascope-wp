@@ -597,7 +597,7 @@ a
 		.row
 			gap: 25px
 			@media (max-width: 991px)
-				gap: intiial
+				gap: initial
 
 		.col-md-7
 			flex: 0 0 54%
@@ -605,9 +605,15 @@ a
 		.col-md-5
 			flex: 0 0 46%
 			max-width: 43.7%
+			@media (max-width: 767px)
+				max-width: 100%
+				flex: 0 0 100%
 
 		.pd-1
 			padding-right: 20px
+			@media (max-width: 767px)
+				max-width: 100%
+				flex: 0 0 100%
 
 		h1
 			font-size: 56px
@@ -888,9 +894,9 @@ a
 				font-weight: 700
 				line-height: 35.964px
 
-			.g-recaptcha > div,
-			.g-recaptcha iframe
-				width: 276px !important
+.g-recaptcha > div,
+.g-recaptcha iframe
+	width: 100% !important
 
 .Privacy-text p, .book-List li
 	font-size: 22px

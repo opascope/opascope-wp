@@ -672,7 +672,7 @@ a {
 }
 @media (max-width: 991px) {
   .services .main .row {
-    gap: intiial;
+    gap: initial;
   }
 }
 .services .main .col-md-7 {
@@ -682,8 +682,20 @@ a {
   flex: 0 0 46%;
   max-width: 43.7%;
 }
+@media (max-width: 767px) {
+  .services .main .col-md-5 {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}
 .services .main .pd-1 {
   padding-right: 20px;
+}
+@media (max-width: 767px) {
+  .services .main .pd-1 {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
 }
 .services .main h1 {
   font-size: 56px;
@@ -1015,10 +1027,11 @@ a {
     font-weight: 700;
     line-height: 35.964px;
   }
-  .book-intro-call .main .g-recaptcha > div,
-  .book-intro-call .main .g-recaptcha iframe {
-    width: 276px !important;
-  }
+}
+
+.g-recaptcha > div,
+.g-recaptcha iframe {
+  width: 100% !important;
 }
 
 .Privacy-text p, .book-List li {
