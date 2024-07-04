@@ -3,7 +3,6 @@
 namespace DeliciousBrains\WPMDB\Common\Transfers\Files;
 
 use DeliciousBrains\WPMDB\Common\FullSite\FullSiteExport;
-use DeliciousBrains\WPMDB\Common\Http\Http;
 use DeliciousBrains\WPMDB\Common\Queue\Manager;
 use DeliciousBrains\WPMDB\Common\Transfers\Abstracts\TransferManagerAbstract;
 use WP_Error;
@@ -48,6 +47,6 @@ class TransferManager extends TransferManagerAbstract
 
         $this->queueManager->delete_data_from_queue($added_to_zip['count']);
 
-        return $this->util->process_queue_data($processed, $state_data, $added_to_zip['total_size']);
+        return ['total_transferred' => $added_to_zip['total_size']];
     }
 }

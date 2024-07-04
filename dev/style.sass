@@ -17,6 +17,15 @@ body
 	line-height: 26px
 	color: $black
 
+header
+	.logo 
+		img
+			max-width: 164px
+			position: relative
+			top: 10px
+
+			@media (max-width: 767px)
+				top: 5px
 .container
 	max-width: 1120px
 
@@ -33,7 +42,7 @@ body
 		justify-content: flex-end
 
 		li
-			padding: 0 17px
+			padding: 0 18.5px
 
 			@media (min-width: 992px) and (max-width: 1100px)
 				padding: 0 14px
@@ -68,6 +77,47 @@ body
 					&:hover
 						background: #fff
 						color: $black
+
+@media (min-width: 1025px)
+	.menu-header-menu-container ul li
+		.sub-menu
+			display: none
+			position: absolute
+			left: 17px
+			top: 30px
+			width: 180px
+			background: #11151C
+			padding-top: 15px
+			padding-bottom: 15px
+
+	.menu-item-has-children
+		position: relative
+		&:hover 
+			.sub-menu
+				display: block
+
+	.menu-header-menu-container .sub-menu li
+		padding-top: 0px
+		padding-bottom: 0px
+
+		> a
+			color: #fff
+			font-size: 14px
+			font-weight: normal
+			border: none
+
+			&:hover
+				color: #fff
+				opacity: 0.8
+
+@media (max-width: 1024px)
+	.menu ul .sub-menu
+		padding: 20px 20px 0 0
+
+	li
+		padding-top: 0px
+		padding-bottom: 0px
+
 
 .toggle-menu
 	float: right
@@ -172,6 +222,9 @@ body
 			padding: 15px 0px
 			width: 100%
 
+			&.menu-item-has-children
+				padding-bottom: 0
+
 			> a
 				position: relative
 				line-height: 28px
@@ -190,6 +243,16 @@ body
 					height: 2px
 					background: $grey
 					content: ""
+
+			> ul 
+				li
+					padding: 5px 0
+					> a
+						border: none
+						font-size: 16px
+
+						&:after
+							content: none
 
 			&.book
 				> a
@@ -335,8 +398,9 @@ a
 	flex: 0 0 100%
 	border: 1px dashed black
 	position: absolute
-	bottom: -40px
+	bottom: -60px
 	left: 0
+	right: 0
 	font-size: 10px
 	background: black
 	color: #fff
@@ -588,7 +652,9 @@ a
 				font-size: 18px
 
 /* Services page */
-.services
+.paidmedia,
+.searchengineoptimization,
+.content-production
 	.main
 		padding: 122px 0
 		@media (max-width: 991px)
@@ -778,6 +844,11 @@ a
 			line-height: 24px
 			color: $grey
 
+.searchengineoptimization
+	.expect
+		.subhead
+			font-size: 30px
+
 
 /* Insights Page */
 .insights
@@ -832,8 +903,6 @@ a
 
 	.post-btns
 		margin-top: 15px
-
-
 
 /* Book page */
 .book-intro-call

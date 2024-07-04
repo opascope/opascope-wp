@@ -118,47 +118,6 @@ class MediaFilesLocal
                 return $key_rules;
             }
         );
-
-        add_action('rest_api_init', [$this, 'register_rest_routes']);
-    }
-
-    public function register_rest_routes()
-    {
-        $this->rest_API_server->registerRestRoute(
-            '/mf-initiate-file-migration',
-            [
-                'methods'  => 'POST',
-                'callback' => [$this, 'ajax_initiate_media_file_migration'],
-            ]
-        );
-
-        $this->rest_API_server->registerRestRoute(
-            '/mf-get-queue-items',
-            [
-                'methods'  => 'POST',
-                'callback' => [$this, 'ajax_mf_get_queue_items'],
-            ]
-        );
-
-        $this->rest_API_server->registerRestRoute(
-            '/mf-transfer-files',
-            [
-                'methods'  => 'POST',
-                'callback' => [$this, 'ajax_mf_transfer_files'],
-            ]
-        );
-    }
-
-    /**
-     * Initiate a media files migration via ajax.
-     *
-     * @return void
-     */
-    public function ajax_initiate_media_file_migration()
-    {
-        $_POST = $this->http_helper->convert_json_body_to_post();
-
-        $this->http->end_ajax($this->initiate_media_file_migration());
     }
 
     /**
@@ -230,7 +189,6 @@ class MediaFilesLocal
 
             $file_list = $this->file_processor->get_local_files(
                 $items,
-                $abs_path,
                 $excludes,
                 $state_data['stage'],
                 $date,
@@ -269,92 +227,6 @@ class MediaFilesLocal
         }
 
         return ['queue_status' => $queue_status];
-    }
-
-    /**
-     * Get queue items in batches to populate the UI
-     *
-     * @return void
-     */
-    public function ajax_mf_get_queue_items()
-    {
-        $this->queue_helper->ajax_get_queue_items();
-    }
-
-    /**
-     * Handle media files transfer request.
-     *
-     * @return void
-     */
-    public function ajax_mf_transfer_files()
-    {
-        $_POST = $this->http_helper->convert_json_body_to_post();
-
-        // Client should check error status for files and if a 500 is encountered kill the migration stage.
-        $this->http->end_ajax($this->mf_transfer_files());
-    }
-
-    /**
-     * Transfer media files.
-     *
-     * @return mixed|WP_Error
-     */
-    public function mf_transfer_files()
-    {
-        $this->util->set_time_limit();
-
-        $key_rules = array(
-            'action'                        => 'key',
-            'stage'                         => 'string',
-            'offset'                        => 'numeric',
-            'folder'                        => 'string',
-            'migration_state_id'            => 'key',
-            'payloadSize'                   => 'numeric',
-            'stabilizePayloadSize'          => 'bool',
-            'stepDownSize'                  => 'bool',
-            'nonce'                         => 'key',
-            'retries'                       => 'numeric',
-            'forceHighPerformanceTransfers' => 'bool',
-        );
-
-        $state_data = Persistence::setPostData($key_rules, __METHOD__);
-
-        if (is_wp_error($state_data)) {
-            return $state_data;
-        }
-
-        $count = apply_filters('wpmdbmf_file_batch_size', 1000);
-        $data  = $this->queue_manager->list_jobs($count);
-
-        if (is_wp_error($data)) {
-            return $data;
-        }
-
-        if (empty($data)) {
-            do_action('wpmdbmf_file_transfer_complete');
-
-            // Clear out queue in case there is a next step
-            $this->queue_manager->truncate_queue();
-
-            return ['status' => 'complete'];
-        }
-
-        $processed = $this->transfer_util->process_file_data($data);
-
-        $remote_url = $state_data['intent'] === 'savefile' ? null : $state_data['url'];
-        $processed  = $this->transfer_manager->manage_file_transfer($remote_url, $processed, $state_data);
-
-        if (is_wp_error($processed)) {
-            return $processed;
-        }
-
-        if (isset($processed['error'], $processed['message']) && true === $processed['error']) {
-            return new WP_Error(400, $processed['message']);
-        }
-
-        return [
-            'status' => $processed,
-        ];
     }
 
     public function mf_migration_complete()

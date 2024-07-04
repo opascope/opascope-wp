@@ -104,29 +104,6 @@ class TableHelper
             return $create_table;
         }
 
-        /*
-         * Workaround database insert bug in WordPress when table has columns with both utf8mb3 and utf8mb4 charsets.
-         * @see https://core.trac.wordpress.org/ticket/59868
-         * wpdb::get_table_charset gets confused and uses utf8 if both utf8mb3 and utf8mb4 charsets are used.
-         * As utf8mb3 is effectively utf8, and utf8mb4 extends utf8, we can safely upgrade from utf8mb3 to utf8mb4.
-         */
-        if (false !== strpos($create_table, 'utf8mb4') && false !== strpos($create_table, 'utf8mb3')) {
-            $create_table = str_replace('utf8mb3', 'utf8mb4', $create_table);
-        }
-        // Same goes for when server uses utf8 instead of utf8mb3, but we have to be a little more careful.
-        if (false !== strpos($create_table, 'utf8mb4') && false !== strpos($create_table, ' utf8_')) {
-            $create_table = str_replace(' utf8_', ' utf8mb4_', $create_table);
-        }
-        if (false !== strpos($create_table, 'utf8mb4') && false !== strpos($create_table, ' utf8 ')) {
-            $create_table = str_replace(' utf8 ', ' utf8mb4 ', $create_table);
-        }
-        if (false !== strpos($create_table, 'utf8mb4') && false === strpos($create_table, 'CHARSET=utf8mb4') && false !== strpos($create_table, 'CHARSET=utf8')) {
-            $create_table = str_replace('CHARSET=utf8', 'CHARSET=utf8mb4', $create_table);
-        }
-        if (false !== strpos($create_table, 'utf8mb4') && false === strpos($create_table, 'COLLATE=utf8mb4') && false !== strpos($create_table, 'COLLATE=utf8')) {
-            $create_table = str_replace('COLLATE=utf8', 'COLLATE=utf8mb4', $create_table);
-        }
-
         if (version_compare($db_version, '5.6', '<')) {
             // Convert utf8m4_unicode_520_ci collation to utf8mb4_unicode_ci if less than mysql 5.6
             $create_table = str_replace('utf8mb4_unicode_520_ci', 'utf8mb4_unicode_ci', $create_table);
@@ -157,6 +134,10 @@ class TableHelper
             $create_table  = preg_replace('/(COLLATE\s)utf8mb4/', '$1utf8', $create_table, -1, $replace_count); // Column collation
 
             if (false === $abort_utf8mb4 || 0 === $replace_count) {
+                $create_table  = preg_replace('/(CHARACTER\sSET\s)utf8mb4/', '$1utf8', $create_table, -1, $replace_count); // Column charset
+            }
+
+            if (false === $abort_utf8mb4 || 0 === $replace_count) {
                 $create_table = preg_replace('/(COLLATE=)utf8mb4/', '$1utf8', $create_table, -1, $replace_count); // Table collation
             }
 
@@ -168,6 +149,12 @@ class TableHelper
                 $return = sprintf(__('The source site supports utf8mb4 data but the target does not, aborting migration to avoid possible data corruption. Please see %1$s for more information. (#148)', 'wp-migrate-db-pro'), sprintf('<a href="%s">%s</a>', 'https://deliciousbrains.com/wp-migrate-db-pro/doc/source-site-supports-utf8mb4/?utm_campaign=error%2Bmessages&utm_source=MDB%2BPaid&utm_medium=insideplugin', __('our documentation', 'wp-migrate-db-pro')));
                 return new WP_Error('wpmdb_error', $return);
             }
+        }
+
+        // Make sure table is safely using utf8mb4.
+        if (false !== strpos($create_table, 'utf8mb4')) {
+            $create_table = static::update_table_to_consistently_use_utf8mb4($create_table);
+            $create_table = static::update_table_to_fix_index_field_lengths($create_table);
         }
 
         return $create_table;
@@ -235,6 +222,7 @@ class TableHelper
      * @param string $scope         Optional type of table to match against, default is 'table'.
      * @param string $new_prefix    Optional new prefix already added to $given_table.
      * @param int    $blog_id       Optional Only used with 'blog' scope to test against a specific subsite's tables other than current for $wpdb.
+     * @param string $source_prefix Optional prefix from source site already added to $given_table.
      *
      * @return boolean
      */
@@ -309,5 +297,119 @@ class TableHelper
         }
 
         return $table;
+    }
+
+    /*
+     * Workaround database insert bug in WordPress when table has columns with both utf8mb3 and utf8mb4 charsets.
+     * @see https://core.trac.wordpress.org/ticket/59868
+     * wpdb::get_table_charset gets confused and uses utf8 if both utf8mb3 and utf8mb4 charsets are used.
+     * As utf8mb3 is effectively utf8, and utf8mb4 extends utf8, we can safely upgrade from utf8mb3 to utf8mb4.
+     *
+     * @param string $create_table
+     *
+     * @return string
+     */
+    public static function update_table_to_consistently_use_utf8mb4($create_table)
+    {
+        if (false !== strpos($create_table, 'utf8mb4') && false !== strpos($create_table, 'utf8mb3')) {
+            $create_table = str_replace('utf8mb3', 'utf8mb4', $create_table);
+        }
+
+        // Same goes for when server uses utf8 instead of utf8mb3, but we have to be a little more careful.
+        if (false !== strpos($create_table, 'utf8mb4') && false !== strpos($create_table, ' utf8_')) {
+            $create_table = str_replace(' utf8_', ' utf8mb4_', $create_table);
+        }
+
+        if (false !== strpos($create_table, 'utf8mb4') && false !== strpos($create_table, ' utf8 ')) {
+            $create_table = str_replace(' utf8 ', ' utf8mb4 ', $create_table);
+        }
+
+        if (
+            false !== strpos($create_table, 'utf8mb4') &&
+            false === strpos($create_table, 'CHARSET=utf8mb4') &&
+            false !== strpos($create_table, 'CHARSET=utf8')
+        ) {
+            $create_table = str_replace('CHARSET=utf8', 'CHARSET=utf8mb4', $create_table);
+        }
+
+        if (
+            false !== strpos($create_table, 'utf8mb4') &&
+            false === strpos($create_table, 'COLLATE=utf8mb4') &&
+            false !== strpos($create_table, 'COLLATE=utf8')
+        ) {
+            $create_table = str_replace('COLLATE=utf8', 'COLLATE=utf8mb4', $create_table);
+        }
+
+        return $create_table;
+    }
+
+    /**
+     * Update index keys to ensure utf8mb4 fields do not blow out the allowed key length.
+     *
+     * @param string $create_table
+     *
+     * @return string
+     */
+    public static function update_table_to_fix_index_field_lengths($create_table)
+    {
+        // Find field name and varchar lengths for fields using utf8mb4.
+        preg_match_all(
+            '/^.*`(?P<fields>\w+)`\svarchar\((?P<lengths>\d+)\).*utf8mb4.*$/im',
+            $create_table,
+            $field_matches
+        );
+
+        if ( ! empty($field_matches['fields']) && ! empty($field_matches['lengths'])) {
+            foreach ($field_matches['fields'] as $idx => $field) {
+                // Find index use without length limiter of 191 or less when field has length greater than 191.
+                if (191 < (int)$field_matches['lengths'][$idx]) {
+                    // Grab (unique) index key names, index field specs, and the key length limits for the field we're interested in.
+                    preg_match_all(
+                        '/^.*(?|(?P<key_names>PRIMARY)\sKEY.*|KEY.*`(?P<key_names>\w+)`.*)(?P<specs>\(.*`' . $field . '`(?|\((?P<lengths>\d+)\)|).*\)).*$/im',
+                        $create_table,
+                        $key_matches
+                    );
+
+                    if ( ! empty($key_matches['key_names']) && ! empty($key_matches['specs']) && ! empty($key_matches['lengths'])) {
+                        foreach ($key_matches['key_names'] as $key_idx => $key_name) {
+                            $spec = false;
+
+                            // We have to update the spec, and then the index key line with that updated spec,
+                            // because the field may be used as the key name, so simple search could update too much.
+                            if (empty($key_matches['lengths'][$key_idx])) {
+                                // Length not set, we need to add it.
+                                $spec = str_replace(
+                                    '`' . $field . '`',
+                                    '`' . $field . '`(191)',
+                                    $key_matches['specs'][$key_idx]
+                                );
+                            } elseif (191 < (int)$key_matches['lengths'][$key_idx]) {
+                                // Length too big, reduce it.
+                                $spec = str_replace(
+                                    '`' . $field . '`(' . $key_matches['lengths'][$key_idx] . ')',
+                                    '`' . $field . '`(191)',
+                                    $key_matches['specs'][$key_idx]
+                                );
+                            }
+
+                            if (false !== $spec) {
+                                // We'll need to find and replace the index key line.
+                                $search = $key_matches[0][$key_idx];
+
+                                // Update spec within the index key line to use for replace.
+                                $replace = str_replace($key_matches['specs'][$key_idx], $spec, $search);
+
+                                // Update the index key line within the create table statement.
+                                $create_table = str_replace($search, $replace, $create_table);
+                            }
+                        }
+                    }
+
+                    unset($key_matches);
+                }
+            }
+        }
+
+        return $create_table;
     }
 }

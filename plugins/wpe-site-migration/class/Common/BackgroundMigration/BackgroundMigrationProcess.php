@@ -237,7 +237,7 @@ abstract class BackgroundMigrationProcess extends WP_Background_Process
         }
 
         // Just in case.
-        if (true === $item['initialized']) {
+        if ( ! empty($item['initialized'])) {
             return $item;
         }
 
@@ -250,7 +250,7 @@ abstract class BackgroundMigrationProcess extends WP_Background_Process
             $stage_num++;
 
             // Don't re-initialize if later stage didn't complete and needs another go-around.
-            if (true === $stage['initialized']) {
+            if ( ! empty($stage['initialized'])) {
                 continue;
             }
 
@@ -259,11 +259,19 @@ abstract class BackgroundMigrationProcess extends WP_Background_Process
                 return $item;
             }
 
+            // Useful for debugging and performance analysis.
+            $stage['initialization_started_at'] = empty($stage['initialization_started_at']) ? time() : $stage['initialization_started_at'];
+
             $initialized_bytes = $stage['total']['target_bytes'];
             $stage             = $this->initialize_stage($stage);
 
             // Update target_bytes.
             $item['total']['target_bytes'] += $stage['total']['target_bytes'] - $initialized_bytes;
+
+            // Useful for debugging and performance analysis.
+            if ( ! empty($stage['initialized'])) {
+                $stage['initialization_finished_at'] = time();
+            }
 
             // We did something, let the UI see how much.
             break;
@@ -271,7 +279,8 @@ abstract class BackgroundMigrationProcess extends WP_Background_Process
 
         // If last stage initialized, mark initialization as complete.
         if ($stage_num >= $num_stages && $stage['initialized']) {
-            $item['initialized'] = true;
+            $item['initialized']                = true;
+            $item['initialization_finished_at'] = time();
         }
 
         return $item;
@@ -418,6 +427,9 @@ abstract class BackgroundMigrationProcess extends WP_Background_Process
                 continue;
             }
 
+            // Useful for debugging and performance analysis.
+            $stage['processing_started_at'] = empty($stage['processing_started_at']) ? time() : $stage['processing_started_at'];
+
             // Process stage for a while and hopefully set processed if it is completed.
             $processed_bytes = $stage['total']['processed_bytes'];
             $stage           = $this->process_stage($stage, $item);
@@ -425,6 +437,11 @@ abstract class BackgroundMigrationProcess extends WP_Background_Process
             // Update processed bytes in grand total.
             if ($processed_bytes < $stage['total']['processed_bytes']) {
                 $item['total']['processed_bytes'] += $stage['total']['processed_bytes'] - $processed_bytes;
+            }
+
+            // Useful for debugging and performance analysis.
+            if ( ! empty($stage['processed'])) {
+                $stage['processing_finished_at'] = time();
             }
 
             // We've done some processing, let parent decide whether we should do some more.
@@ -571,6 +588,8 @@ abstract class BackgroundMigrationProcess extends WP_Background_Process
         parent::cancelled();
 
         WPMDBDI::getInstance()->get(MigrationManager::class)->cancel_migration(['action' => 'cancel']);
+
+        do_action('wpmdb_migration_canceled');
     }
 
     /**
@@ -705,5 +724,15 @@ abstract class BackgroundMigrationProcess extends WP_Background_Process
     public function should_continue()
     {
         return ! ($this->time_exceeded() || $this->memory_exceeded() || $this->is_paused() || $this->is_cancelled());
+    }
+
+    /**
+     * Get the string used to identify this type of background process.
+     *
+     * @return string
+     */
+    public function get_identifier()
+    {
+        return $this->identifier;
     }
 }

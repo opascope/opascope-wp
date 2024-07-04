@@ -10,6 +10,17 @@ body {
   color: #11151C;
 }
 
+header .logo img {
+  max-width: 164px;
+  position: relative;
+  top: 10px;
+}
+@media (max-width: 767px) {
+  header .logo img {
+    top: 5px;
+  }
+}
+
 .container {
   max-width: 1120px;
 }
@@ -28,7 +39,7 @@ body {
   justify-content: flex-end;
 }
 .menu ul li {
-  padding: 0 17px;
+  padding: 0 18.5px;
 }
 @media (min-width: 992px) and (max-width: 1100px) {
   .menu ul li {
@@ -70,6 +81,47 @@ body {
   color: #11151C;
 }
 
+@media (min-width: 1025px) {
+  .menu-header-menu-container ul li .sub-menu {
+    display: none;
+    position: absolute;
+    left: 17px;
+    top: 30px;
+    width: 180px;
+    background: #11151C;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .menu-item-has-children {
+    position: relative;
+  }
+  .menu-item-has-children:hover .sub-menu {
+    display: block;
+  }
+  .menu-header-menu-container .sub-menu li {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .menu-header-menu-container .sub-menu li > a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    border: none;
+  }
+  .menu-header-menu-container .sub-menu li > a:hover {
+    color: #fff;
+    opacity: 0.8;
+  }
+}
+@media (max-width: 1024px) {
+  .menu ul .sub-menu {
+    padding: 20px 20px 0 0;
+  }
+  li {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
 .toggle-menu {
   float: right;
 }
@@ -171,6 +223,9 @@ body {
   padding: 15px 0px;
   width: 100%;
 }
+.mobile-menu ul li.menu-item-has-children {
+  padding-bottom: 0;
+}
 .mobile-menu ul li > a {
   position: relative;
   line-height: 28px;
@@ -189,6 +244,16 @@ body {
   height: 2px;
   background: #6E7074;
   content: "";
+}
+.mobile-menu ul li > ul li {
+  padding: 5px 0;
+}
+.mobile-menu ul li > ul li > a {
+  border: none;
+  font-size: 16px;
+}
+.mobile-menu ul li > ul li > a:after {
+  content: none;
 }
 .mobile-menu ul li.book > a {
   padding: 12.5px 23px;
@@ -351,8 +416,9 @@ a {
   flex: 0 0 100%;
   border: 1px dashed black;
   position: absolute;
-  bottom: -40px;
+  bottom: -60px;
   left: 0;
+  right: 0;
   font-size: 10px;
   background: black;
   color: #fff;
@@ -659,57 +725,81 @@ a {
 }
 
 /* Services page */
-.services .main {
+.paidmedia .main,
+.searchengineoptimization .main,
+.content-production .main {
   padding: 122px 0;
 }
 @media (max-width: 991px) {
-  .services .main {
+  .paidmedia .main,
+  .searchengineoptimization .main,
+  .content-production .main {
     padding: 50px 0;
   }
 }
-.services .main .row {
+.paidmedia .main .row,
+.searchengineoptimization .main .row,
+.content-production .main .row {
   gap: 25px;
 }
 @media (max-width: 991px) {
-  .services .main .row {
+  .paidmedia .main .row,
+  .searchengineoptimization .main .row,
+  .content-production .main .row {
     gap: initial;
   }
 }
-.services .main .col-md-7 {
+.paidmedia .main .col-md-7,
+.searchengineoptimization .main .col-md-7,
+.content-production .main .col-md-7 {
   flex: 0 0 54%;
 }
-.services .main .col-md-5 {
+.paidmedia .main .col-md-5,
+.searchengineoptimization .main .col-md-5,
+.content-production .main .col-md-5 {
   flex: 0 0 46%;
   max-width: 43.7%;
 }
 @media (max-width: 767px) {
-  .services .main .col-md-5 {
+  .paidmedia .main .col-md-5,
+  .searchengineoptimization .main .col-md-5,
+  .content-production .main .col-md-5 {
     max-width: 100%;
     flex: 0 0 100%;
   }
 }
-.services .main .pd-1 {
+.paidmedia .main .pd-1,
+.searchengineoptimization .main .pd-1,
+.content-production .main .pd-1 {
   padding-right: 20px;
 }
 @media (max-width: 767px) {
-  .services .main .pd-1 {
+  .paidmedia .main .pd-1,
+  .searchengineoptimization .main .pd-1,
+  .content-production .main .pd-1 {
     max-width: 100%;
     flex: 0 0 100%;
   }
 }
-.services .main h1 {
+.paidmedia .main h1,
+.searchengineoptimization .main h1,
+.content-production .main h1 {
   font-size: 56px;
   font-weight: 700;
   line-height: 64px;
   margin: 0 0 50px 0;
 }
 @media (max-width: 991px) {
-  .services .main h1 {
+  .paidmedia .main h1,
+  .searchengineoptimization .main h1,
+  .content-production .main h1 {
     font-size: 45px;
     line-height: 55px;
   }
 }
-.services .main .inner {
+.paidmedia .main .inner,
+.searchengineoptimization .main .inner,
+.content-production .main .inner {
   background: #11151C;
   color: #fff;
   padding: 69px 84px;
@@ -717,31 +807,43 @@ a {
   line-height: 24px;
 }
 @media (max-width: 991px) {
-  .services .main .inner {
+  .paidmedia .main .inner,
+  .searchengineoptimization .main .inner,
+  .content-production .main .inner {
     margin-top: 25px;
     padding: 30px;
   }
 }
-.services .main .auth {
+.paidmedia .main .auth,
+.searchengineoptimization .main .auth,
+.content-production .main .auth {
   padding-top: 15px;
   font-weight: 700;
 }
 @media (max-width: 991px) {
-  .services .main .auth {
+  .paidmedia .main .auth,
+  .searchengineoptimization .main .auth,
+  .content-production .main .auth {
     padding-top: 50px;
   }
 }
-.services .services-section {
+.paidmedia .services-section,
+.searchengineoptimization .services-section,
+.content-production .services-section {
   background: #11151C;
   padding: 100px 0;
   color: #fff;
 }
 @media (max-width: 991px) {
-  .services .services-section {
+  .paidmedia .services-section,
+  .searchengineoptimization .services-section,
+  .content-production .services-section {
     padding: 50px 0;
   }
 }
-.services .services-section .head {
+.paidmedia .services-section .head,
+.searchengineoptimization .services-section .head,
+.content-production .services-section .head {
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
@@ -749,37 +851,53 @@ a {
   text-transform: uppercase;
   margin: 0 0 32px;
 }
-.services .services-section .subhead {
+.paidmedia .services-section .subhead,
+.searchengineoptimization .services-section .subhead,
+.content-production .services-section .subhead {
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
   margin: 0 0 20px;
 }
 @media (max-width: 991px) {
-  .services .services-section .subhead {
+  .paidmedia .services-section .subhead,
+  .searchengineoptimization .services-section .subhead,
+  .content-production .services-section .subhead {
     font-size: 20px;
     padding: 0;
     margin: 0 0 10px;
   }
 }
-.services .services-section .inner {
+.paidmedia .services-section .inner,
+.searchengineoptimization .services-section .inner,
+.content-production .services-section .inner {
   padding: 33px 23px;
 }
-.services .services-section .row {
+.paidmedia .services-section .row,
+.searchengineoptimization .services-section .row,
+.content-production .services-section .row {
   margin: 0;
 }
-.services .services-section .row > div {
+.paidmedia .services-section .row > div,
+.searchengineoptimization .services-section .row > div,
+.content-production .services-section .row > div {
   border: 1px solid #fff;
 }
-.services .expect {
+.paidmedia .expect,
+.searchengineoptimization .expect,
+.content-production .expect {
   padding: 80px 0;
 }
 @media (max-width: 991px) {
-  .services .expect {
+  .paidmedia .expect,
+  .searchengineoptimization .expect,
+  .content-production .expect {
     padding: 50px 0;
   }
 }
-.services .expect .head-sm {
+.paidmedia .expect .head-sm,
+.searchengineoptimization .expect .head-sm,
+.content-production .expect .head-sm {
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
@@ -788,7 +906,9 @@ a {
   margin: 0 0 17px;
   color: #6E7074;
 }
-.services .expect .head {
+.paidmedia .expect .head,
+.searchengineoptimization .expect .head,
+.content-production .expect .head {
   font-size: 32px;
   font-weight: 700;
   line-height: 51.53px;
@@ -797,60 +917,84 @@ a {
   margin: 0 0 53px;
 }
 @media (max-width: 991px) {
-  .services .expect .head {
+  .paidmedia .expect .head,
+  .searchengineoptimization .expect .head,
+  .content-production .expect .head {
     margin: 0 0 24px;
     line-height: 45px;
   }
 }
-.services .expect .num {
+.paidmedia .expect .num,
+.searchengineoptimization .expect .num,
+.content-production .expect .num {
   font-size: 66.065px;
   font-weight: 700;
   line-height: 85.884px;
   margin: 0 0 37px;
 }
 @media (max-width: 991px) {
-  .services .expect .num {
+  .paidmedia .expect .num,
+  .searchengineoptimization .expect .num,
+  .content-production .expect .num {
     font-size: 16px;
     line-height: 24px;
     margin: 0 0 15px;
   }
 }
-.services .expect .subhead {
+.paidmedia .expect .subhead,
+.searchengineoptimization .expect .subhead,
+.content-production .expect .subhead {
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
   text-transform: capitalize;
   margin: 0 0 19px;
 }
-.services .expect .text {
+.paidmedia .expect .text,
+.searchengineoptimization .expect .text,
+.content-production .expect .text {
   color: #6E7074;
 }
-.services .expect .text a {
+.paidmedia .expect .text a,
+.searchengineoptimization .expect .text a,
+.content-production .expect .text a {
   color: #6E7074;
   text-decoration: underline;
 }
-.services .expect .row {
+.paidmedia .expect .row,
+.searchengineoptimization .expect .row,
+.content-production .expect .row {
   gap: 50px;
 }
 @media (max-width: 991px) {
-  .services .expect .row {
+  .paidmedia .expect .row,
+  .searchengineoptimization .expect .row,
+  .content-production .expect .row {
     gap: 25px;
   }
 }
 @media (max-width: 991px) {
-  .services .expect .row .col {
+  .paidmedia .expect .row .col,
+  .searchengineoptimization .expect .row .col,
+  .content-production .expect .row .col {
     flex-basis: 100%;
   }
 }
-.services .drive {
+.paidmedia .drive,
+.searchengineoptimization .drive,
+.content-production .drive {
   padding: 51px 0 80px;
 }
 @media (max-width: 991px) {
-  .services .drive {
+  .paidmedia .drive,
+  .searchengineoptimization .drive,
+  .content-production .drive {
     padding: 20px 0 50px;
   }
 }
-.services .drive .head-sm {
+.paidmedia .drive .head-sm,
+.searchengineoptimization .drive .head-sm,
+.content-production .drive .head-sm {
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
@@ -859,40 +1003,58 @@ a {
   margin: 0 0 17px;
   color: #6E7074;
 }
-.services .drive .head {
+.paidmedia .drive .head,
+.searchengineoptimization .drive .head,
+.content-production .drive .head {
   font-size: 32px;
   font-weight: 700;
   line-height: 40px;
   padding-right: 80px;
 }
 @media (max-width: 991px) {
-  .services .drive .head {
+  .paidmedia .drive .head,
+  .searchengineoptimization .drive .head,
+  .content-production .drive .head {
     font-size: 26px;
     line-height: 35px;
     margin: 0 0 20px;
   }
 }
-.services .drive .text {
+.paidmedia .drive .text,
+.searchengineoptimization .drive .text,
+.content-production .drive .text {
   color: #6E7074;
 }
-.services .quote {
+.paidmedia .quote,
+.searchengineoptimization .quote,
+.content-production .quote {
   background: #F9F9F9;
   padding: 160px 0;
   font-size: 24px;
 }
 @media (max-width: 991px) {
-  .services .quote {
+  .paidmedia .quote,
+  .searchengineoptimization .quote,
+  .content-production .quote {
     padding: 50px 0;
     font-size: 20px;
   }
 }
-.services .quote .text {
+.paidmedia .quote .text,
+.searchengineoptimization .quote .text,
+.content-production .quote .text {
   line-height: 32px;
   margin: 0 0 30px;
 }
-.services .quote .auth {
+.paidmedia .quote .auth,
+.searchengineoptimization .quote .auth,
+.content-production .quote .auth {
   line-height: 24px;
   color: #6E7074;
+}
+
+.searchengineoptimization .expect .subhead {
+  font-size: 30px;
 }
 
 /* Insights Page */

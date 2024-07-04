@@ -123,8 +123,6 @@ abstract class TransferManagerAbstract
             }
         }
 
-        $results = reset($results);
-
         if (isset($results['total_transferred'])) {
             $progress['processed_bytes'] += $results['total_transferred'];
         }

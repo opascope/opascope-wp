@@ -659,7 +659,7 @@ class Util
     {
         static $absolute_path;
 
-        if (!empty($absolute_path)) {
+        if ( ! empty($absolute_path)) {
             return $absolute_path;
         }
 
@@ -673,6 +673,9 @@ class Util
                 $absolute_path = rtrim(substr($absolute_path, 0, -strlen($difference)), '\\/');
             }
         }
+
+        // Set static var with trailing slashed version.
+        $absolute_path = trailingslashit($absolute_path);
 
         return $absolute_path;
     }
@@ -1435,29 +1438,28 @@ class Util
      * Checks if a file should be excluded
      *
      * @param string $file
-     * @param array $excludes
+     * @param array  $excludes
+     * @param string $stage_path
      *
      * @return bool
      */
-    public static function is_excluded_file($file, $excludes = [])
+    public static function is_excluded_file($file, $excludes = [], $stage_path = '')
     {
         if ( empty($file) || (! is_file($file) && !is_dir($file))) {
             return true;
         }
 
-        $path = realpath($file);
-
-        // If the path is not a valid string, the file should get excluded.
-        if (false === $path) {
+        // If file is not a valid string, the file should get excluded.
+        if (false === $file) {
             return true;
         }
 
-        // If the path is a directory, make sure it has a trialing slash.
-        if (is_dir($path)) {
-            $path = trailingslashit($path);
+        // If file is a directory, make sure it has a trialing slash.
+        if (is_dir($file)) {
+            $file = trailingslashit($file);
         }
 
-        return Excludes::shouldExcludeFile($path, $excludes);
+        return Excludes::shouldExcludeFile($file, $excludes, $stage_path);
 
     }
 

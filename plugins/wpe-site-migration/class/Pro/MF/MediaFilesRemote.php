@@ -20,7 +20,6 @@ class MediaFilesRemote {
 		// Remote AJAX handlers
 		add_action( 'wp_ajax_nopriv_wpmdbmf_respond_to_get_remote_media', array( $this, 'respond_to_get_remote_media' ) );
 
-        add_action('wp_ajax_nopriv_wpmdbmf_respond_to_save_queue_status', array($this, 'ajax_mf_respond_to_save_queue_status'));
         add_action('wp_ajax_nopriv_wpmdbmf_transfers_send_file', array($this, 'ajax_mf_respond_to_request_files',));
         add_action('wp_ajax_nopriv_wpmdbmf_transfers_receive_file', array($this, 'ajax_mf_respond_to_post_file'));
 	}
@@ -31,10 +30,6 @@ class MediaFilesRemote {
     public function respond_to_get_remote_media()
     {
         $this->plugin_helper->respond_to_get_remote_folders('media_files');
-    }
-
-    public function ajax_mf_respond_to_save_queue_status(){
-        $this->plugin_helper->respond_to_save_queue_status();
     }
 
     public function ajax_mf_respond_to_request_files(){

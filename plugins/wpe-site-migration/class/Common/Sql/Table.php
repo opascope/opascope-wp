@@ -216,7 +216,7 @@ class Table
 
         $sql = $wpdb->prepare(
             "SELECT TABLE_NAME AS 'table',
-			ROUND( ( data_length + index_length ) / 1024, 0 ) AS 'size'
+			ROUND( data_length / 1024, 0 ) AS 'size'
 			FROM INFORMATION_SCHEMA.TABLES
 			WHERE table_schema = %s
 			AND table_type = %s
@@ -428,6 +428,7 @@ class Table
 
         $form_data           = $this->form_data->getFormData();
         $keep_active_plugins = $form_data['keep_active_plugins'] === '1';
+        $keep_blog_public    = $form_data['keep_blog_public'] === '1';
         $sql                 = '';
         $sitemeta_table_name = '';
         $options_table_names = array();
@@ -466,7 +467,6 @@ class Table
             WPMDB_SCHEMA_VERSION_OPTION,
             'upload_path',
             'upload_url_path',
-            'blog_public',
             WPMDB_MIGRATION_OPTIONS_OPTION,
             WPMDB_MIGRATION_STATE_OPTION,
             WPMDB_REMOTE_RESPONSE_OPTION,
@@ -483,6 +483,9 @@ class Table
             $preserved_sitemeta_options[] = 'active_sitewide_plugins';
         }
 
+        if ($keep_blog_public) {
+            $preserved_options[] = 'blog_public';
+        }
         if (is_multisite()) {
             // Get preserved data in site meta table if being replaced.
             if (!empty($sitemeta_table_name)) {
@@ -578,19 +581,25 @@ class Table
     }
 
     /**
-     * Preserves the active_plugins option.
+     * Preserves the selected preserved options.
      *
      * @param array $preserved_options
      *
      * @return array
      */
-    function preserve_active_plugins_option($preserved_options)
+    function preserve_options($preserved_options)
     {
         $form_data           = $this->form_data->getFormData();
         $keep_active_plugins = $form_data['keep_active_plugins'] === '1';
 
         if (empty($keep_active_plugins)) {
             $preserved_options[] = 'active_plugins';
+        }
+
+        $keep_blog_public = $form_data['keep_blog_public'] === '1';
+
+        if (empty($keep_blog_public)) {
+            $preserved_options[] = 'blog_public';
         }
 
         return $preserved_options;
@@ -1550,29 +1559,85 @@ class Table
                 $col_name = 'meta_key';
             }
 
-            $where .= " AND `{$col_name}` != '" . WPMDB_SETTINGS_OPTION . "'";
-            $where .= " AND `{$col_name}` != '" . WPMDB_SAVED_PROFILES_OPTION . "'";
-            $where .= " AND `{$col_name}` != '" . WPMDB_RECENT_MIGRATIONS_OPTION . "'";
-            $where .= " AND `{$col_name}` != '" . WPMDB_REMOTE_MIGRATION_STATE_OPTION . "'";
-            $where .= " AND `{$col_name}` != '" . WPMDB_MIGRATION_STATE_OPTION . "'";
-            $where .= " AND `{$col_name}` != '" . WPMDB_MIGRATION_OPTIONS_OPTION . "'";
-            $where .= " AND `{$col_name}` != '" . WPMDB_REMOTE_RESPONSE_OPTION . "'";
-            $where .= " AND `{$col_name}` != '" . WPMDB_ERROR_LOG_OPTION . "'";
-            //TODO: This option is not used anywhere, maybe we can remove it from this list?
-            $where .= " AND `{$col_name}` != 'wpmdb_file_ignores'";
-            $where .= " AND `{$col_name}` != '" . WPMDB_SCHEMA_VERSION_OPTION . "'";
-            $where .= " AND `{$col_name}` != '" . WPMDB_USAGE_OPTION . "'";
-            $where .= " AND `{$col_name}` NOT LIKE '" . WPMDB_OPTION_PREFIX . "state_%'";
-            $where .= " AND `{$col_name}` NOT LIKE '" . WPMDB_OPTION_PREFIX . "folder_transfers_%'";
-            $where .= " AND `{$col_name}` NOT LIKE '" . WPMDB_OPTION_PREFIX . "%_batch_%'";
-            $where .= " AND `{$col_name}` NOT LIKE '" . WPMDB_OPTION_PREFIX . "%_status'";
-        }
+            // Options to exclude where !=
+            $options_to_exclude = [
+                WPMDB_SETTINGS_OPTION,
+                WPMDB_SAVED_PROFILES_OPTION,
+                WPMDB_RECENT_MIGRATIONS_OPTION,
+                WPMDB_REMOTE_MIGRATION_STATE_OPTION,
+                WPMDB_MIGRATION_STATE_OPTION,
+                WPMDB_MIGRATION_OPTIONS_OPTION,
+                WPMDB_REMOTE_RESPONSE_OPTION,
+                WPMDB_ERROR_LOG_OPTION,
+                WPMDB_SCHEMA_VERSION_OPTION,
+                WPMDB_USAGE_OPTION
+            ];
+            // Add destination prefixed option excludes if prefixes differ
+            $options_to_exclude = $this->maybe_add_prefixed_items(
+                $options_to_exclude,
+                ['user_roles'],
+                $this->state_data['source_prefix'],
+                $this->state_data['destination_prefix']
+            );
+            $where .= $this->build_where_clause($col_name, $options_to_exclude, '!=');
 
+            // Options to exclude where NOT LIKE
+            $not_like_options = [
+                WPMDB_OPTION_PREFIX . 'state_%',
+                WPMDB_OPTION_PREFIX . 'folder_transfers_%',
+                WPMDB_OPTION_PREFIX . '%_batch_%',
+                WPMDB_OPTION_PREFIX . '%_status'
+            ];
+
+            $where .= $this->build_where_clause($col_name, $not_like_options, 'NOT LIKE');
+
+            // Add destination prefixed option excludes if prefixes differ
+            $not_like_options = $this->maybe_add_prefixed_items(
+                [],
+                ['%_user_roles'],
+                $this->state_data['source_prefix'],
+                $this->state_data['destination_prefix']
+            );
+
+            $include_guards = [];
+            if (!empty($not_like_options)) {
+                $include_guards = [
+                    $this->state_data['source_prefix'] . 'user_roles',
+                ];
+            }
+
+            $where .= $this->build_where_clause($col_name, $not_like_options, 'NOT LIKE', $include_guards);
+        }
         // Exclude last migration data from migrated usermeta data.
         if ('backup' != $state_data['stage'] && $this->table_helper->table_is('usermeta', $table, 'table', $prefix)) {
             $col_name = 'meta_key';
+            $meta_keys_not_equal = [BackgroundMigrationManager::LAST_MIGRATION_USERMETA_IDENTIFIER];
+            $meta_keys_not_equal = $this->maybe_add_prefixed_items(
+                $meta_keys_not_equal,
+                ['capabilities', 'user_level'],
+                $this->state_data['source_prefix'],
+                $this->state_data['destination_prefix']
+            );
+            $where .= $this->build_where_clause($col_name, $meta_keys_not_equal, '!=');
 
-            $where .= " AND `{$col_name}` != '" . BackgroundMigrationManager::LAST_MIGRATION_USERMETA_IDENTIFIER . "'";
+            $meta_keys_not_like = [];
+            // Add wildcard items to handle site_id for multisites.
+            $meta_keys_not_like = $this->maybe_add_prefixed_items(
+                $meta_keys_not_like,
+                ['%_capabilities', '%_user_level'],
+                $this->state_data['source_prefix'],
+                $this->state_data['destination_prefix']
+            );
+
+            $include_guards = [];
+            if (!empty($meta_keys_not_like)) {
+                $include_guards = [
+                    $this->state_data['source_prefix'] . 'capabilities',
+                    $this->state_data['source_prefix'] . 'user_level',
+                ];
+            }
+
+            $where .= $this->build_where_clause($col_name, $meta_keys_not_like, 'NOT LIKE', $include_guards);
         }
 
         $limit = "LIMIT {$row_start}, {$this->rows_per_segment}";
@@ -1642,6 +1707,78 @@ class Table
         $sql = apply_filters('wpmdb_rows_sql', $sql, $table);
 
         return $sql;
+    }
+
+    /**
+     * Build the portion of the select statement for excluding items
+     *
+     * @param string $col_name      The name of the column
+     * @param array  $items         An array of string values from the table
+     * @param string $operator      defaults to '='
+     * @param array  $include_items An optional array of string values to be included.
+     *                              The array must have the same count as $items.
+     *                              Each entry will be OR'd with its associated $items
+     *                              counterpart to ensure that is included.
+     *                              An empty entry in this array will skip adding the include guard
+     *                              for the associated item.
+     *                              This is only implemented when the $operator is 'NOT LIKE'.
+     *
+     * @return string
+     */
+    public function build_where_clause($col_name, $items, $operator = '=', array $include_items = [])
+    {
+        $where = '';
+        if ( ! is_string($col_name) || empty($col_name) || ! is_array($items) || empty($items) || empty($operator) || ! is_string($operator)) {
+            return $where;
+        }
+
+        $add_includes = false;
+        if ('NOT LIKE' === $operator && ! empty($include_items) && is_array($include_items) && count($items) === count($include_items)) {
+            $add_includes = true;
+        }
+
+        foreach ($items as $idx => $item) {
+            if (empty($item) || ! is_string($item)) {
+                continue;
+            }
+
+            if ($add_includes && ! empty($include_items[$idx])) {
+                $where .= " AND (`$col_name` " . $operator . " '" . $item . "' OR `$col_name` = '" . $include_items[$idx] . "')";
+            } else {
+                $where .= " AND `$col_name` " . $operator . " '" . $item . "'";
+            }
+        }
+
+        return $where;
+    }
+
+    /**
+     * Build the portion of the select statement for excluding items
+     *
+     * @param array  $items
+     * @param array  $prefixed_items
+     * @param string $source_prefix
+     * @param string $destination_prefix
+     *
+     * @return array
+     */
+    public function maybe_add_prefixed_items($items, $prefixed_items, $source_prefix, $destination_prefix)
+    {
+        if (( ! is_array($items) || ! is_array($prefixed_items)) ||
+            ( ! is_string($source_prefix) || ! is_string($destination_prefix)) ||
+            (empty($source_prefix) || empty($destination_prefix)) ||
+            $source_prefix === $destination_prefix
+        ) {
+            return $items;
+        }
+        foreach ($prefixed_items as $prefixed_item) {
+            if (empty($prefixed_item) || ! is_string($prefixed_item)) {
+                continue;
+            }
+            $items[] = $destination_prefix . $prefixed_item;
+        }
+
+        return $items;
     }
 
     /**
@@ -2053,9 +2190,10 @@ class Table
 
         $data['sig'] = $this->http_helper->create_signature($data, $state_data['key']);
 
-        $ajax_url = $this->util->ajax_url();
-        $response = $this->remote_post->post($ajax_url, $data, __FUNCTION__);
-        $response = HandleRemotePostError::handle('wpmdb-transfer-chunk-error', $response);
+        $ajax_url     = $this->util->ajax_url();
+        $response     = $this->remote_post->post($ajax_url, $data, __FUNCTION__);
+        $fallback_msg = sprintf(__('Transfer failed while migrating table %s.', 'wp-migrate-db'), $table);
+        $response     = HandleRemotePostError::handle('wpmdb_transfer_chunk_error', $response, $fallback_msg);
 
         if (is_wp_error($response)) {
             return $response;

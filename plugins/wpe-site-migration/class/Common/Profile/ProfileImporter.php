@@ -383,6 +383,7 @@ class ProfileImporter
             'exclude_spam',
             'exclude_transients',
             'keep_active_plugins',
+            'keep_blog_public',
             'compatibility_older_mysql',
             'gzip_file',
         ];
@@ -393,15 +394,18 @@ class ProfileImporter
                 'exclude_spam',
                 'exclude_transients',
                 'keep_active_plugins',
+                'keep_blog_public',
             ],
             'pull'         => [
                 'replace_guids',
                 'exclude_spam',
                 'exclude_transients',
                 'keep_active_plugins',
+                'keep_blog_public',
             ],
             'import'       => [
                 'keep_active_plugins',
+                'keep_blog_public',
             ],
             'savefile'     => [
                 'replace_guids',

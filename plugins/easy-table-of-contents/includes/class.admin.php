@@ -400,6 +400,14 @@ inlineAdminInitialView;
 			$initial_view  = get_post_meta( $post->ID, '_ez-toc-visibility_hide_by_default', true );
 			$hide_counter  = get_post_meta( $post->ID, '_ez-toc-hide_counter', true );
 
+			$position  = get_post_meta( $post->ID, '_ez-toc-position-specific', true );			
+
+			$custom_para_number  = get_post_meta( $post->ID, '_ez-toc-s_custom_para_number', true );		
+
+			$blockqoute_checkbox  = get_post_meta( $post->ID, '_ez-toc-s_blockqoute_checkbox', true );		
+
+			$custom_img_number  = get_post_meta( $post->ID, '_ez-toc-s_custom_img_number', true );
+
 			if ( ! is_array( $headings ) ) {
 
 				$headings = array();
@@ -458,6 +466,83 @@ inlineAdminInitialView;
 				</tr>
 
 				<tr>
+					<th scope="row"><?php esc_html_e( 'Position', 'easy-table-of-contents' ); ?></th>
+					<td>
+						<?php
+						ezTOC_Option::select(
+							array(
+								'id' => 'position-specific',
+								'desc' => __( 'Choose where where you want to display the table of contents.', 'easy-table-of-contents' ), 
+								'options' => array(
+									'' => __( 'Select Position', 'easy-table-of-contents' ),
+									'before' => __( 'Before first heading (default)', 'easy-table-of-contents' ),
+									'after' => __( 'After first heading', 'easy-table-of-contents' ),
+									'afterpara' => __( 'After first paragraph', 'easy-table-of-contents' ),
+									'aftercustompara' => __( 'After paragraph number', 'easy-table-of-contents' ),
+									'aftercustomimg' => __( 'After Image number', 'easy-table-of-contents' ),
+									'top' => __( 'Top', 'easy-table-of-contents' ),
+									'bottom' => __( 'Bottom', 'easy-table-of-contents' ),
+								),
+								'default' => $position,
+							),
+							$position
+						);
+						?>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?php esc_html_e( 'Select Image', 'easy-table-of-contents' ); ?></th>
+					<td>
+						<?php
+							ezTOC_Option::number(
+								array(
+									'id' => 's_custom_img_number',
+									'name' => __( 'Select Paragraph', 'easy-table-of-contents' ),
+									'desc' => __( 'Select Image after which ETOC should get display', 'easy-table-of-contents' ),
+									'type' => 'number',
+									'size' => 'small',
+									'default' => $custom_img_number,
+							),
+								$custom_img_number
+							);
+						?>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?php esc_html_e( 'Select Paragraph', 'easy-table-of-contents' ); ?></th>
+					<td>
+						<?php
+							ezTOC_Option::number(
+								array(
+									'id' => 's_custom_para_number',
+									'desc' => __( 'Select paragraph after which ETOC should get display', 'easy-table-of-contents' ),
+									'type' => 'number',
+									'size' => 'small',
+									'default' => $custom_para_number,
+							),
+								$custom_para_number
+							);
+						?>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?php esc_html_e( 'Exclude Blockqoute', 'easy-table-of-contents' ); ?></th>
+					<td>
+						<?php
+							ezTOC_Option::checkbox(
+								array(
+								'id' => 's_blockqoute_checkbox',
+								'name' => __( 'Exclude Blockqoute', 'easy-table-of-contents' ),
+								'desc' => __( 'Do not consider Paragraphs which are inside Blockqoute.', 'easy-table-of-contents' ),
+								'default' => false,
+							),
+								$blockqoute_checkbox
+							);
+						?>
+					</td>
+				</tr>
+
+				<tr>
 					<th scope="row"><?php esc_html_e( 'Appearance:', 'easy-table-of-contents' ); ?></th>
 					<td>
 						<?php
@@ -494,7 +579,6 @@ inlineAdminInitialView;
 						?>
 					</td>
 				</tr>
-
 				<tr>
 					<th scope="row"><?php esc_html_e( 'Advanced:', 'easy-table-of-contents' ); ?></th>
 					<td>
@@ -568,6 +652,9 @@ inlineAdminInitialView;
                         ?>
                     </td>
                 </tr>
+
+				<?php   do_action('eztoc_pro_single_post_settings' , $post->ID); ?>
+
 				<tr>
 					<th scope="row"><?php esc_html_e( 'Alternate Headings', 'easy-table-of-contents' ); ?></th>
 					<td>
@@ -638,6 +725,7 @@ inlineAdminInitialView;
 						?>
 					</td>
 				</tr>
+				
 				</tbody>
 			</table>
 
@@ -782,6 +870,49 @@ inlineAdminInitialView;
 
 					update_post_meta( $post_id, '_ez-toc-exclude', '' );
 				}
+
+				if ( isset( $_REQUEST['ez-toc-settings']['position-specific'] ) ) {
+				    $align_values = array(
+						'',
+						'before',
+						'after',
+						'afterpara',
+						'aftercustompara',
+						'aftercustomimg',
+						'top',
+						'bottom',
+					);
+				    $position = sanitize_text_field( $_REQUEST['ez-toc-settings']['position-specific'] );					
+				    if( in_array( $position, $align_values ) ) {
+				        update_post_meta( $post_id, '_ez-toc-position-specific', $position );
+				    }
+
+					
+					if($position == 'aftercustompara' ||  $position == 'afterpara') {
+						if (isset($_REQUEST['ez-toc-settings']['s_blockqoute_checkbox'])) {
+							$s_blockqoute_checkbox = sanitize_text_field( $_REQUEST['ez-toc-settings']['s_blockqoute_checkbox'] );					
+							update_post_meta( $post_id, '_ez-toc-s_blockqoute_checkbox', 1 );
+						}else{
+							update_post_meta( $post_id, '_ez-toc-s_blockqoute_checkbox', 0 );
+						}
+					}
+
+				    if($position == 'aftercustompara' ) {	
+						if (isset($_REQUEST['ez-toc-settings']['s_custom_para_number'])) {	
+						$s_custom_para_number = sanitize_text_field( $_REQUEST['ez-toc-settings']['s_custom_para_number'] );			
+				        update_post_meta( $post_id, '_ez-toc-s_custom_para_number', $s_custom_para_number );
+						}
+				    }
+
+				    if($position == 'aftercustomimg' ) {
+						if (isset($_REQUEST['ez-toc-settings']['s_custom_img_number'])) {	
+						$s_custom_img_number = sanitize_text_field( $_REQUEST['ez-toc-settings']['s_custom_img_number'] );					
+				        update_post_meta( $post_id, '_ez-toc-s_custom_img_number', $s_custom_img_number );
+						}
+				    }
+				}
+
+				do_action('eztoc_pro_single_post_save_settings' , $post_id , $_REQUEST);
 
 			}
 

@@ -3,9 +3,9 @@ Contributors: magazine3
 Donate link: https://tocwp.com/
 Tags: table of contents, toc
 Requires at least: 5.0
-Tested up to: 6.4
+Tested up to: 6.5
 Requires PHP: 5.6.20
-Stable tag: 2.0.63
+Stable tag: 2.0.67.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,10 +67,12 @@ Below are the attibutes we support and could be useful in configuring the table 
 [header_label="Title"] – title for the table of contents
 [display_header_label="no"] - no title for the table of contents
 [toggle_view="no"] – no toggle for the table of contents 
-[initial_view="no"] –  initially hide the table of contents 
+[initial_view="hide"] –  initially hide the table of contents 
+[initial_view="show"] –  initially show the table of contents 
 [display_counter="no"] – no counter for the table of contents
 [post_types="post,page"] – post types seperated by ,(comma)
 [post_in="1,2"] – ID's of the posts|pages seperated by ,(comma)
+[post_not_in="1,2"] – ID's of the posts|pages seperated by ,(comma)
 [device_target="desktop"] – mobile or desktop device support for the table of contents
 [view_more="5"] – 5, is the number of headings loads on first view, before user interaction (PRO)
 
@@ -128,6 +130,51 @@ Easy Table Contents is a fork of the excellent [Table of Contents Plus](https://
 4. Activate the plugin on the Plugins admin page.
 
 == Changelog ==
+
+= 2.0.67.1 19/06/2024 =
+* Bug: Plugin Does Not Save Changes in recent version 2.0.67 #771
+
+= 2.0.67 18/06/2024 =
+* New: Read Time in Minutes option for individual posts and set the translation for reading time. #763
+* New: Exclude heading by id option #768
+* New: Exclude TOC added using shortcode on specific pages/posts [post_not_in="1,2"] #758
+* Compatibility: Added compatibility with the theme StoreHub #760
+* Compatibility: Conflict issue with custom theme(user specific issue) #750
+* Compatibility: Conflict issue with DIVI theme #749
+* Bug: Highlight Heading colors are not getting customized #755
+* Bug: Sticky TOC appears on homepage without enabling option when front page is set #754
+* Bug: TOC is showing on homepage's post's excerpt Avada theme conflict #757
+* Fix: Passing null to parameter #1 ($string) of type string is deprecated #769
+* Fix: Patched Security Vulnerability disclosed by Dmitrii Ignatyev from cleantalk.org
+
+= 2.0.66.1 15/05/2024 =
+* Bug: ETOC version 2.0.66 giving **Fatal error**: Uncaught TypeError: method_exists() #752
+
+= 2.0.66 15/05/2024 =
+* Bug: Multiple warnings showing when ACF support is enabled in TOC #738
+* Bug: Conflict issue with Avada child theme. #740
+* Bug: The editing/updating of the post/page is slowing down if the plugin is activated with Block based themes #741
+* Bug: Positions & Alignment is not being changed globally #743
+* New: Option for showing promt if no headings available #654
+* New: Option or shortcode like [initial_view="Show"] for specific pages/post. #732
+* Fix: Patched Stored XSS Vulnerability disclosed by Dmitrii Ignatyev from cleantalk.org
+
+= 2.0.65 10/04/2024 =
+* TWEAK: Warning: Undefined array key "s_blockqoute_checkbox" #728
+* TWEAK: Write plugin name in subject of feedback form #731
+* New: Added to exclude heading from query loop feature #730
+
+= 2.0.64 28/03/2024 =
+* TWEAK: When clicked on copy shortcode, Page is shaking #695
+* TWEAK: Uncaught ReferenceError #693
+* TWEAK: Need to correct [initial_view='no'] shortcode in TOC #715
+* New: Exclude By Matching Url/String Option is not working for Sticky TOC #688
+* New: Added a new feature to set different positions on specific posts/pages #697
+* New: Added a new feature to Filter/Hook for Adding Custom Links Before and After Toc plugin-generated Links #718
+* Bug: Fatal Error: [ez-toc-widget-sticky] Shortcode and also Conflict with 'Internal Link Juicer (Pro)'. #704
+* Bug: Sidebar’s PHP Error Notices in TOC version 2.0.63 #716
+* Bug: Double invoice showing when sitenavigation schema option enabled #720
+* Compatibility: Tested with Wordpress 6.5 #723
 
 = 2.0.63 02/03/2024 =
 * TWEAK: Remove extra spaces added by the users to the option Exclude feature #687
@@ -202,53 +249,6 @@ Easy Table Contents is a fork of the excellent [Table of Contents Plus](https://
 * Bug: Fatal error while activating pro version #644
 * Bug: Conflict issue with the Smooth Scroll Offset option #646
 * Bug: Critical Error with READ TIME Option when Set to "0"(Zero) #648
-
-= 2.0.58 15/11/2023 =
-* New: Generate schema/SiteNavigationElement for Table of contents #592
-* New: An option to show estimated time to read the full article #594
-* New: An option of TOC not crawl the paragraphs in blockquotes #601
-* New: Add the View More feature compatibility with the Shortcode #628
-* Bug: Widget Auto-Highlight Issue After Update 2.0.56.1 #610
-* Bug: Conflict with the plugin Perfmatters's option "Enable FastClick" #612
-* Bug: Add compatibility with the theme Oliver Lohse #615
-* Bug: Sticky TOC is showing on Blog pages #617
-* Bug: Toc not showing if AMP Page Builder is used #619
-* Bug: Smooth Scroll offset issue after latest update #620
-* Bug: JSON error when we try to added the ETOC in page/post section #621
-* Bug: The WP Bakery image gallery is getting braked on first reload #627
-* Bug: Issue showing on the page speed tool as Lists do not contain only <li> elements and script-supporting elements #630
-
-= 2.0.57.1 27/10/2023 =
-* Bug: Incomplete CSS Classes in Version 2.0.57 Causing Style Issues #614
-
-= 2.0.57 25/10/2023 =
-* New: A feature to show only limited number of headings and rest should be as "View More" #474
-* Bug: The Footnotes are being repeated if the plugin is activated #597
-* Bug: A warning is showing while using the TOC #606
-* Bug: Jump anchors with apostrophe headings not working if theme Bamboo by Mediavine is active #607
-* Bug: Conflict issue with Molongui Authorship plugin in 2.0.56 version #608
-* Bug: Widget Auto-Highlight Issue After Update 2.0.56.1 #610
-
-= 2.0.56.1 09/10/2023 =
-* Bug: Toggle is not working with the pure CSS loading method. #604
-* Bug: Border colour is not changing in TOC #603
-* Bug: jQuery issue showing in console #605
-
-= 2.0.56 05/10/2023 =
-* New: Option to exclude toc from wp-json rest api #580
-* New: Feature to customize the CSS of the TOC container #553
-* New: Compatibility with the plugin CM Tooltip Glossary Ecommerce #556
-* New: Compatibility with the plugin Molongui Authorship #563
-* New: Option to include Page title in Table Of Content #568
-* New: Feature to customize the Background color of the Header Label #569
-* New: Added shortcode [no_ez_toc] so that users can disable the auto insertion of the TOC on a specific post/page #581
-* New: Compatibility with the ACF Flexible Content Module #589
-* New: Compatibility with salesdorado-tailpress theme #590
-* New: Compatibility of javascript scroll with Walker News Template theme #593
-* New: Options to customise the sticky TOC toggle. #583 #286
-* Bug: Unwanted spacing added in post while using TOC with uncode theme #588
-* Bug: Links are not working if the placement option "After Paragraph Number" is selected #598
-* Bug: TOC shortcode is added to the single.php file, it does not work. #599
 
 Full changelog available at [changelog.txt](https://plugins.svn.wordpress.org/easy-table-of-contents/trunk/changelog.txt)
 

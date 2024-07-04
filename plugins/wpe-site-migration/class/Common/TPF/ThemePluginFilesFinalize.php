@@ -116,16 +116,17 @@ class ThemePluginFilesFinalize
         );
         $migration_id     = $intent === 'push' ? $state_data['remote_state_id'] : $state_data['migration_state_id'];
 
-        foreach ($files_to_migrate as $stage => $stage_folder) {
-            $paths = [
-                'themes'    => WP_CONTENT_DIR . DIRECTORY_SEPARATOR . 'themes',
-                'plugins'   => WP_PLUGIN_DIR,
-                'muplugins' => WPMU_PLUGIN_DIR,
-                'others'    => WP_CONTENT_DIR
-            ];
-            $dest_path = trailingslashit($paths[$stage]);
+        $paths = [
+            'themes'    => WP_CONTENT_DIR . DIRECTORY_SEPARATOR . 'themes',
+            'plugins'   => WP_PLUGIN_DIR,
+            'muplugins' => WPMU_PLUGIN_DIR,
+            'others'    => WP_CONTENT_DIR
+        ];
 
+        foreach ($files_to_migrate as $stage => $stage_folder) {
+            $dest_path = trailingslashit($paths[$stage]);
             $tmp_path  = Util::get_temp_dir($stage);
+
             if ('pull' === $intent) {
                 $file_folders_list = $this->get_files_for_stage($stage, $state_data, $current_migration);
             }
@@ -139,16 +140,9 @@ class ThemePluginFilesFinalize
                 if (in_array($stage, ['plugins', 'muplugins', 'others'])) {
                     $folder_name = basename(str_replace('\\', '/', $file_folder));
                 } else { //Themes
-                    $manifest = $this->transfer_helpers->load_manifest($stage, $migration_id);
-
-                    if (is_wp_error($manifest)) {
-                        return $manifest;
-                    }
-
                     $folder_name = $this->transfer_helpers->get_theme_folder_name(
                         $file_folder,
-                        $tmp_path,
-                        $manifest['manifest']
+                        $tmp_path
                     );
 
                     if ( ! $folder_name) {
@@ -364,21 +358,9 @@ class ThemePluginFilesFinalize
         $migration_key = isset($state_data['type']) && 'push' === $state_data['type'] ? $state_data['remote_state_id'] : $state_data['migration_state_id'];
 
         foreach ($stages as $stage) {
-            $filename      = Util::get_queue_manifest_file_name($migration_key);
-            $manifest_path = Util::get_temp_dir($stage) . $filename;
-            $queue_info    = json_decode(file_get_contents($manifest_path), true);
-
-            if (!$queue_info) {
-                throw new Exception(sprintf(__('Unable to verify file migration, %s does not exist.'), $manifest_path));
-            }
-
-            if (!isset($queue_info['total'])) {
-                continue;
-            }
-
             try {
                 // Throws exception
-                $this->transfer_helpers->check_manifest($queue_info['manifest'], $stage);
+                $this->transfer_helpers->check_stage_directory($stage);
             } catch (Exception $e) {
                 return new WP_Error('wpmdb_error', $e->getMessage());
             }

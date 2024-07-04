@@ -185,7 +185,6 @@ class MigrationManager
 
         // REST endpoints
         add_action('rest_api_init', [$this, 'register_rest_routes']);
-        add_action('wp_ajax_wpmdb_migrate_table', array($this, 'ajax_migrate_table'));
 
         // This class does double duty and handles processing table related stages.
         add_filter('wpmdb_process_stage', [$this, 'filter_process_stage'], 10, 3);
@@ -200,31 +199,10 @@ class MigrationManager
             'callback' => [$this->initiate_migration, 'ajax_initiate_migration'],
         ]);
 
-        $this->rest_API_server->registerRestRoute('/finalize-migration', [
-            'methods'  => 'POST',
-            'callback' => [$this->finalize_migration, 'ajax_finalize_migration'],
-        ]);
-
         $this->rest_API_server->registerRestRoute('/cancel-migration', [
             'methods'  => 'POST',
             'callback' => [$this, 'ajax_cancel_migration'],
         ]);
-    }
-
-    /**
-     * Called for each database table to be migrated.
-     *
-     * @return void
-     */
-    public function ajax_migrate_table()
-    {
-        $this->http->check_ajax_referer('migrate-table');
-
-        if (isset($_POST['form_data']) && ! Util::is_json($_POST['form_data'])) {
-            $_POST['form_data'] = stripslashes($_POST['form_data']);
-        }
-
-        $this->http->end_ajax($this->migrate_table());
     }
 
     /**

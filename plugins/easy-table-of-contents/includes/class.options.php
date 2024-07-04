@@ -819,6 +819,13 @@ text
 							'type' => 'checkbox',
 							'default' => false,
 						),
+						'enable_memory_fix' => array(
+							'id' => 'enable_memory_fix',
+							'name' => __( 'Fix Out of Memory / 500 Error', 'easy-table-of-contents' ),
+							'desc' => __( 'To solve memory / 500 error on the page where toc shortcode is added through pagebuilder such as DIVI.', 'easy-table-of-contents' ),
+							'type' => 'checkbox',
+							'default' => false,
+						),
 						'prsrv_line_brk' => array(
 							'id' => 'prsrv_line_brk',
 							'name' => __( 'Preserve Line Breaks', 'easy-table-of-contents' ),
@@ -832,7 +839,22 @@ text
 							'desc' => __( 'Makes toggle (js method) work for Infinite Scroll – Ajax Loaded contents/posts.', 'easy-table-of-contents' ),
 							'type' => 'checkbox',
 							'default' => false,
-						)
+						),
+						'no_heading_text' => array(
+							'id' => 'no_heading_text',
+							'name' => __( 'Display no heading text', 'easy-table-of-contents' ),
+							'desc' => __( 'Display text when heading not available.', 'easy-table-of-contents' ),
+							'type' => 'checkbox',
+							'default' => false,
+						),
+						'no_heading_text_value' => array(
+							'id' => 'no_heading_text_value',
+							'name' => __( 'No heading text value', 'easy-table-of-contents' ),
+							'desc' => '<br/>' . __( 'This text will display when no heading found on page/post', 'easy-table-of-contents' ),
+							'type' => 'text',
+							'default' => 'No heading found',
+							'class'=>'js_v'
+						),
 					)
 				),
                 'shortcode' => apply_filters(
@@ -842,7 +864,7 @@ text
                             'id'   => 'shortcode-first-paragraph',
                             'name' => __( 'Manual Adding the shortcode', 'easy-table-of-contents' ),
                             'desc' => sprintf(
-                            		__( 'You can use the following shortcode to `Easy Table of Contents` display in your particular post or page. <a target="_blank" href="%s">Learn More</a><br/><input type="text" id="ez-toc-clipboard-apply" value="[ez-toc]" disabled />&nbsp;<span class="ez-toc-tooltip"><button type="button" onclick="ez_toc_clipboard(\'ez-toc-clipboard-apply\', \'ez-toc-myTooltip\', this, event)" onmouseout="ez_toc_outFunc(\'ez-toc-myTooltip\', this, event)"><span class="ez-toc-tooltiptext ez-toc-myTooltip">Copy to clipboard</span>Copy shortcode</button></span>', 'easy-table-of-contents' ), 'https://tocwp.com/docs/knowledge-base/how-to-add-toc-with-shortcode/'
+                            		__( 'You can use the following shortcode to `Easy Table of Contents` display in your particular post or page. <a target="_blank" href="%s">Learn More</a><br/><input type="text" id="ez-toc-clipboard-apply" value="[ez-toc]" disabled />&nbsp;<span class="ez-toc-tooltip"><button type="button" class="button" onclick="ez_toc_clipboard(\'ez-toc-clipboard-apply\', \'ez-toc-myTooltip\', this, event)" onmouseout="ez_toc_outFunc(\'ez-toc-myTooltip\', this, event)"><span class="ez-toc-tooltiptext ez-toc-myTooltip">Copy to clipboard</span>Copy shortcode</button></span>', 'easy-table-of-contents' ), 'https://tocwp.com/docs/knowledge-base/how-to-add-toc-with-shortcode/'
                             		),
                             'type' => 'paragraph',
                             'allowedHtml' => array(
@@ -877,7 +899,7 @@ text
                             'id'   => 'shortcode-second-paragraph',
                             'name' => __( 'Supported Attributes', 'easy-table-of-contents' ),
                             'desc' => sprintf(
-                            		__( '<p><code>[header_label="Title"]</code> – title for the table of contents</p><p><code>[display_header_label="no"]</code> – no title for the table of contents</p><p><code>[toggle_view="no"]</code> – no toggle for the table of contents</p><p><code>[initial_view="no"]</code> – initially hide the table of contents</p><p><code>[display_counter="no"]</code> – no counter for the table of contents</p><p><code>[post_types="post,page"]</code> – post types seperated by ,(comma)</p><p><code>[post_in="1,2"]</code> – ID’s of the posts|pages seperated by ,(comma)</p><p><code>[device_target="desktop"]</code> – mobile or desktop device support for the table of contents</p><p><code>[view_more="5"]</code> – 5, is the number of headings loads on first view, before user interaction (PRO)</p>', 'easy-table-of-contents' )
+                            		__( '<p><code>[header_label="Title"]</code> – title for the table of contents</p><p><code>[display_header_label="no"]</code> – no title for the table of contents</p><p><code>[toggle_view="no"]</code> – no toggle for the table of contents</p><p><code>[initial_view="hide"]</code> – initially hide the table of contents</p><p><code>[initial_view="show"]</code> – initially show the table of contents</p><p><code>[display_counter="no"]</code> – no counter for the table of contents</p><p><code>[post_types="post,page"]</code> – post types seperated by ,(comma)</p><p><code>[post_in="1,2"]</code> – ID’s of the posts|pages seperated by ,(comma)</p><p><code>[device_target="desktop"]</code> – mobile or desktop device support for the table of contents</p><p><code>[view_more="5"]</code> – 5, is the number of headings loads on first view, before user interaction (PRO)</p>', 'easy-table-of-contents' )
                             		),
                             'type' => 'descriptive_text',
                         ),
@@ -885,7 +907,7 @@ text
                             'id'   => 'shortcode-third-paragraph',
                             'name' => __( 'Manual Adding widget shortcode', 'easy-table-of-contents' ),
                             'desc' => sprintf(
-                            		__( 'You can use the following widget shortcode to display `Easy Table of Contents` in your sidebar. <a target="_blank" href="%s">Learn More</a><br/><input type="text" id="ez-toc-clipboard-apply" value="[ez-toc-widget-sticky]" disabled />&nbsp;<span class="ez-toc-tooltip"><button type="button" onclick="ez_toc_clipboard(\'ez-toc-clipboard-apply\', \'ez-toc-myTooltip\', this, event)" onmouseout="ez_toc_outFunc(\'ez-toc-myTooltip\', this, event)"><span class="ez-toc-tooltiptext ez-toc-myTooltip">Copy to clipboard</span>Copy shortcode</button></span>', 'easy-table-of-contents' ), 'https://tocwp.com/docs/knowledge-base/how-to-add-toc-with-shortcode/'
+                            		__( 'You can use the following widget shortcode to display `Easy Table of Contents` in your sidebar. <a target="_blank" href="%s">Learn More</a><br/><input type="text" id="ez-toc-clipboard-apply" value="[ez-toc-widget-sticky]" disabled />&nbsp;<span class="ez-toc-tooltip"><button type="button" class="button" onclick="ez_toc_clipboard(\'ez-toc-clipboard-apply\', \'ez-toc-myTooltip\', this, event)" onmouseout="ez_toc_outFunc(\'ez-toc-myTooltip\', this, event)"><span class="ez-toc-tooltiptext ez-toc-myTooltip">Copy to clipboard</span>Copy shortcode</button></span>', 'easy-table-of-contents' ), 'https://tocwp.com/docs/knowledge-base/how-to-add-toc-with-shortcode/'
                             		),
                             'type' => 'paragraph',
                             'allowedHtml' => array(
@@ -1072,7 +1094,15 @@ text
 							'type'        => 'checkbox',
 							'default'     => false,
 							'placeholder' => __( 'Close Sticky Toggle on click over headings in desktop', 'easy-table-of-contents' )
-						)
+						),
+						'sticky_restrict_url_text' => array(
+							'id' => 'sticky_restrict_url_text',
+							'name' => __( 'Exclude By Matching Url/String', 'easy-table-of-contents' ),
+							'desc' => '<br/>' . __( 'Add the url of the pages that you do not want to show table of contents on. Any part or match of the url, will restrict table of contents from loading on those pages. Please add the urls in the new lines by clicking on "enter".', 'easy-table-of-contents' ),
+							'type' => 'textarea',
+							'placeholder' => 'wp
+text
+/featured/'),
                     )
                 ),
                 'compatibility' => apply_filters(
@@ -1315,6 +1345,7 @@ text
 				'sticky_include_product_category'     => true,
 				'sticky_include_custom_tax'           => false,
 				'generate_toc_link_ids'               => false,
+				'enable_memory_fix'					  => false,
 			);
 
 			return apply_filters( 'ez_toc_get_default_options', $defaults );
@@ -1564,8 +1595,8 @@ HR_TAG;
 
 			$readonly = isset( $args['readonly'] ) && $args['readonly'] === true ? ' readonly="readonly"' : '';
 			$size     = isset( $args['size'] ) && ! is_null( $args['size'] ) ? $args['size'] : 'regular';
-
-			$html = '<input type="text" class="' . $size . '-text" id="ez-toc-settings[' . $args['id'] . ']"' . $name . ' value="' . esc_attr( stripslashes( $value ) ) . '"' . $readonly . ' placeholder="' .
+			$value = $value ? stripslashes($value) : '';
+			$html = '<input type="text" class="' . $size . '-text" id="ez-toc-settings[' . $args['id'] . ']"' . $name . ' value="' . esc_attr( $value ) . '"' . $readonly . ' placeholder="' .
 			        $placeholder . '" />';
 
 

@@ -23,8 +23,9 @@
 					<div class="col-md-4">
 						<div class="title">Company</div>
 						<ul>
-							<li><a href="<?php bloginfo('url'); ?>/services">Services</a></li>
+							<li><a href="<?php bloginfo('url'); ?>/paidmedia">Services</a></li>
 							<li><a href="<?php bloginfo('url'); ?>/our-approach">Our Approach</a></li>
+							<li><a href="<?php bloginfo('url'); ?>/careers">Careers</a></li>
 						</ul>
 					</div>
 

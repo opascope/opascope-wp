@@ -134,6 +134,14 @@ class Local
             return new WP_Error('invalid-license', $message);
         }
 
+        foreach (['url', 'key', 'intent'] as $param) {
+            if (empty($state_data[$param])) {
+                $message = sprintf(__('Required parameter "%s" not supplied.', 'wp-migrate-db'), $param);
+
+                return new WP_Error(__FUNCTION__ . '-missing-param-' . $param, $message);
+            }
+        }
+
         do_action('wpmdb_before_verify_connection_to_remote_site', $state_data);
 
         $data = array(

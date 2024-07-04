@@ -87,6 +87,9 @@ class BackgroundMigrationManager
 
         // Check whether migration is in a state where it needs to be forcefully terminated.
         add_filter('wpmdb_task_item', [$this, 'maybe_terminate'], 99, 3);
+
+        // Ensure last migration record is updated on cancel.
+        add_action('wpmdb_migration_canceled', [$this, 'handle_migration_canceled']);
     }
 
     /**
@@ -265,7 +268,14 @@ class BackgroundMigrationManager
      */
     public function ajax_get_migration()
     {
-        $this->http->end_ajax($this->get_background_migrations_info());
+        $info = $this->get_background_migrations_info();
+
+        // Use this UI initiated request to potentially terminate an AWOL migration.
+        if ($this->maybe_terminate_awol_migration($info)) {
+            $info = $this->get_background_migrations_info();
+        }
+
+        $this->http->end_ajax($info);
     }
 
     /**
@@ -371,7 +381,6 @@ class BackgroundMigrationManager
 
             $this->update_last_migration($last_migration);
         }
-
 
         //Clean up the migration data
         Persistence::cleanupStateOptions();
@@ -565,6 +574,8 @@ class BackgroundMigrationManager
      * @param array|bool|WP_Error      $item       The background migration batch item.
      * @param BackgroundMigration|null $migration  The background migration.
      * @param string                   $identifier The background migration process identifier.
+     *
+     * @return array|bool|WP_Error
      */
     public function save_last_migration($item, $migration, $identifier)
     {
@@ -905,6 +916,75 @@ class BackgroundMigrationManager
     }
 
     /**
+     * Check last migration if active migration missing to see if it needs terminating.
+     *
+     * @param array $info
+     *
+     * @return bool
+     */
+    private function maybe_terminate_awol_migration($info)
+    {
+        // Make sure we're ok to proceed, and that last migration has
+        // all the data we'd normally need from a task item in order to
+        // check and terminate the migration.
+        if (
+            ! empty($info['active_migration']) ||
+            ! empty($info['last_migration']['finished']) ||
+            ! empty($info['last_migration']['dismissed']) ||
+            empty($info['last_migration']['started_by']) ||
+            empty($info['last_migration']['started_at']) ||
+            empty($info['last_migration']['updated_at']) ||
+            empty($info['last_migration']['migration_id']) ||
+            empty($info['last_migration']['type']) ||
+            empty($info['last_migration']['stages']) ||
+            ! isset($info['last_migration']['total'])
+        ) {
+            return false;
+        }
+
+        $item      = $info['last_migration'];
+        $migration = $this->get_migration($item['type']);
+
+        if (empty($migration)) {
+            return false;
+        }
+
+        $identifier = $migration->get_background_process_identifier();
+
+        if (empty($identifier)) {
+            return false;
+        }
+
+        // Pretend task/cron just fired and updated the item/last migration.
+        // This ensures timestamps are as needed, and validates/upgrades data.
+        $item = $this->save_last_migration($item, $migration, $identifier);
+
+        if (empty($item) || ! is_array($item)) {
+            return false;
+        }
+
+        // Now we can try and terminate the stale migration.
+        $item = $this->maybe_terminate($item, $migration, $identifier);
+
+        // No error, nothing changed.
+        if (empty($item) || ! is_array($item) || ! BackgroundMigrationProcess::has_errors($item)) {
+            return false;
+        }
+
+        // Make absolutely sure the last migration is now finished too.
+        $last_migration = $this->get_last_migration($info['last_migration']['started_by']);
+
+        if ( ! empty($last_migration['finished'])) {
+            do_action('wpmdb_track_migration_error', BackgroundMigrationProcess::get_error($item));
+            do_action('wpmdb_migration_failed', $item['migration_id']);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
      * Does the migration look to be stuck?
      *
      * @param array|bool $last_migration
@@ -1021,5 +1101,25 @@ class BackgroundMigrationManager
         }
 
         return $continue;
+    }
+
+    /**
+     * When cancelling, the last migration record doesn't get a chance
+     * to be updated as finished, so we need to do it here.
+     *
+     * @handles wpmdb_migration_canceled
+     *
+     * @return void
+     */
+    public function handle_migration_canceled()
+    {
+        $last_migration = $this->get_last_migration();
+
+        if ( ! empty($last_migration['started_by']) && empty($last_migration['finished'])) {
+            $last_migration['updated_at']  = time();
+            $last_migration['finished']    = true;
+            $last_migration['finished_at'] = $last_migration['updated_at'];
+            $this->update_last_migration($last_migration, $last_migration['started_by']);
+        }
     }
 }

@@ -110,46 +110,6 @@ class ThemePluginFilesLocal
 
         add_filter('wpmdb_enqueue_stage', array($this, 'filter_enqueue_stage'), 10, 2);
         add_filter('wpmdb_initiate_migration', array($this->check, 'transfer_check'));
-        add_action('rest_api_init', [$this, 'register_rest_routes']);
-    }
-
-    public function register_rest_routes()
-    {
-        $this->rest_API_server->registerRestRoute(
-            '/tpf-initiate-file-migration',
-            [
-                'methods'  => 'POST',
-                'callback' => [$this, 'ajax_initiate_file_migration'],
-            ]
-        );
-
-        $this->rest_API_server->registerRestRoute(
-            '/tpf-get-queue-items',
-            [
-                'methods'  => 'POST',
-                'callback' => [$this, 'ajax_get_queue_items'],
-            ]
-        );
-
-        $this->rest_API_server->registerRestRoute(
-            '/tpf-transfer-files',
-            [
-                'methods'  => 'POST',
-                'callback' => [$this, 'ajax_transfer_files'],
-            ]
-        );
-    }
-
-    /**
-     * Handle an initiate file migration request.
-     *
-     * @return void
-     */
-    public function ajax_initiate_file_migration()
-    {
-        $_POST = $this->http_helper->convert_json_body_to_post();
-
-        $this->http->end_ajax($this->initiate_file_migration());
     }
 
     /**
@@ -230,18 +190,8 @@ class ThemePluginFilesLocal
             );
         } else {
             // Push = get local files
-            $paths = [
-                'themes'    => WP_CONTENT_DIR . '/themes/',
-                'plugins'   => WP_PLUGIN_DIR,
-                'muplugins' => WPMU_PLUGIN_DIR,
-                'others'    => WP_CONTENT_DIR,
-                'core'      => ABSPATH,
-            ];
-
-            $abs_path  = $paths[$state_data['stage']];
             $file_list = $this->file_processor->get_local_files(
                 $verified_folders,
-                $abs_path,
                 $split_excludes,
                 $state_data['stage'],
                 null,
@@ -282,104 +232,6 @@ class ThemePluginFilesLocal
         }
 
         return ['queue_status' => $queue_status];
-    }
-
-    /**
-     * Get queue items in batches to populate the UI
-     *
-     * @return void
-     */
-    public function ajax_get_queue_items()
-    {
-        $this->queue_helper->ajax_get_queue_items();
-    }
-
-    /**
-     * Handle request to transfer files.
-     *
-     * @return void
-     */
-    public function ajax_transfer_files()
-    {
-        $_POST = $this->http_helper->convert_json_body_to_post();
-
-        // Client should check error status for files and if a 500 is encountered kill the migration stage.
-        $this->http->end_ajax($this->transfer_files());
-    }
-
-    /**
-     * Handle request to transfer files.
-     *
-     * @return array|WP_Error
-     */
-    public function transfer_files()
-    {
-        $this->util->set_time_limit();
-
-        $key_rules = array(
-            'action'                        => 'key',
-            'stage'                         => 'string',
-            'offset'                        => 'numeric',
-            'folders'                       => 'json_array',
-            'theme_folders'                 => 'json_array',
-            'themes_option'                 => 'string',
-            'plugin_folders'                => 'json_array',
-            'plugins_option'                => 'string',
-            'muplugin_folders'              => 'json_array',
-            'muplugins_option'              => 'string',
-            'other_folders'                 => 'json_array',
-            'others_option'                 => 'string',
-            'core_folders'                  => 'json_array',
-            'core_option'                   => 'string',
-            'migration_state_id'            => 'key',
-            'payloadSize'                   => 'numeric',
-            'stabilizePayloadSize'          => 'bool',
-            'stepDownSize'                  => 'bool',
-            'nonce'                         => 'key',
-            'retries'                       => 'numeric',
-            'forceHighPerformanceTransfers' => 'bool',
-        );
-
-        $state_data = Persistence::setPostData($key_rules, __METHOD__);
-
-        if (is_wp_error($state_data)) {
-            return $state_data;
-        }
-
-        $count = apply_filters('wpmdbtp_file_batch_size', 1000);
-        $data  = $this->queueManager->list_jobs($count);
-
-        if (is_wp_error($data)) {
-            return $data;
-        }
-
-        $processed = $this->transfer_util->process_file_data($data);
-
-        if (empty($data)) {
-            do_action('wpmdbtp_file_transfer_complete');
-
-            // Clear out queue in case there is a next step
-            $this->queueManager->truncate_queue();
-
-            return ['status' => 'complete'];
-        }
-
-        $remote_url = isset($state_data['url']) ? $state_data['url'] : '';
-        $processed  = $this->transfer_manager->manage_file_transfer($remote_url, $processed, $state_data);
-
-        if (is_wp_error($processed)) {
-            return $processed;
-        }
-
-        $result = [
-            'status' => $processed,
-        ];
-
-        if (isset($processed['error'], $processed['message']) && true === $processed['error']) {
-            $result = new WP_Error(400, $processed['message']);
-        }
-
-        return $result;
     }
 
     public function verify_files_for_migration($files)
@@ -599,7 +451,7 @@ class ThemePluginFilesLocal
                 $stage_files_to_migrate = $this->get_stage_files_to_migrate($profile, $stage);
         }
 
-        return $this->filter_items_to_migrate($stage_files_to_migrate, $profile['theme_plugin_files']["{$stage}_excludes"]);
+        return $this->filter_items_to_migrate($stage_files_to_migrate, $profile['theme_plugin_files']["{$stage}_excludes"], $stage);
 
     }
 
@@ -882,10 +734,11 @@ class ThemePluginFilesLocal
      *
      * @param array        $items
      * @param array|string $excludes
+     * @param string       $stage
      *
      * @return array
      */
-    private function filter_items_to_migrate($items, $excludes)
+    private function filter_items_to_migrate($items, $excludes, $stage)
     {
         Debug::log(__METHOD__);
         Debug::log(__FUNCTION__ . ':>>> items:-');
@@ -896,12 +749,14 @@ class ThemePluginFilesLocal
             return $items;
         }
 
-        $excludes = CommonUtil::split_excludes($excludes);
+        $items = array_unique($items);
 
+        $excludes   = CommonUtil::split_excludes($excludes);
+        $stage_path = CommonUtil::get_stage_base_dir($stage);
         foreach ($items as $key => $item) {
             if (
-                CommonUtil::is_excluded_file($item, $excludes) ||
-                Util::is_empty_dir($item, $excludes)
+                CommonUtil::is_excluded_file($item, $excludes, $stage_path) ||
+                Util::is_empty_dir($item, $excludes, $stage_path)
             ) {
                 unset($items[$key]);
             }

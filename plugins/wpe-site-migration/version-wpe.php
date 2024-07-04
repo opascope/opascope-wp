@@ -1,2 +1,2 @@
 <?php
-$GLOBALS['wpmdb_meta']['wpe-site-migration']['version'] = '1.0.2';
+$GLOBALS['wpmdb_meta']['wpe-site-migration']['version'] = '1.2.0';

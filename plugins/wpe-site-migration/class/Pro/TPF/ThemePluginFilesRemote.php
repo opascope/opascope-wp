@@ -6,7 +6,6 @@ use DeliciousBrains\WPMDB\Common\Filesystem\Filesystem;
 use DeliciousBrains\WPMDB\Common\Http\Helper;
 use DeliciousBrains\WPMDB\Common\Http\Http;
 use DeliciousBrains\WPMDB\Common\Http\Scramble;
-use DeliciousBrains\WPMDB\Common\MigrationPersistence\Persistence;
 use DeliciousBrains\WPMDB\Common\MigrationState\MigrationStateManager;
 use DeliciousBrains\WPMDB\Common\Properties\Properties;
 use DeliciousBrains\WPMDB\Common\Settings\Settings;
@@ -118,7 +117,6 @@ class ThemePluginFilesRemote
         add_action('wp_ajax_nopriv_wpmdbtp_respond_to_get_remote_muplugins', array($this, 'ajax_tp_respond_to_get_remote_muplugins'));
         add_action('wp_ajax_nopriv_wpmdbtp_respond_to_get_remote_others', array($this, 'ajax_tp_respond_to_get_remote_others'));
 
-        add_action('wp_ajax_nopriv_wpmdbtp_respond_to_save_queue_status', array($this, 'ajax_tp_respond_to_save_queue_status'));
         add_action('wp_ajax_nopriv_wpmdbtp_transfers_send_file', array($this, 'ajax_tp_respond_to_request_files',));
         add_action('wp_ajax_nopriv_wpmdbtp_transfers_receive_file', array($this, 'ajax_tp_respond_to_post_file'));
     }
@@ -165,17 +163,6 @@ class ThemePluginFilesRemote
     public function ajax_tp_respond_to_request_files()
     {
         $this->plugin_helper->respond_to_request_files();
-    }
-
-    /**
-     *
-     * Respond to request to save queue status
-     *
-     * @return void
-     */
-    public function ajax_tp_respond_to_save_queue_status()
-    {
-        $this->plugin_helper->respond_to_save_queue_status();
     }
 
     /**

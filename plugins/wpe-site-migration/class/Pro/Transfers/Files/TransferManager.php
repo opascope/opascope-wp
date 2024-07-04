@@ -171,11 +171,6 @@ class TransferManager extends Common_TransferManager
             );
         }
 
-        list($total_sent, $sent_copy) = $this->process_sent_data_push($sent, $chunked);
-
-        // Convert 'file data' to 'folder data', as that's how the UI/Client displays progress
-        $result = $this->util->process_queue_data($sent_copy, $state_data, $total_sent);
-
         // If we're not chunking
         if ( empty( $chunked ) ) {
             $this->queueManager->delete_data_from_queue($count);
@@ -196,7 +191,12 @@ class TransferManager extends Common_TransferManager
             }
         }
 
-        $result['fallback_payload_size'] = $fallback_payload_size;
+        list($total_sent, $sent_copy) = $this->process_sent_data_push($sent, $chunked);
+
+        $result = [
+            'total_transferred'     => $total_sent,
+            'fallback_payload_size' => $fallback_payload_size,
+        ];
 
         if ($this->canUseHighPerformanceTransfers($high_performance_transfers, $force_performance_transfers)) {
             $result['current_payload_size']     = $this->size_controller->get_current_size();
@@ -268,10 +268,10 @@ class TransferManager extends Common_TransferManager
             $total_sent += $sent['size'];
         }
 
-        // Convert 'file data' to 'folder data', as that's how the UI/Client displays progress
-        $result = $this->util->process_queue_data($meta['sent'], $state_data, $total_sent);
-
-        $result['fallback_payload_size'] = $fallback_payload_size;
+        $result = [
+            'total_transferred'     => $total_sent,
+            'fallback_payload_size' => $fallback_payload_size,
+        ];
 
         if ($this->canUseHighPerformanceTransfers($high_performance_transfers, $force_performance_transfers)) {
             $result['current_payload_size']     = $this->size_controller->get_current_size();
@@ -282,10 +282,12 @@ class TransferManager extends Common_TransferManager
     }
 
     /**
-     * @param string $payload
-     * @param array  $state_data
-     * @param string $action
-     * @param string $remote_url
+     * Send a file payload to the remote.
+     *
+     * @param resource $payload
+     * @param array    $state_data
+     * @param string   $action
+     * @param string   $remote_url
      *
      * @return FileTransportResponse|WP_Error
      * @throws Exception
@@ -307,16 +309,21 @@ class TransferManager extends Common_TransferManager
 
         $response = $this->sender->post_payload($payload, $state_data, $ajax_url);
 
-        if(is_wp_error($response)) {
+        if (is_wp_error($response)) {
             return $response;
         }
 
         if ($response->has_error()) {
-            return new WP_Error('wpmdb_transfer_failed', $response->error_message());
+            return new WP_Error('wpmdb_file_transfer_error', $response->error_message());
         }
 
-        if (!$response->success) {
-            return new WP_Error('wpmdb_transfer_failed', $response->data);
+        if ( ! $response->success) {
+            $msg = sprintf(
+                __('File transfer failed with response code: %s', 'wp-migrate-db'),
+                $response->code
+            );
+
+            return new WP_Error('wpmdb_file_transfer_failed', $msg, $response->data);
         }
 
         // Returns response directly

@@ -16,7 +16,7 @@
 
 	<script type="text/javascript">
          document.addEventListener( 'wpcf7mailsent', function( event ) {
-              location = '<?php bloginfo('url'); ?>/thank-you-newsletter';
+              location = '<?php bloginfo('url'); ?>/newsletter-thank-you';
          }, false );
 	</script>
 <?php get_footer(); ?>

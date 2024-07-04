@@ -404,18 +404,18 @@ class ThemePluginFilesAddon extends AddonAbstract
      *
      * @param array  $all_files  Total contents of directory
      * @param array  $to_exclude Files and directories to exclude
-     * @param string $base_path  Path to directory
+     * @param string $stage_path Path to directory
      *
      * @return array
      **/
-    public function prepare_files_list($all_files, $to_exclude, $base_path)
+    public function prepare_files_list($all_files, $to_exclude, $stage_path)
     {
         $files = array_diff($all_files, $to_exclude);
         sort($files);
         $formatted_files = [];
         foreach ($files as $file) {
-            $path = $base_path . DIRECTORY_SEPARATOR . $file;
-            if (is_dir($path) && File_Utils::is_empty_dir($path)) {
+            $path = $stage_path . DIRECTORY_SEPARATOR . $file;
+            if (is_dir($path) && File_Utils::is_empty_dir($path, [], $stage_path)) {
                 continue;
             }
             $formatted_files[$file] = [
@@ -426,7 +426,7 @@ class ThemePluginFilesAddon extends AddonAbstract
             ];
         }
 
-        return apply_filters('wpmdb_filter_files_list', $formatted_files);
+        return apply_filters('wpmdb_filter_files_list', $formatted_files, $stage_path);
     }
 
     /**

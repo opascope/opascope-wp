@@ -72,7 +72,6 @@ class MediaFilesAddon extends AddonAbstract
 
 		add_action( 'wpmdb_migration_complete', array($this, 'cleanup_transfer_migration') );
 		add_filter( 'wpmdb_site_details', array($this, 'filter_site_details') );
-		add_filter( 'wpmdb_mf_excludes', [$this, 'filter_mf_excludes'], 10, 2 );
 	}
 
 	/**
@@ -204,25 +203,4 @@ class MediaFilesAddon extends AddonAbstract
 		return $site_details;
 	}
 
-	/**
-     * Filters the list of excluded MF files
-     *
-     * @param array $excludes
-	 * @param array $state_data
-     *
-     * @return array
-     * @handles wpmdb_mf_excludes
-     */
-    public function filter_mf_excludes($excludes, $state_data)
-    {
-        $excluded_files = [
-            'elementor/css/',
-        ];
-
-        if ( ! is_array($excludes)) {
-            $excludes = [];
-        }
-
-        return array_merge($excludes, $excluded_files);
-    }
 }

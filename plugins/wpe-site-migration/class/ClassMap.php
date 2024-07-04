@@ -13,7 +13,6 @@ use DeliciousBrains\WPMDB\Common\DryRun\DiffGroup;
 use DeliciousBrains\WPMDB\Common\DryRun\DiffInterpreter;
 use DeliciousBrains\WPMDB\Common\DryRun\MemoryPersistence;
 use DeliciousBrains\WPMDB\Common\Error\ErrorLog;
-use DeliciousBrains\WPMDB\Common\Filesystem\RecursiveScanner;
 use DeliciousBrains\WPMDB\Common\FullSite\FullSiteExport;
 use DeliciousBrains\WPMDB\Common\Http\Helper;
 use DeliciousBrains\WPMDB\Common\Http\RemotePost;
@@ -113,10 +112,6 @@ class ClassMap
      * @var TransferManager
      */
     public $transfers_manager;
-    /**
-     * @var RecursiveScanner
-     */
-    public $recursive_scanner;
     /**
      * @var FileProcessor
      */
@@ -520,12 +515,8 @@ class ClassMap
             $this->full_site_export
         );
 
-        $this->recursive_scanner = new RecursiveScanner($this->filesystem, $this->transfers_util);
-
         $this->transfers_file_processor = new FileProcessor(
-            $this->filesystem,
-            $this->http,
-            $this->recursive_scanner
+            $this->filesystem
         );
 
         $this->transfers_queue_helper = new QueueHelper(

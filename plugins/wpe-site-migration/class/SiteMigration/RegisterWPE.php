@@ -28,6 +28,7 @@ use DeliciousBrains\WPMDB\Pro\UI\Template;
 use DeliciousBrains\WPMDB\SiteMigration\Plugin\PluginManager;
 use DeliciousBrains\WPMDB\SiteMigration\Plugin\Scrubber;
 use DeliciousBrains\WPMDB\SiteMigration\Settings\Settings as WPE_Settings;
+use DeliciousBrains\WPMDB\SiteMigration\Files\Excludes as WPE_Excludes;
 use DeliciousBrains\WPMDB\WPMDBDI;
 use DI\DependencyException;
 use DI\NotFoundException;
@@ -95,6 +96,10 @@ class RegisterWPE
      * @var WPE_Settings
      */
     protected $wpe_settings;
+     /**
+     * @var WPE_Excludes
+     */
+    protected $wpe_excludes;
     /**
      * @var BackgroundMigration[]
      */
@@ -154,6 +159,7 @@ class RegisterWPE
         $this->usage_tracking         = $container->get(\DeliciousBrains\WPMDB\Pro\UsageTracking::class);
         $this->logger                 = $container->get(Logger::class);
         $this->wpe_settings           = $container->get(WPE_Settings::class);
+        $this->wpe_excludes           = $container->get(WPE_Excludes::class);
         $this->alerts                 = $container->get(EmailAlert::class);
         $this->update_manager         = $container->get(PluginUpdateManager::class);
         $this->remote_updates_manager = $container->get(RemoteUpdatesManager::class);
@@ -174,6 +180,7 @@ class RegisterWPE
         $this->plugin_manager->register();
         $this->scrubber->register();
         $this->wpe_settings->register();
+        $this->wpe_excludes->register();
         $this->alerts->register();
         $this->remote_updates_manager->register();
         $this->update_manager->register();

@@ -704,7 +704,7 @@ class Replace
                 // PHP currently has a bug that doesn't allow you to clone the DateInterval / DatePeriod classes.
                 // We skip them here as they probably won't need data to be replaced anyway
                 if (
-                    'object' == gettype($unserialized) && 
+                    'object' == gettype($unserialized) &&
                     (
                         $unserialized instanceof \DateInterval ||
                         $unserialized instanceof \DatePeriod
@@ -806,14 +806,30 @@ class Replace
         if ($this->table_is('options', $table_prefix) && 'option_value' === $this->get_column()) {
             return true;
         }
-        if ($table_prefix . 'duplicator_packages' === $this->get_table() && 'package' === $this->get_column()) {
-            return true;
-        }
-        if ($table_prefix . 'aiowps_audit_log' === $this->get_table() && 'stacktrace' === $this->get_column()) {
-            return true;
-        }
-        if ($table_prefix . 'wfconfig' === strtolower($this->get_table()) && 'val' === $this->get_column()) {
-            return true;
+        $table_column_for_check = [
+            [
+                'table' => $table_prefix . 'duplicator_packages',
+                'column' => 'package'
+            ],
+            [
+                'table' => $table_prefix . 'aiowps_audit_log',
+                'column' => 'stacktrace'
+            ],
+            [
+                'table' => $table_prefix . 'wfconfig',
+                'column' => 'val'
+            ]
+        ];
+        $table_column_for_check = apply_filters('wpmdb_check_table_column_for_reference', $table_column_for_check);
+        foreach($table_column_for_check as $table_column ) {
+            if (
+                array_key_exists('table', $table_column)
+                && $table_column['table'] === strtolower($this->get_table())
+                && array_key_exists('column', $table_column)
+                && $table_column['column'] === $this->get_column()
+                ) {
+                return true;
+            }
         }
 
         return false;

@@ -139,6 +139,7 @@ class ProfileManager
             'replace_guids'             => '0',
             'exclude_spam'              => '0',
             'keep_active_plugins'       => '0',
+            'keep_blog_public'          => '0',
             'create_backup'             => '0',
             'exclude_post_types'        => '0',
             'exclude_transients'        => '0',

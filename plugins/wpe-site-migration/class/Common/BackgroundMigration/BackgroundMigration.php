@@ -287,6 +287,16 @@ abstract class BackgroundMigration
     }
 
     /**
+     * Get the string used to identify this migration type's background process.
+     *
+     * @return string
+     */
+    public function get_background_process_identifier()
+    {
+        return $this->background_process->get_identifier();
+    }
+
+    /**
      * Get background process class.
      *
      * @return BackgroundMigrationProcess|null

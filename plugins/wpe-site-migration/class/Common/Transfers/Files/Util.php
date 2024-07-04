@@ -218,7 +218,7 @@ class Util
     {
         $this->error_log->log_error($msg, $data);
 
-        return new WP_Error('wpmdb_transfer_error', $msg);
+        return new WP_Error('wpmdb_transfer_error', $msg, $data);
     }
 
     /**
@@ -275,49 +275,20 @@ class Util
     }
 
     /**
-     * Check's that files migrated match the .manifest file. Always fires at the migration destination
+     * Check's that expected directory for file transfer stage migrated. Always fires at the migration destination.
      *
-     * @param array  $files
      * @param string $stage
      *
      * @throws Exception
      */
-    public function check_manifest($files, $stage)
+    public function check_stage_directory($stage)
     {
-        $failures = [];
-
-        foreach ($files as $file) {
-            $file_path = Common_Util::get_stage_base_dir($stage);
-            if (!file_exists($file_path)) {
-                $failures[] = $file_path;
-            }
+        $file_path = Common_Util::get_stage_base_dir($stage);
+        if ( ! file_exists($file_path)) {
+            throw new Exception(
+                sprintf(__('The following directory failed to transfer: <br> %s', 'wp-migrate-db'), $file_path)
+            );
         }
-
-        if (!empty($failures)) {
-            throw new Exception(sprintf(__('The following files failed to transfer: <br> %s', 'wp-migrate-db'), implode('<br>', $failures)));
-        }
-    }
-
-    /**
-     * Merges a stored queue status (if exists) with the provided one.
-     *
-     * @param array $queue_status
-     * @param string $stage
-     * @param string $migration_state_id
-     * @return array
-     */
-    public function concat_existing_remote_items($queue_status, $stage, $migration_state_id)
-    {
-        $stored_queue = $this->get_queue_status($stage, $migration_state_id);
-        if (false !== $stored_queue) {
-            $queue_status['total'] += $stored_queue['total'];
-            $queue_status['size'] += $stored_queue['size'];
-            $queue_status['manifest'] = array_merge($stored_queue['manifest'], $queue_status['manifest']);
-
-            $this->remove_tmp_folder($stage);
-        }
-
-        return $queue_status;
     }
 
     /**
@@ -497,125 +468,6 @@ class Util
     }
 
     /**
-     * Determine folder transferred numbers for client.
-     *
-     * @param array $data
-     * @param int   $bytes_transferred
-     * @param array $state_data
-     *
-     * @return array
-     */
-    public function process_queue_data($data, $state_data, $bytes_transferred = 0)
-    {
-        $result_set = [];
-
-        if (empty($data)) {
-            return array($result_set, 0);
-        }
-
-
-        $stage = $state_data['stage'];
-        // Could be empty - stores progress of folder migrations between requests. Generally, the size of batch is 100 files and each file could be from a separate folder
-        $folder_transfer_status = get_site_option(constant("WPMDB_FOLDER_TRANSFER_" . strtoupper($stage) . "_OPTION") . $state_data['migration_state_id']);
-
-        if (empty($folder_transfer_status)) {
-            $folder_transfer_status = [];
-        }
-
-        $total_transferred      = 0;
-        $batch_size             = 0;
-
-        foreach ($data as $key => $record) {
-            $is_chunked = isset($record['chunked']) && $record['chunked'];
-            $dirname    = $record['folder_name'];
-            $keys       = array_keys($result_set);
-
-            // This method is called in WPMDBPro_Theme_Plugin_Files_Local::ajax_initiate_file_migration()
-            // $bytes_transferred = 0 and we don't need to iterate over _all_ the files
-            if (0 === $bytes_transferred && \in_array($dirname, $keys)) {
-                continue;
-            }
-
-            if (0 !== $bytes_transferred) {
-                if (!isset($folder_transfer_status[$dirname])) {
-                    $batch_size = 0;
-
-                    $folder_transfer_status[$dirname] = [
-                        'folder_transferred'         => 0,
-                        'folder_percent_transferred' => 0,
-                    ];
-                }
-
-                $item_size = $record['size'];
-
-                if ($is_chunked) {
-                    $item_size = $record['chunk_size'];
-                }
-
-                $folder_transfer_status[$dirname]['folder_transferred'] += $item_size;
-
-                if (!$is_chunked) {
-                    $batch_size += $item_size;
-                } else {
-                    $batch_size = $item_size;
-                }
-
-                $transferred_percentage = $record['folder_size'] > 0 ? $folder_transfer_status[$dirname]['folder_transferred'] / $record['folder_size'] : 0;
-                $folder_transfer_status[$dirname]['folder_percent_transferred'] = $transferred_percentage;
-            }
-
-            $result_set[$dirname] = [
-                'nice_name'                  => $record['nice_name'],
-                'relative_path'              => DIRECTORY_SEPARATOR . $dirname,
-                'absolute_path'              => $record['folder_abs_path'],
-                'item_size'                  => $record['size'],
-                'size'                       => $record['folder_size'],
-                'batch_size'                 => $batch_size,
-                'folder_transferred'         => isset($folder_transfer_status[$dirname]['folder_transferred']) ? $folder_transfer_status[$dirname]['folder_transferred'] : 0,
-                'folder_percent_transferred' => isset($folder_transfer_status[$dirname]['folder_percent_transferred']) ? $folder_transfer_status[$dirname]['folder_percent_transferred'] : 0,
-                'total_transferred'          => $bytes_transferred,
-            ];
-        }
-
-        //Updates folder status transient
-        $this->update_folder_status($state_data, $result_set, $bytes_transferred);
-
-        // Maybe compute folder percent transferred here?
-        return $result_set;
-    }
-
-    /**
-     * @param array $state_data
-     * @param array $result_set
-     * @param int   $bytes_transferred
-     *
-     * @return bool
-     */
-    public function update_folder_status($state_data, $result_set, $bytes_transferred)
-    {
-        if (0 === $bytes_transferred) {
-            return false;
-        }
-
-        $folders_in_progress = [];
-
-        foreach ($result_set as $key => $folder) {
-            if ($folder['folder_transferred'] < $folder['size']) {
-                $folders_in_progress[$key] = $folder;
-            }
-        }
-
-        $stage = $state_data['stage'];
-        if (empty($folders_in_progress) && 0 !== $bytes_transferred) {
-            delete_site_option(constant("WPMDB_FOLDER_TRANSFER_" . strtoupper($stage) . "_OPTION") . $state_data['migration_state_id']);
-        } else {
-            update_site_option(constant("WPMDB_FOLDER_TRANSFER_" . strtoupper($stage) . "_OPTION") . $state_data['migration_state_id'], $folders_in_progress);
-        }
-
-        return true;
-    }
-
-    /**
      * Clean up any temporary file chunks.
      *
      * @param string $suffix
@@ -641,82 +493,45 @@ class Util
     /**
      * Extracts the theme folder name from a given path.
      *
-     * @param  string $local_path
-     * @param  string $temp_path
-     * @param  array $manifest
+     * @param string $local_path
+     * @param string $temp_path
      *
      * @return false|string
      */
-    public function get_theme_folder_name($local_path, $temp_path, $manifest)
+    public function get_theme_folder_name($local_path, $temp_path)
     {
         Debug::log(__FUNCTION__ . ': local_path "' . $local_path . '", temp_path  “' . $temp_path . '”.');
 
         $last = basename(str_replace('\\', '/', $local_path));
 
+        // Theme found at top level of temp folder.
         if ($this->filesystem->file_exists($temp_path . $last)) {
             Debug::log(__FUNCTION__ . ': Returning "' . $last . '".');
+
             return $last;
         }
 
-        foreach ($manifest as $key => $item) {
-            $manifest_item = explode(DIRECTORY_SEPARATOR, $item);
-            unset($manifest_item[count($manifest_item) - 1]);
-            $imploded = implode(DIRECTORY_SEPARATOR, $manifest_item);
+        // Themes are allowed to be nested by one folder, but no more.
+        // Get penultimate and tail directories,
+        // and then check whether penultimate plus tail are in tmp.
+        $pieces     = explode(DIRECTORY_SEPARATOR, $local_path);
+        $num_pieces = count($pieces);
 
-            if (stripos($item, 'style.css') !== false && stripos($local_path, $imploded) !== false) {
-                $pieces = explode(DIRECTORY_SEPARATOR, $item);
-                if (empty($pieces)) {
-                    Debug::log(__FUNCTION__ . ': Failed to explode item:');
-                    Debug::log($item);
-                    return false;
-                }
+        if (1 < $num_pieces) {
+            $tail        = array_pop($pieces);
+            $penultimate = array_pop($pieces);
+            $subdir      = $penultimate . DIRECTORY_SEPARATOR . $tail;
 
-                $glued_pieces = isset($pieces[1]) ? $pieces[1] : '';
+            if ($this->filesystem->file_exists($temp_path . $subdir)) {
+                Debug::log(__FUNCTION__ . ': Returning "' . $subdir . '".');
 
-                // If the last piece is the style.css, discard it and glue the paths together.
-                if (end($pieces) === 'style.css') {
-                    reset($pieces);
-                    array_pop($pieces);
-                    $glued_pieces = implode(DIRECTORY_SEPARATOR, $pieces);
-                }
-                if ($this->filesystem->file_exists($temp_path . $glued_pieces)) {
-                    Debug::log(__FUNCTION__ . ': Returning glued pieces "' . $glued_pieces . '".');
-                    return $glued_pieces;
-                }
+                return $subdir;
             }
         }
 
-        Debug::log(__FUNCTION__ . ': Failed to get name from manifest:');
-        Debug::log($manifest);
+        Debug::log(__FUNCTION__ . ': Failed to get theme folder.');
 
         return false;
-    }
-
-    /**
-     * Load the manifest file.
-     *
-     * @param string $stage
-     * @param string $migration_id
-     *
-     * @return mixed|WP_Error
-     */
-    public function load_manifest($stage, $migration_id)
-    {
-        $filename      = static::get_queue_manifest_file_name($migration_id);
-        $manifest_path = self::get_temp_dir($stage) . $filename;
-        $contents      = file_get_contents($manifest_path);
-
-        if ( ! $contents) {
-            return new WP_Error('wpmdb_load_manifest_failed', __("Failed to load manifest file."));
-        }
-
-        $queue_info = json_decode($contents, true);
-
-        if ( ! $queue_info) {
-            return new WP_Error('wpmdb_parse_manifest_failed', __("Failed to parse manifest file."));
-        }
-
-        return $queue_info;
     }
 
     /**
@@ -990,10 +805,11 @@ class Util
      *
      * @param string $dir
      * @param array  $excludes
+     * @param string $stage_path
      *
      * @return bool
      */
-    public static function is_empty_dir($dir, $excludes = [])
+    public static function is_empty_dir($dir, $excludes = [], $stage_path = '')
     {
         if ( ! is_dir($dir)) {
             return false;
@@ -1012,14 +828,14 @@ class Util
 
         $files = new RecursiveIteratorIterator(
         // Filter iterator results
-            new RecursiveCallbackFilterIterator($dir_iterator, function ($file, $key, $iterator) use ($excludes) {
+            new RecursiveCallbackFilterIterator($dir_iterator, function ($file, $key, $iterator) use ($excludes, $stage_path) {
                 // If folder, allow recursion to look for files
                 if ($file->isReadable() && $iterator->hasChildren()) {
                     return true;
                 }
 
                 // Make sure files are not excluded files
-                return $file->isReadable() && $file->isFile() && ! Excludes::shouldExcludeFile($file->getPathname(), $excludes);
+                return $file->isReadable() && $file->isFile() && ! Excludes::shouldExcludeFile($file->getPathname(), $excludes, $stage_path);
             })
         );
 

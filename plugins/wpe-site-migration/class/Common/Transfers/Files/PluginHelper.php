@@ -158,35 +158,6 @@ class PluginHelper
 
         MigrationHelper::set_current_migration_id($filtered_post['migration_state_id']);
 
-        $abs_path = '';
-
-        if ('plugins' === $stage) {
-            $abs_path = WP_PLUGIN_DIR;
-        }
-
-        if ('muplugins' === $stage) {
-            $abs_path = WPMU_PLUGIN_DIR;
-        }
-
-        if ('others' === $stage) {
-            $abs_path = WP_CONTENT_DIR;
-        }
-
-        if ('themes' === $stage) {
-            $abs_path = WP_CONTENT_DIR . DIRECTORY_SEPARATOR . 'themes' . DIRECTORY_SEPARATOR;
-        }
-
-        if ('media_files' === $stage) {
-            $uploads_path = Util::get_wp_uploads_dir();
-            $uploads_name = wp_basename($uploads_path);
-            $abs_path     = apply_filters(
-                'wpmdb_mf_media_upload_path',
-                WP_CONTENT_DIR . DIRECTORY_SEPARATOR . $uploads_name,
-                $state_data
-            );
-        }
-
-        $slashed  = $this->filesystem->slash_one_direction($abs_path);
         $date     = isset($_POST['date']) ? $state_data['date'] : null;
         $timezone = ! empty($_POST['timezone']) ? $state_data['timezone'] : 'UTC';
 
@@ -203,7 +174,6 @@ class PluginHelper
 
         $files = $this->file_processor->get_local_files(
             $items,
-            $slashed,
             json_decode($state_data['excludes'], true),
             $stage,
             $date,
@@ -220,78 +190,6 @@ class PluginHelper
         $files = ZipAndEncode::encode(json_encode($files));
 
         $this->http->end_ajax($files);
-    }
-
-    /**
-     *
-     * Respond to request to save queue status
-     *
-     * @return void
-     */
-    public function respond_to_save_queue_status()
-    {
-        $this->http->end_ajax($this->save_queue_status());
-    }
-
-    /**
-     *
-     * Respond to request to save queue status
-     *
-     * @return true|WP_Error
-     */
-    public function save_queue_status()
-    {
-        MigrationHelper::set_is_remote();
-
-        $key_rules = array(
-            'action'          => 'key',
-            'remote_state_id' => 'key',
-            'stage'           => 'string',
-            'intent'          => 'string',
-            'sig'             => 'string',
-        );
-
-        $state_data = $this->migration_state_manager->set_post_data($key_rules);
-
-        if (is_wp_error($state_data)) {
-            return $state_data;
-        }
-
-        $filtered_post = $this->http_helper->filter_post_elements(
-            $state_data,
-            array(
-                'action',
-                'remote_state_id',
-                'intent',
-                'stage',
-            )
-        );
-
-        $settings = $this->settings;
-
-        if (!$this->http_helper->verify_signature($filtered_post, $settings['key'])) {
-            return $this->transfer_util->log_and_return_error($this->properties->invalid_content_verification_error . ' (#100tp)', $filtered_post);
-        }
-
-        MigrationHelper::set_current_migration_id($filtered_post['remote_state_id']);
-
-        if (empty($_POST['queue_status'])) {
-            return $this->transfer_util->log_and_return_error(__('Saving queue status to remote failed.'));
-        }
-
-        $queue_status = filter_var($_POST['queue_status'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $queue_data   = json_decode(gzdecode(base64_decode($queue_status)), true);
-
-        if ($queue_data) {
-            try {
-                $queue_data = $this->transfer_util->concat_existing_remote_items($queue_data, $state_data['stage'], $state_data['remote_state_id']);
-                $this->transfer_util->save_queue_status($queue_data, $state_data['stage'], $state_data['remote_state_id']);
-            } catch (Exception $e) {
-                return new WP_Error('wpmdb_failed_save_queue', $e->getMessage());
-            }
-        }
-
-        return true;
     }
 
     public function get_top_level_items($dir)

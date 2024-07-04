@@ -92,18 +92,6 @@ class FinalizeMigration
     }
 
     /**
-     * After table migration, delete old tables and rename new tables removing the temporary prefix.
-     *
-     * @return void
-     */
-    public function ajax_finalize_migration()
-    {
-        $_POST = $this->http_helper->convert_json_body_to_post();
-
-        $this->http->end_ajax($this->finalize_migration());
-    }
-
-    /**
      * Finalize Export by moving file to specified destination.
      *
      * @param array $state_data

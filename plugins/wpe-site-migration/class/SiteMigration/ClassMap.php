@@ -11,7 +11,6 @@ use DeliciousBrains\WPMDB\Pro\Transfers\Files\Transport\TransportManager;
 use DeliciousBrains\WPMDB\Pro\UsageTracking;
 use DeliciousBrains\WPMDB\SiteMigration\Addon\Addon;
 use DeliciousBrains\WPMDB\Common\Error\Logger;
-use DeliciousBrains\WPMDB\Common\Filesystem\RecursiveScanner;
 use DeliciousBrains\WPMDB\SiteMigration\Addon\AddonsFacade;
 use DeliciousBrains\WPMDB\Common\MF\MediaFilesLocal;
 use DeliciousBrains\WPMDB\Pro\BackgroundMigration\BackgroundPush;
@@ -44,6 +43,7 @@ use DeliciousBrains\WPMDB\SiteMigration\Plugin\PluginManager;
 use DeliciousBrains\WPMDB\SiteMigration\Plugin\Scrubber;
 use DeliciousBrains\WPMDB\SiteMigration\Settings\Settings as WPE_Settings;
 use DeliciousBrains\WPMDB\SiteMigration\TPF\ThemePluginFilesAddon;
+use DeliciousBrains\WPMDB\SiteMigration\Files\Excludes as WPE_Excludes;
 
 class ClassMap extends \DeliciousBrains\WPMDB\ClassMap
 {
@@ -102,11 +102,6 @@ class ClassMap extends \DeliciousBrains\WPMDB\ClassMap
     public $transfers_queue_helper;
 
     /**
-     * @var RecursiveScanner
-     */
-    public $recursive_scanner;
-
-    /**
      * @var AddonsFacade
      */
     public $addons_facade;
@@ -156,6 +151,11 @@ class ClassMap extends \DeliciousBrains\WPMDB\ClassMap
      */
     public $transport_manager;
 
+     /**
+     * @var WPE_Excludes
+     */
+    public $wpe_excludes;
+    
     /**
      * @var Cli\Commands
      */
@@ -167,6 +167,8 @@ class ClassMap extends \DeliciousBrains\WPMDB\ClassMap
 
         $this->wpe_settings = new WPE_Settings();
 
+        $this->wpe_excludes = new WPE_Excludes();
+        
         parent::__construct();
 
         $this->tp_addon = new ThemePluginFilesAddon(
@@ -367,15 +369,8 @@ class ClassMap extends \DeliciousBrains\WPMDB\ClassMap
             $this->transport_manager
         );
 
-        $this->recursive_scanner = new RecursiveScanner(
-            $this->filesystem,
-            $this->transfers_util
-        );
-
         $this->transfers_file_processor = new FileProcessor(
-            $this->filesystem,
-            $this->http,
-            $this->recursive_scanner
+            $this->filesystem
         );
 
         $this->transfers_plugin_helper = new PluginHelper(

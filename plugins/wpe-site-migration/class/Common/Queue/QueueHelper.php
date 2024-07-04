@@ -5,10 +5,7 @@ namespace DeliciousBrains\WPMDB\Common\Queue;
 use DeliciousBrains\WPMDB\Common\Filesystem\Filesystem;
 use DeliciousBrains\WPMDB\Common\Http\Helper;
 use DeliciousBrains\WPMDB\Common\Http\Http;
-use DeliciousBrains\WPMDB\Common\MigrationPersistence\Persistence;
 use DeliciousBrains\WPMDB\Common\Transfers\Files\Util;
-use DI\DependencyException;
-use DI\NotFoundException;
 use Exception;
 use WP_Error;
 
@@ -88,7 +85,6 @@ class QueueHelper
         $queue_status = [
             'total'    => $file_data['meta']['count'],
             'size'     => $file_data['meta']['size'],
-            'manifest' => $file_data['meta']['manifest'],
         ];
 
         //Always store local manifest even for push intents, to keep track of recursive scanning items count.
@@ -104,47 +100,7 @@ class QueueHelper
             return $complete_status;
         }
 
-        if ('push' === $intent) {
-            $response = $this->store_remote_manifest($queue_status, $stage);
-            if (true !== $response) {
-                return $response;
-            }
-        }
-
-        // Manifest can get quite large, so remove it once it's no longer needed
-        unset($queue_status['manifest'], $complete_status['manifest']);
-
         return $complete_status;
-    }
-
-    /**
-     * Saves the remote manifest.
-     *
-     * @param array $queue_status
-     * @param string $stage
-     *
-     * @return bool|WP_Error
-     * @throws Exception
-     */
-    private function store_remote_manifest($queue_status, $stage)
-    {
-        $key      = $stage === 'media_files' ? 'mf' : 'tp';
-        $response = $this->transfer_util->save_queue_status_to_remote(
-            $queue_status,
-            "wpmdb{$key}_respond_to_save_queue_status"
-        );
-
-        if (is_wp_error($response)) {
-            return $response;
-        }
-
-        $decoded_response = json_decode($response->body, true);
-
-        if ((isset($decoded_response['success']) && $decoded_response['success'] === false) || empty($decoded_response)) {
-            return $this->transfer_util->log_and_return_error($decoded_response['data']);
-        }
-
-        return true;
     }
 
     /**
@@ -184,109 +140,8 @@ class QueueHelper
             $queue_status = $stored_queue;
             $queue_status['total'] += $file_data['meta']['count'];
             $queue_status['size'] += $file_data['meta']['size'];
-            $queue_status['manifest'] = array_merge($file_data['meta']['manifest'], $queue_status['manifest']);
         }
 
         return $queue_status;
-    }
-
-    /**
-     * Handle request for queue status.
-     *
-     * @return void
-     * @throws DependencyException
-     * @throws NotFoundException
-     */
-    public function ajax_get_queue_items()
-    {
-        $_POST = $this->http_helper->convert_json_body_to_post();
-
-        $this->http->end_ajax($this->get_queue_items());
-    }
-
-    /**
-     * Get queue status.
-     *
-     * @return array|WP_Error
-     * @throws DependencyException
-     * @throws NotFoundException
-     */
-    public function get_queue_items()
-    {
-        $this->util->set_time_limit();
-
-        $key_rules = array(
-            'action'             => 'key',
-            'stage'              => 'string',
-            'migration_state_id' => 'key',
-            'nonce'              => 'key',
-        );
-
-        $state_data = Persistence::setPostData($key_rules, __METHOD__);
-
-        if (is_wp_error($state_data)) {
-            return $state_data;
-        }
-
-        if ($state_data['stage'] === 'media_files') {
-            $folder_key = $state_data['folder'];
-        } else {
-            $folder_key = $state_data['folders'];
-        }
-        $current_option = isset($state_data[$state_data['stage'] . '_option'])
-            ? $state_data[$state_data['stage'] . '_option']
-            : null;
-        if (empty($folder_key) && $current_option !== 'except') {
-            return $this->transfer_util->log_and_return_error(
-                __('Error: empty folder list supplied.', 'wp-migrate-db')
-            );
-        }
-
-        $queue_status = get_site_transient(WPMDB_QUEUE_STATUS_OPTION);
-        $count        = apply_filters('wpmdb_tranfers_queue_batch_size', 1000);
-        $offset       = isset($queue_status['offset']) ? $queue_status['offset'] : 0;
-
-        $q_data = $this->queue_manager->list_jobs($count, $offset);
-
-        if (is_wp_error($q_data)) {
-            return $q_data;
-        }
-
-        if (empty($q_data)) {
-            delete_site_transient(WPMDB_QUEUE_STATUS_OPTION);
-
-            return ['status' => 'complete'];
-        }
-
-        $file_data  = $this->process_file_data($q_data);
-        $result_set = $this->transfer_util->process_queue_data($file_data, $state_data);
-
-        $queue_status['offset'] = $offset + $count;
-        set_site_transient(WPMDB_QUEUE_STATUS_OPTION, $queue_status);
-
-        return ['queue_status' => $queue_status, 'items' => $result_set];
-    }
-
-    /**
-     * Process data
-     *
-     * @param array $data
-     *
-     * @return array
-     */
-    public function process_file_data($data)
-    {
-        $result_set = [];
-
-        if (!empty($data)) {
-            foreach ($data as $size => $record) {
-                $display_path                  = $record->file['subpath'];
-                $record->file['relative_path'] = $display_path;
-
-                $result_set[] = $record->file;
-            }
-        }
-
-        return $result_set;
     }
 }

@@ -33,6 +33,7 @@ class FormData
             'create_backup',
             'remove_backup',
             'keep_active_plugins',
+            'keep_blog_public',
             'select_post_types',
             'backup_option',
             'select_backup',
@@ -68,6 +69,7 @@ class FormData
             'exclude_transients'        => in_array('exclude_transients', $advanced_options) ? '1' : '0',
             'exclude_spam'              => in_array('exclude_spam', $advanced_options) ? '1' : '0',
             'keep_active_plugins'       => in_array('keep_active_plugins', $advanced_options) ? '1' : '0',
+            'keep_blog_public'          => in_array('keep_blog_public', $advanced_options) ? '1' : '0',
             'gzip_file'                 => in_array('gzip_file', $advanced_options) ? '1' : '0',
             'exclude_post_types'        => '0',
         ];
