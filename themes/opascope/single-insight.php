@@ -1029,7 +1029,8 @@
 				<?php
 				$args = array(
 					'post_type' => 'insight',
-					'posts_per_page' => 3
+					'posts_per_page' => 3,
+				    'post__not_in' => array(5112) // exclude /sme page from carousel
 				);
 				$query = new WP_Query($args);
 
