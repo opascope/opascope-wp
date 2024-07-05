@@ -199,6 +199,7 @@
 					'post_status'=>'publish',
 				    'posts_per_page' => 10,
 				    'paged' => $paged,
+				    'post__not_in' => array(5112), // exclude /sme page from insights list
 					'orderby'   => array(
 				      'date' =>'DESC',
 				      'menu_order'=>'ASC'
@@ -209,7 +210,6 @@
 
 		<?php if ( $wp_query->have_posts() ) : ?>
 			<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-
 			<div class="item">
 				<a href="<?php echo get_permalink() ?>">
 				  	<div class="row">

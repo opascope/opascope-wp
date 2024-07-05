@@ -966,32 +966,34 @@
 			<?php if ( have_rows( 'statistics' ) ) : ?>
 				<?php while ( have_rows( 'statistics' )) :
 					the_row(); ?>
-					<div class="statisticSection">
-						<?php if ( get_sub_field( 'title_first_stat' ) || get_sub_field( 'content_first_stat' ) ) : ?>
-							<div class="statistic">
-								<div><?php echo esc_html( get_sub_field( 'title_first_stat' ) ); ?></div>
-								<p><?php echo esc_html( get_sub_field( 'content_first_stat' ) ); ?></p>
-							</div>
-						<?php endif; ?>
-						<?php if ( get_sub_field( 'title_second_stat' ) || get_sub_field( 'content_second_stat' ) ) : ?>
-							<div class="statistic">
-								<div><?php echo esc_html( get_sub_field( 'title_second_stat' ) ); ?></div>
-								<p><?php echo esc_html( get_sub_field( 'content_second_stat' ) ); ?></p>
-							</div>
-						<?php endif; ?>
-						<?php if ( get_sub_field( 'title_third_stat' ) || get_sub_field( 'content_third_stat' ) ) : ?>
-							<div class="statistic">
-								<div><?php echo esc_html( get_sub_field( 'title_third_stat' ) ); ?></div>
-								<p><?php echo esc_html( get_sub_field( 'content_third_stat' ) ); ?></p>
-							</div>
-						<?php endif; ?>
-						<?php if ( get_sub_field( 'title_fourth_stat' ) || get_sub_field( 'content_fourth_stat' ) ) : ?>
-							<div class="statistic">
-								<div><?php echo esc_html( get_sub_field( 'title_fourth_stat' ) ); ?></div>
-								<p><?php echo esc_html( get_sub_field( 'content_fourth_stat' ) ); ?></p>
-							</div>
-						<?php endif; ?>
-					</div>
+					<?php if ( get_sub_field( 'title_first_stat' ) || get_sub_field( 'content_first_stat' ) ) : ?>
+						<div class="statisticSection">
+							<?php if ( get_sub_field( 'title_first_stat' ) || get_sub_field( 'content_first_stat' ) ) : ?>
+								<div class="statistic">
+									<div><?php echo esc_html( get_sub_field( 'title_first_stat' ) ); ?></div>
+									<p><?php echo esc_html( get_sub_field( 'content_first_stat' ) ); ?></p>
+								</div>
+							<?php endif; ?>
+							<?php if ( get_sub_field( 'title_second_stat' ) || get_sub_field( 'content_second_stat' ) ) : ?>
+								<div class="statistic">
+									<div><?php echo esc_html( get_sub_field( 'title_second_stat' ) ); ?></div>
+									<p><?php echo esc_html( get_sub_field( 'content_second_stat' ) ); ?></p>
+								</div>
+							<?php endif; ?>
+							<?php if ( get_sub_field( 'title_third_stat' ) || get_sub_field( 'content_third_stat' ) ) : ?>
+								<div class="statistic">
+									<div><?php echo esc_html( get_sub_field( 'title_third_stat' ) ); ?></div>
+									<p><?php echo esc_html( get_sub_field( 'content_third_stat' ) ); ?></p>
+								</div>
+							<?php endif; ?>
+							<?php if ( get_sub_field( 'title_fourth_stat' ) || get_sub_field( 'content_fourth_stat' ) ) : ?>
+								<div class="statistic">
+									<div><?php echo esc_html( get_sub_field( 'title_fourth_stat' ) ); ?></div>
+									<p><?php echo esc_html( get_sub_field( 'content_fourth_stat' ) ); ?></p>
+								</div>
+							<?php endif; ?>
+						</div>
+					<?php endif; ?>
 				<?php endwhile; ?>
 			<?php endif; ?>
 		</div>
