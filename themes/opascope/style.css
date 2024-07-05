@@ -509,7 +509,7 @@ a {
 
 /* Our Approach Page */
 .our-approach .pd-1 {
-  padding-right: 109px;
+  padding-right: 60px;
 }
 @media (max-width: 991px) {
   .our-approach .pd-1 {
