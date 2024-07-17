@@ -1191,11 +1191,6 @@ a {
   }
 }
 
-.g-recaptcha > div,
-.g-recaptcha iframe {
-  width: 100% !important;
-}
-
 .Privacy-text p, .book-List li {
   font-size: 22px;
   line-height: 37px;

@@ -1,4 +1,3 @@
-
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
 	function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
@@ -68,7 +67,7 @@
 	<input type="hidden" id="lead_source" name="lead_source" value="">
 	<input type="hidden" id="00N5e00000dU1MC" name="00N5e00000dU1MC" value="">
 	<input  id="00N5e00000dU0pl" name="00N5e00000dU0pl" type="hidden" value="" />
-	<div class="g-recaptcha" data-sitekey="6LdtoxkpAAAAAG9AU4d7EbvpirUwiGPUi9JpRbOx" data-callback="validate"></div>
+	<div class="g-recaptcha" data-sitekey="6Leew6QpAAAAAAOsQgzKgzw5Y3SfmobqBvBw_1If" data-callback="validate"></div>
 
 	<input id="formBtn" type="submit" name="submit" onClick="submitForm()" disabled>
 </form>
