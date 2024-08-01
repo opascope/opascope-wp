@@ -47,7 +47,7 @@
 	<input type="hidden" name="gclid__c" value="">
 	<input type="hidden" name="ga_id__c" value="">
 	<input type=hidden name="oid" value="00D5e000002Gmku">
-	<input type=hidden name="retURL" value="<?php bloginfo('url'); ?>/thank-you/">
+	<input id="returl" type="hidden" name="retURL" value="<?php bloginfo('url'); ?>/thank-you/">
 
 	<!--  ----------------------------------------------------------------------  -->
 	<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
